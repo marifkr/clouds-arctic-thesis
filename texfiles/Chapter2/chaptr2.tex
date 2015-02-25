@@ -1,0 +1,17 @@
+\chapter{Model and methods}
+\label{chaptr2}
+\section{Model description}
+\label{sec:modeldes}
+To produce results for the thesis, a formulation of the Weather Research and Forecasting (WRF) Model called the Advanced Research WRF (ARW) has been used, version 3.6.1. The model is developed at the National Centre for Atmospheric Research (NCAR) in Boulder, Colorado. The ARW model is the first fully compressible conservative form nonhydrostatic model designed for both research and operational numerical weather prediction (NWP) applications \citep{Skamarock2008}.
+\section{Model setup}
+\label{sec:modelset}
+I run ARW with a horisontal resolution of 4 km, and 72 vertical layers. This resolution is sufficient to resolve clouds @citation.
+The vertical layers in the ARW model are called eta levels. These levels have uneven vertical spacing, defined by @insertequation @citaion. The levels in the area I have been looking at in lower troposphere are closer to each other than higher up in the troposphere. Therefore the low clouds in the area can be resolved.
+
+Area description. East Siberian Sea and Beaufort Sea. By Canada and Alaska, this is because data from the area has been used for research by others @citations. The area is not ice free any part of the year @cite, and provides a good place to simulate cloud and sea ice interaction.
+
+The sea ice in the area was removed by editing the input files made by WPS, to get results to compare with results from runs with ice.
+
+From diminishing sea ice we might experience an increase in sea traffic, which would lead to an increase in aerosol content in otherwise clean air @citation. To include sudden aerosol "spurts" from shipping I used the microphysics scheme developed by Greg Thompson and Trude Eidhammer described in \cite{Thompson2014}.
+
+The scheme....
