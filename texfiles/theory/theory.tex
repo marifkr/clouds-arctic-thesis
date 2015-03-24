@@ -10,14 +10,37 @@ The air in the Arctic is very stable in winter (polar night) and clean as there 
 Low clouds have bases below 2000 m. Stratus (St) are layered clouds that form when extensive areas of stable air are lifted. Stratus clouds are normally between 0.5 and 1~km thick, whereas they can be several km wide (@citeAguadoBurtpage188?).
 
 \begin{figure}
+\label{fig:dropletsize}
 \includegraphics[width=1\textwidth]{dropletsize}
-\caption{~\citep{McDonald1958}.}
+\caption{Size of CCN, typical cloud droplet, boarderline between cloud droplet and rain drop and typical size of rain drop. Adapted from~\citep{McDonald1958}.}
 \label{fig:Schf01}
 \end{figure}
  
 \section{Radiation and clouds}
+The cloud microphysical properties that determine the cloud radiative properties include: the amount of condensed water, the size and shape of the cloud particles, and the phase of the particles/and if the particles are liquid or ice~\citep{Curry1996}. The amount of condensed water can be expressed by the liquid water content (LWC) in the cloud, often presented with units $g~m^{-3}$, and is proportional to the median volume radius, $\overline{r}$, $\mju~m$. From~\cite{Rogers1989} we can express the number of droplets with radius $r$ by
+\begin{equation}
+N = \int n(r) dr
+\end{equation}
+where $N$ is the droplet number concentration $cm^{-3}$, and $n(r)$ is the number of droplets with radius $r$. @isit?
+The LWC can be written
+\begin{eqnarray}
+LWC &=& \int \rho_L \frac{4}{3} \pi r^3 n(r) dr\\
+&=& \frac{4}{3} \pi \rho_L \int r^3 n(r) dr\\
+&=& \frac{4}{3} \pi \rho_L \overline{r}^3 \int n(r) dr\\
+&=& \frac{4}{3} \pi \rho_L \overline{r}^3 N 
+\end{eqnarray}
+where the last equation shows the proportionality of LWC to the droplet number concentration $N$, and $\rho_L$ is the density of liquid water.
+
+If the LWC is integrated over the height of the cloud or any layer, we find the liquid water path (LWP) of that layer.
+\begin{equation}
+LWP = \int_{base}^{top} LWC dz
+\end{equation}
+The LWP is the column of liquid water in a cloudand is usually expressed by $g~m^{-2}$.
+
+
+
 Cloud consist of droplets that absorb, emit and scatter radiation. 
-In this thesis shortwave (SW) radiation means solar radiation and longwave (LW) radiation covers the terrestrial infrared radiation.
+(introduction@)In this thesis shortwave (SW) radiation means solar radiation and longwave (LW) radiation covers the terrestrial infrared radiation.
 How clouds scatter and absorb SW and LW radiation.
 Explain something about blackbodies, clouds and blackbodies? Stefan–Boltzmanns law states that the flux density emitted by a blackbody is proportional to the fourth power of the absolute temperature @citeLiou2002page12. For a greybody, like a cloud, the equation can be written
 \begin{equation}
@@ -31,6 +54,7 @@ Write about optical depth from Wallace and Hobbs: Normal optical depth or optica
 \tau_{\lambda} = \int_z^{\infty} k_{\lambda} \rho r dz
 \end{equation}
 where $k_{\lambda}$ is the mass absorption coefficient, which has units of $m^2~kg^{-1}$, $\rho$ is the density of air, which has units of $kg~m^{-3}$, and $r$ is the mass of the absorbing gas per unit mass of air.
+
 
 
 As mentioned in Chapter~\ref{chap:introduction} Introduction there is no solar radiation to reflect during winter and the polar night in the Arctic, where as in the summer the zenith angle is so high that even though there is sunlight 24 hours a day the cooling effect in summer does not average out the heating effect the clouds have in winter. The low cloud's ability to absorb and emit terrestrial radiation domiantes over their reflective effect on the solar radiation. @cite?
