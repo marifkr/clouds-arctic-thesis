@@ -11,8 +11,9 @@ Low clouds have bases below 2000 m. Stratus (St) are layered clouds that form wh
 
 \begin{figure}
 \label{fig:dropletsize}
-\includegraphics[width=1\textwidth]{dropletsize}
-\caption{Size of CCN, typical cloud droplet, boarderline between cloud droplet and rain drop and typical size of rain drop. Adapted from~\citep{McDonald1958}.}
+\centering
+\includegraphics[width=1\textwidth]{dropletsize.png}
+\caption{Size of CCN, typical cloud droplet, large cloud droplet, boarderline between cloud droplets and raindrops and typical size of raindrop. Adapted from~\citep{McDonald1958}.}
 \label{fig:Schf01}
 \end{figure}
  
@@ -31,11 +32,14 @@ LWC &=& \int \rho_L \frac{4}{3} \pi r^3 n(r) dr\\
 \end{eqnarray}
 where the last equation shows the proportionality of LWC to the droplet number concentration $N$, and $\rho_L$ is the density of liquid water.
 
-If the LWC is integrated over the height of the cloud or any layer, we find the liquid water path (LWP) of that layer.
+If the LWC is integrated over the height of the cloud, or any layer with chosen base and top in the atmosphere, we find the liquid water path (LWP) of that layer.
 \begin{equation}
 LWP = \int_{base}^{top} LWC dz
 \end{equation}
-The LWP is the column of liquid water in a cloudand is usually expressed by $g~m^{-2}$.
+The LWP is the column of liquid water in a cloud and is usually expressed by $g~m^{-2}$.
+
+
+The cloud droplet effective radius determines many important radiative properties of a cloud and is therefore of particular interest. For example it determines the cloud albedo~\citep{Hansen1974}, which I will go more into when describing the first indirect effect.
 
 
 
@@ -57,7 +61,7 @@ where $k_{\lambda}$ is the mass absorption coefficient, which has units of $m^2~
 
 
 
-As mentioned in Chapter~\ref{chap:introduction} Introduction there is no solar radiation to reflect during winter and the polar night in the Arctic, where as in the summer the zenith angle is so high that even though there is sunlight 24 hours a day the cooling effect in summer does not average out the heating effect the clouds have in winter. The low cloud's ability to absorb and emit terrestrial radiation domiantes over their reflective effect on the solar radiation. @cite?
+As mentioned in Chapter~\ref{chap:introduction} Introduction there is no solar radiation to reflect during winter and the polar night in the Arctic, where as in the summer the zenith angle is so high that even though there is sunlight 24 hours a day the cooling effect in summer does not average out the heating effect the clouds have in winter. The low clouds' ability to absorb and emit terrestrial radiation domiantes over their reflective effect on the solar radiation. @cite?
 
 How do clouds reflect radiation? What is the effect of more water? Or more ice? What about the droplet size? (effective radius)\\
 How do clouds absorb and emit radiation? Effect of more or less water or ice? Droplet size?
@@ -66,7 +70,7 @@ Ice is more effective in reflecting SW than water. Snow has a higher albedo than
 
 Make sure to include something on how LWC/LWP and effective radii plays in, if this is to be mentioned in the results or discussion!!
 
-\section{Aerosol effect on clouds}
+\section{Aerosol effects on clouds}
 Aerosols affect clouds in numerous ways. They have a direct effect on the climate by scattering and absorbing SW radiation. acting as CCNs og INs. elaborate?
 Diminishing sea ice could lead to an increase in the aerosol number concentrations in the area where ice has retreated. The open sea surface it self would lead to an increase in release of sea salt to the lower atmosphere @cite. The lack of sea ice would also increase the likelyhood that the sea could be used for shipping, which would pollute the area @cite. There are two known indirect effects that aerosols have on radiation, through clouds. The first indirect effect was proposed by~\cite{Twomey1974} and is some times referred to as the Twomey effect. The second indirect effect was proposed by~\cite{Albrecht1989} @citecorrectly 
 
