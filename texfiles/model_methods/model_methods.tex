@@ -19,19 +19,19 @@ The vertical coordinate is the traditional $\sigma$ coordinate used in many hydr
 \begin{figure}
 \label{fig:sigma}
 \centering
-\includegraphics[width=\textwidth]{sigma}
-\caption{This figure is shown as presented in~\cite{Skamarock2008}, and is a schematic of the terrain following a $\sigma$ coordinate. P_{hs} and P_{ht} is the hydrostatic pressure at the surface and the top respectively.}
+\includegraphics[scale=1]{sigma.pdf}
+\caption{This figure is shown as presented in~\cite{Skamarock2008}, and is a schematic of the terrain following a $\sigma$ coordinate. $P_{hs}$ and $P_{ht}$ is the hydrostatic pressure at the surface and the top respectively.}
 \end{figure}
 
 \section{Schemes}
 \label{sec:schemes}
-The ARW model offers a wide selection of schemes to treat different physics that one wants represented in the model. The schemes treat the physics slightly differently and some schemes are better for certain horisontal and vertical resolutions than others, so one needs to be careful when choosing how the model is to treat the physics. For my thesis, the especially relevant scheme to mention is the cloud microphysics scheme that I chose, which is the aerosol-aware scheme described in~\cite{Thompson2014} which is a development of the bulk microphysisc scheme described in~\cite{Thompson2008}, to include aerosols and scavenging of them. The scheme is a true double moment scheme andn therefore treats cloud water, cloud ice, rain and snow in a complex and detailed way~\cite{Thompson2014}. At the time of writing, the only radiation schemes that make use of the effective radius are the Rapid Radiative Tranfer Model (RRTM) for General Circulation Models (GCMs) (RRTMG) radiation schemes~\cite{@authorsRRTMG} for both SW and LW. These were therefore used in combination with the aerosol-aware cloud microphysics scheme.
+The ARW model offers a wide selection of schemes to treat different physics that one wants represented in the model. The schemes treat the physics slightly differently and some schemes are better for certain horisontal and vertical resolutions than others, so one needs to be careful when choosing how the model is to treat the physics. For my thesis, the especially relevant scheme to mention is the cloud microphysics scheme that I chose, which is the aerosol-aware scheme described in~\cite{Thompson2014} which is a development of the bulk microphysisc scheme described in~\cite{Thompson2008}, to include aerosols and scavenging of them. The scheme is a true double moment scheme and therefore treats cloud water, cloud ice, rain and snow in a complex and detailed way(@???litt vagt og rart å skrive)~\cite{Thompson2014}. At the time of writing, the only radiation schemes that make use of the effective radii are the Rapid Radiative Tranfer Model (RRTM) for General Circulation Models (GCMs) (RRTMG) radiation schemes~\cite{@authorsRRTMG} for both SW and LW. These were therefore used in combination with the aerosol-aware cloud microphysics scheme.
 
 \section{Model setup}
 \label{sec:modelsetup}
 @Area description. Sea names: Beaufort and ??. By Canada and Alaska, this is because data from the area has been used for research by others @citations. The area is not ice free any part of the year @cite, and provides a good place to simulate cloud and sea ice interaction.
 \\
-I ran ARW with a horisontal resolution of 4 km, and 72 vertical layers. This resolution is sufficient to resolve clouds @citation.
+I ran ARW with a horisontal resolution of 4 km, and 72 vertical layers. This resolution is sufficient to resolve clouds @citation. 300\cdot 300 gridpoints, with 4 km spacing.
 \\
 I call the vertical layers in the ARW model eta levels, because of the choice of $\eta$ as the vertical coordinate. These levels have uneven vertical spacing. Since the level height is dependent on pressure, the height varies in both time and space. Consequently the levels in the lower troposphere are closer to each other than higher up in the troposphere. Therefore the low clouds in the area can be resolved. (@How close? what heights??)
 \\
