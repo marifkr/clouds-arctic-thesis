@@ -17,29 +17,39 @@ The vertical coordinate is the traditional $\sigma$ coordinate used in many hydr
 
 
 \begin{figure}
-\label{fig:sigma}
 \centering
 \includegraphics[scale=1]{sigma.pdf}
 \caption{This figure is shown as presented in~\cite{Skamarock2008}, and is a schematic of the terrain following a $\sigma$ coordinate. $P_{hs}$ and $P_{ht}$ is the hydrostatic pressure at the surface and the top respectively.}
+\label{fig:sigma}
 \end{figure}
 
 \section{Schemes}
 \label{sec:schemes}
 The ARW model offers a wide selection of schemes to treat different physics that one wants represented in the model. The schemes treat the physics slightly differently and some schemes are better for certain horisontal and vertical resolutions than others, so one needs to be careful when choosing how the model is to treat the physics. For my thesis, the especially relevant scheme to mention is the cloud microphysics scheme that I chose, which is the aerosol-aware scheme described in~\cite{Thompson2014} which is a development of the bulk microphysisc scheme described in~\cite{Thompson2008}, to include aerosols and scavenging of them. The scheme is a true double moment scheme and therefore treats cloud water, cloud ice, rain and snow in a complex and detailed way(@???litt vagt og rart å skrive)~\cite{Thompson2014}. At the time of writing, the only radiation schemes that make use of the effective radii are the Rapid Radiative Tranfer Model (RRTM) for General Circulation Models (GCMs) (RRTMG) radiation schemes~\cite{@authorsRRTMG} for both SW and LW. These were therefore used in combination with the aerosol-aware cloud microphysics scheme.
 
+\subsection{The aerosol-aware scheme}
+The microphysics option 28~\citep{Thompson2014} is built on the schematic shown in figure~\ref{fig:microphysics}. It is a double moment scheme, which means it computes both mixing ratios and number concentrations for the same water species (hydrometeors). 
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{microphysics.pdf}
+\caption{Cloud microphysical parameterization scheme typically used i NWP models as shown in~\cite{Reisner1998}. A full list of the acronyms used in the schematic can be found in~\cite{Reisner1998}.}
+\label{fig:microphysics}
+\end{figure}
+
 \section{Model setup}
 \label{sec:modelsetup}
 @Area description. Sea names: Beaufort and ??. By Canada and Alaska, this is because data from the area has been used for research by others @citations. The area is not ice free any part of the year @cite, and provides a good place to simulate cloud and sea ice interaction.
 \\
-I ran ARW with a horisontal resolution of 4 km, and 72 vertical layers. This resolution is sufficient to resolve clouds @citation. 300\cdot 300 gridpoints, with 4 km spacing.
+I ran ARW with a horisontal resolution of 4 km, and 72 vertical layers. This resolution is sufficient to resolve clouds @citation. 300$\cdot$ 300 gridpoints, with 4 km spacing, between .
 \\
 I call the vertical layers in the ARW model eta levels, because of the choice of $\eta$ as the vertical coordinate. These levels have uneven vertical spacing. Since the level height is dependent on pressure, the height varies in both time and space. Consequently the levels in the lower troposphere are closer to each other than higher up in the troposphere. Therefore the low clouds in the area can be resolved. (@How close? what heights??)
 \\
 The sea ice in the area was removed by editing the input file constructed? built? by WPS and real.exe, to get results to compare with results from runs with ice.
 \\
-From diminishing sea ice we might experience an increase in sea traffic, which would lead to an increase in aerosol content in otherwise clean air @citation. To include increase in aerosol concentrations due to lack of sea ice I used the microphysics scheme developed by Greg Thompson and Trude Eidhammer described in \cite{Thompson2014}.
+From diminishing sea ice we might experience an increase in sea traffic, which would lead to an increase in aerosol content in otherwise clean air @citation. To include increase in aerosol concentrations due to lack of sea ice I used the microphysics scheme developed by Greg Thompson and Trude Eidhammer described in~\cite{Thompson2014}.
 \\
-The scheme uses a monthly mean for aerosol number concentrations derived from multi-year (2001-2007) global model simulations @citationColarco2010??(det har de cita) in which particles and their precursors are emitted by natural and anthropogenic sources and are explicitly modeled with multiple size bins for multiple species of aerosols by the Goddard Chemistry Aerosol Radiation and Transport (GOCART) model (@desiterteGinoux2001).~\citep{Thompson2014}.
+The scheme uses a monthly mean for aerosol number concentrations derived from multi-year (2001-2007) global model simulations @citationColarco2010??(det har de cita) in which particles and their precursors are emitted by natural and anthropogenic sources and are explicitly modeled with multiple size bins for multiple species of aerosols by the Goddard Chemistry Aerosol Radiation and Transport (GOCART) model (@desiterteGinoux2001)~\citep{Thompson2014}.
 \\
 Choice of schemes and reasons should be presented. As should hos WPS and real.exe and wrf.exe works. At least short about what they do and contribute with to get to the end results. Explain some of the improvements in the micro physics scheme in combination with the revised radiation schemes (RRTMG for SW and LW).
 
@@ -57,7 +67,7 @@ The increase in aerosol concentration was a bit more complicated, but the same m
 Multiplied the aerosol number concentration fields at all levels with a factor of 10 by using NCOs ncap2, using the same tool I also changed the belonging..? (tilhørende..) variables in the bdy input file (is this a building file.. or what?). The goal is to find changes in cloud properties compared to those in the control run.
 
 \section{Input data}
-ERA-Interim reanalysis from European Centre for Medium-Range Weather Forecasts (ECMWF) used as input for initial and boundary?? conditions. (Downloaded by python scripts provided by Anne (more names) at the IT-help ??? at section for Meteorology and Oceanography at the University of Oslo.)
+ERA-Interim reanalysis from European Centre for Medium-Range Weather Forecasts (ECMWF) used as input for initial and boundary?? conditions. (Downloaded by python scripts provided by Anne (more names) at the IT-help ??? at section for Meteorology and Oceanography at the University of Oslo.) The data from ERA-Interim was interpolated over a the grid with a 2 degree minute spacing between the points, to be used to initialize the model.
 
 \section{Processing of the results}
 Figures presented in my thesis, I made (unless other is stated) by use of National Centre for Atmospheric Research (NCAR) Command Language (NCL) and MatLab. For the NCL scripts I found a lot of help and inspiration from the example scripts for WRF-users available at (URL for examples).
