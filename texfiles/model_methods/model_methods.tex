@@ -25,7 +25,7 @@ The vertical coordinate is the traditional $\sigma$ coordinate used in many hydr
 
 \section{Schemes}
 \label{sec:schemes}
-The ARW model offers a wide selection of schemes to treat different physics that one wants represented in the model. The schemes treat the physics slightly differently and some schemes are better for certain horisontal and vertical resolutions than others, so one needs to be careful when choosing how the model is to treat the physics. For my thesis, the especially relevant scheme to mention is the cloud microphysics scheme that I chose, which is the aerosol-aware scheme described in~\cite{Thompson2014} which is a development of the scheme bulk microphysisc scheme described in~\cite{Thompson2008}, to include aerosols and scavenging of them. The scheme is a true double moment scheme andn therefore treats cloud water, cloud ice, rain and snow in a complex and detailed way~\cite{Thompson2014}. At the time of writing, the only radiation schemes that make use of the effective radius are the RRTM-G radiation schemes~\cite{@authorsRRTM-G} for both SW and LW. These were therefore used in combination with the aerosol-aware cloud microphysics scheme.
+The ARW model offers a wide selection of schemes to treat different physics that one wants represented in the model. The schemes treat the physics slightly differently and some schemes are better for certain horisontal and vertical resolutions than others, so one needs to be careful when choosing how the model is to treat the physics. For my thesis, the especially relevant scheme to mention is the cloud microphysics scheme that I chose, which is the aerosol-aware scheme described in~\cite{Thompson2014} which is a development of the bulk microphysisc scheme described in~\cite{Thompson2008}, to include aerosols and scavenging of them. The scheme is a true double moment scheme andn therefore treats cloud water, cloud ice, rain and snow in a complex and detailed way~\cite{Thompson2014}. At the time of writing, the only radiation schemes that make use of the effective radius are the Rapid Radiative Tranfer Model (RRTM) for General Circulation Models (GCMs) (RRTMG) radiation schemes~\cite{@authorsRRTMG} for both SW and LW. These were therefore used in combination with the aerosol-aware cloud microphysics scheme.
 
 \section{Model setup}
 \label{sec:modelsetup}
@@ -39,18 +39,21 @@ The sea ice in the area was removed by editing the input file constructed? built
 \\
 From diminishing sea ice we might experience an increase in sea traffic, which would lead to an increase in aerosol content in otherwise clean air @citation. To include increase in aerosol concentrations due to lack of sea ice I used the microphysics scheme developed by Greg Thompson and Trude Eidhammer described in \cite{Thompson2014}.
 \\
-The scheme uses a monthly mean for aerosol number concentrations derived from multi-year (2001-2007) global model simulations @citationColarco2010??(det har de cita) in which particles and their precursors are emitted by natural and anthropogenic sources and are explicitly modeled with multiple size bins for multiple species of aerosols by the Goddard Chemistry Aerosol Radiation and Transport (GOCART) model (@desiterteGinoux2001).
+The scheme uses a monthly mean for aerosol number concentrations derived from multi-year (2001-2007) global model simulations @citationColarco2010??(det har de cita) in which particles and their precursors are emitted by natural and anthropogenic sources and are explicitly modeled with multiple size bins for multiple species of aerosols by the Goddard Chemistry Aerosol Radiation and Transport (GOCART) model (@desiterteGinoux2001).~\citep{Thompson2014}.
 \\
 Choice of schemes and reasons should be presented. As should hos WPS and real.exe and wrf.exe works. At least short about what they do and contribute with to get to the end results. Explain some of the improvements in the micro physics scheme in combination with the revised radiation schemes (RRTMG for SW and LW).
 
 \section{Model runs}
 \subsection{Manipulation of input files}
+To run the model without ice and with an increased number of aerosols I manipulated the input files for WRF. I used a netCDF Operator (NCO) tool, ncap2. This allowed me do manipulate the netCDF files from my terminal window in the folder where they were located.
 Elaborate on removal or placing of sea ice. Elaborate on multiplying the aerosol number concentration with a factor 10. By use of ncap2 from NetCDF (NCO).
 
 \subsection{Changed ice run}
+The seaice variable was simply multiplied by 0 in every gridpoint and by that removed.
 Removed ice from the input file for the model run by using NCO and ncap2. The point of this is to compare the run with no ice to the control run, and see if there are any changes to the cloud properties.
 
 \subsection{Changed aerosols run}
+The increase in aerosol concentration was a bit more complicated, but the same method. The number of water and ice friendly aerosols were multiplied by 100 and so were their tendencies and respective concentrations at the boundaries of the area.
 Multiplied the aerosol number concentration fields at all levels with a factor of 10 by using NCOs ncap2, using the same tool I also changed the belonging..? (tilhørende..) variables in the bdy input file (is this a building file.. or what?). The goal is to find changes in cloud properties compared to those in the control run.
 
 \section{Input data}
