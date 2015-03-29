@@ -1,20 +1,37 @@
 \chapter{Model and methods}
 \label{chap:modmet}
-\section{Model description}
+\section{Modeling System description}
 \label{sec:modeldes}
 (What did Johanne and Kjetil think was important enough to write about in their thesees?)
 
-To produce results for the thesis, a formulation of the Weather Research and Forecasting (WRF) Model called the Advanced Research WRF (ARW) has been used, version 3.6.1. The model is developed at the National Centre for Atmospheric Research (NCAR) in Boulder, Colorado. The ARW model is the first fully compressible conservative form nonhydrostatic model designed for both research and operational numerical weather prediction (NWP) applications~\citep{Skamarock2008}. Any detailed information on the model presented in this section is based on the Article by~\cite{Skamarock2008} unless otherwise stated.
+To produce results for the thesis, a formulation of the Weather Research and Forecasting (WRF) Model called the Advanced Research WRF (ARW) has been used, Version 3.6.1, released in April 2014. The model is developed at the National Centre for Atmospheric Research (NCAR) in Boulder, Colorado. The ARW model is the first fully compressible conservative form nonhydrostatic model designed for both research and operational numerical weather prediction (NWP) applications~\citep{Skamarock2008}. 
+
+As can be seen from figure~\ref{fig:wrfflowchart} the WRF Modeling System consists of four major programs~\citep{Wang2012}:
+\begin{itemize}
+\item The WRF Prepocessing System (WPS)
+\item WRF-Data Assimilation (WRF-DA)
+\item ARW solver
+\item Post-processing \& Visualization tools
+\end{itemize}
+
+WPS is used primarily for real data simulations~\citep{Wang2015}, like the study presented in this thesis. Its functions include defining simulation domains, interpolating terrestrial data and degribbing and interpolating meteorological data from another model to this simulation domain~\citep{Wang2015}. WRF-DA is optional and can be used to ingest observations into the interpolated analyses created by WPS~\citep{Wang2015}, but was not used in this study. The ARW solver is the key component of the modeling system, which is composed of several intialization programs for idealized, and real-data simulations, and the numerical integration program~\citep{Wang2015}. Fully compressible nonhydrostatic equations with hydrostatic options, regional and global applications, complete coriolis and curvature terms and that vertical grid-spacing can vary with height are among the WRF models key features according to~\cite{Wang2015}.
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{wrfflowchart}
+\caption{Flowchart for the WRF ARW Modeling System Version 3. From~\cite{Wang2015}.}
+\label{fig:wrfflowchart}
+\end{figure}
+
+%Any detailed information on the model, presented in this section is based on the Article by~\cite{Skamarock2008} unless otherwise stated.
 
 The continuous equations solved in the ARW model are the Euler equations cast in a flux form where the vertical coordinate, $\eta$, is defined by a normalized hydrostatic pressure,
 \begin{equation}
 \eta = (p_h - p_{ht})/\mju 
 \end{equation}
-where $\mju = (p_{hs} - p_{ht})$~\citep{Skamarock2008}. $p_h$ is the hydrostatic component of the pressure and $p_{hs}$ and $p_{ht}$ are the values of the hydrostatic pressure in a dry atmosphere at the surface and top boundaries respectively%~\citep{Skamarock2008}.
+where $\mju = (p_{hs} - p_{ht})$~\citep{Skamarock2008}. $p_h$ is the hydrostatic component of the pressure and $p_{hs}$ and $p_{ht}$ are the values of the hydrostatic pressure in a dry atmosphere at the surface and top boundaries respectively~\citep{Skamarock2008}.
 
-The vertical coordinate is the traditional $\sigma$ coordinate used in many hydrostatic atmospheric models and is given by shown in a diagram in figure~\ref{fig:sigma}.
-
-
+The vertical coordinate is the traditional $\sigma$ coordinate used in many hydrostatic atmospheric models, shown in a diagram in figure~\ref{fig:sigma}.
 
 \begin{figure}
 \centering
