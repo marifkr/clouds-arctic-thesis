@@ -54,6 +54,8 @@ The microphysics option 28~\citep{Thompson2014} is built on the schematic shown 
 \label{fig:microphysics}
 \end{figure}
 
+Write more about this figure!
+
 \section{Model setup}
 \label{sec:modelsetup}
 @Area description. Sea names: Beaufort and ??. By Canada and Alaska, this is because data from the area has been used for research by others @citations. The area is not ice free any part of the year @cite, and provides a good place to simulate cloud and sea ice interaction.
@@ -71,34 +73,54 @@ The scheme uses a monthly mean for aerosol number concentrations derived from mu
 Choice of schemes and reasons should be presented. As should hos WPS and real.exe and wrf.exe works. At least short about what they do and contribute with to get to the end results. Explain some of the improvements in the micro physics scheme in combination with the revised radiation schemes (RRTMG for SW and LW).
 
 \section{Model runs}
-\begin{table}
+\begin{table}[H]
 \centering
 \caption{Table showing the name of the runs and what is included}
-\label{tab:runs}
-\begin{tabular}{l l l l l l l}
+%Caption could say: Table showing the names of the runs and if they have sea ice or not, and if the aerosol concentration has been increased. All the runs have the same horisontal resolution of 4kmx4km, dimensons 300x300, vertical layers 72 and time step 24 s.
+\label{tab:runs} 
+\begin{tabular}{L{2.3cm} L{2.3cm} L{2cm} L{1.5cm} L{1cm} L{1.5cm} L{3cm}}
 \centering
-Run name & Horisontal resolution & Dimensions & Vertical layers & $\Delta$t & Sea ice & Aerosol concentration\\ \hline
+Name & Horisontal resolution & Dimensions & Vertical layers & $\Delta$t & Sea ice & Aerosol concentration\\ \hline
 control & 4~km x 4~km & 300 x 300 & 72& 24~s & initial & control \\
 NoIce & 4~km x 4~km & 300 x 300 & 72 & 24~s & removed & control \\
-IncAero & 4~km x 4~km & 300 x 300 & 72 & 24~s & removed & control x 100 \\
+IncAero & 4~km x 4~km & 300 x 300 & 72 & 24~s & initial & control x 100 \\
 IncAeroNoIce & 4~km x 4~km & 300 x 300 & 72 & 24~s & removed & control x 100 \\
 \end{tabular}
 \end{table}
 
+Which table?
+
+\begin{table}[H]
+\centering
+\caption{Caption could say: Table showing the names of the runs and if they have sea ice or not, and if the aerosol concentration has been increased. All the runs have the same horisontal resolution of 4kmx4km, dimensons 300x300, vertical layers 72 and time step 24 s.}
+\label{tab:runs} 
+\begin{tabular}{L{2.3cm} L{2cm} L{3cm}}
+\centering
+Name & Sea ice & Aerosol concentration\\ \hline
+control & initial & control \\
+NoIce & removed & control \\
+IncAero & initial & control x 100 \\
+IncAeroNoIce & removed & control x 100 \\
+\end{tabular}
+\end{table}
+
 \subsection{Manipulation of input files}
+wrfinput_d01 and wrfbdy_d01 are input files made by wrf_init.exe
 To run the model without ice and with an increased number of aerosols I manipulated the input files for WRF. I used a netCDF Operator (NCO) tool, ncap2. This allowed me do manipulate the netCDF files from my terminal window in the folder where they were located.
 Elaborate on removal or placing of sea ice. Elaborate on multiplying the aerosol number concentration with a factor 10. By use of ncap2 from NetCDF (NCO).
 
 \subsection{Changed ice run}
-The seaice variable was simply multiplied by 0 in every gridpoint and by that removed.
+The sea ice variable in the wrfinput_d01 file was simply multiplied by 0 in every gridpoint and by that removed.
 Removed ice from the input file for the model run by using NCO and ncap2. The point of this is to compare the run with no ice to the control run, and see if there are any changes to the cloud properties.
 
 \subsection{Changed aerosols run}
-The increase in aerosol concentration was a bit more complicated, but the same method. The number of water and ice friendly aerosols were multiplied by 100 and so were their tendencies and respective concentrations at the boundaries of the area.
-Multiplied the aerosol number concentration fields at all levels with a factor of 10 by using NCOs ncap2, using the same tool I also changed the belonging..? (tilhørende..) variables in the bdy input file (is this a building file.. or what?). The goal is to find changes in cloud properties compared to those in the control run.
+The increase in aerosol concentration was a bit more complicated, but the same method. The number of water and ice friendly aerosols were multiplied by 100 and so were their tendencies and respective concentrations at the boundaries of the area. %wrfbdy is a lateral boundary file, contains the WRF lateral boundary conditions~\citep{Wang2015}.
+The goal is to find changes in cloud properties compared to those in the control run, for that purpose the aerosol concentration was multiplied by a factor of 100. Hoping to get a signal.
 
 \section{Input data}
-ERA-Interim reanalysis from European Centre for Medium-Range Weather Forecasts (ECMWF) used as input for initial and boundary?? conditions. (Downloaded by python scripts provided by Anne (more names) at the IT-help ??? at section for Meteorology and Oceanography at the University of Oslo.) The data from ERA-Interim was interpolated over a the grid with a 2 degree minute spacing between the points, to be used to initialize the model.
+The model runs were initialized with data downloaded from the European Centre for Medium-Range Weather Forecasts (ECMWF).%was downloaded from their site and used as input for initial and boundary?? conditions.
+The downloaded data is from the ERA-Interim dataset, which is a global atmospheric reanalysis from 1979 to present and continues to be updated in real time.%~\cite{ecmwf}.@make bib for ecmwf
+Through WPS the data from ERA-Interim was interpolated over a the grid, with a 2 degree minute spacing between the points, to be used to initialize the model. The data is in 6-hourly atmospheric fields on pressure levels, for the first five days of September 2012, which was the period the model was run for.
 
 \section{Processing of the results}
 Figures presented in my thesis, I made (unless other is stated) by use of National Centre for Atmospheric Research (NCAR) Command Language (NCL) and MatLab. For the NCL scripts I found a lot of help and inspiration from the example scripts for WRF-users available at (URL for examples).
