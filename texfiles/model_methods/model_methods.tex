@@ -71,6 +71,20 @@ The scheme uses a monthly mean for aerosol number concentrations derived from mu
 Choice of schemes and reasons should be presented. As should hos WPS and real.exe and wrf.exe works. At least short about what they do and contribute with to get to the end results. Explain some of the improvements in the micro physics scheme in combination with the revised radiation schemes (RRTMG for SW and LW).
 
 \section{Model runs}
+\begin{table}
+\centering
+\caption{Table showing the name of the runs and what is included}
+\label{tab:runs}
+\begin{tabular}{l l l l l l l}
+\centering
+Run name & Horisontal resolution & Dimensions & Vertical layers & $\Delta$t & Sea ice & Aerosol concentration\\ \hline
+control & 4~km x 4~km & 300 x 300 & 72& 24~s & initial & control \\
+NoIce & 4~km x 4~km & 300 x 300 & 72 & 24~s & removed & control \\
+IncAero & 4~km x 4~km & 300 x 300 & 72 & 24~s & removed & control x 100 \\
+IncAeroNoIce & 4~km x 4~km & 300 x 300 & 72 & 24~s & removed & control x 100 \\
+\end{tabular}
+\end{table}
+
 \subsection{Manipulation of input files}
 To run the model without ice and with an increased number of aerosols I manipulated the input files for WRF. I used a netCDF Operator (NCO) tool, ncap2. This allowed me do manipulate the netCDF files from my terminal window in the folder where they were located.
 Elaborate on removal or placing of sea ice. Elaborate on multiplying the aerosol number concentration with a factor 10. By use of ncap2 from NetCDF (NCO).
