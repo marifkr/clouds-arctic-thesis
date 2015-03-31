@@ -105,7 +105,7 @@ IncAeroNoIce & removed & control x 100 \\
 \end{table}
 
 \subsection{Manipulation of input files}
-wrfinput_d01 and wrfbdy_d01 are input files made by wrf_init.exe
+wrfinput_d01 and wrfbdy_d01 are input files for domain 1, in my case the only domain, and are made by real.exe. These files are then used as initialization or forcing when wrf.exe is run. 
 To run the model without ice and with an increased number of aerosols I manipulated the input files for WRF. I used a netCDF Operator (NCO) tool, ncap2. This allowed me do manipulate the netCDF files from my terminal window in the folder where they were located.
 Elaborate on removal or placing of sea ice. Elaborate on multiplying the aerosol number concentration with a factor 10. By use of ncap2 from NetCDF (NCO).
 
