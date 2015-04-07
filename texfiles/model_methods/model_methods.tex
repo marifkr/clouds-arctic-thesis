@@ -23,6 +23,7 @@ WPS is used primarily for real data simulations~\citep{Wang2015}, like the study
 \label{fig:wrfflowchart}
 \end{figure}
 
+The model can be run for ideal cases or real cases. I have run the REAL-TIME WRF, real.exe — to produce inputfiles for wrf.exe.
 %Any detailed information on the model, presented in this section is based on the Article by~\cite{Skamarock2008} unless otherwise stated.
 
 The continuous equations solved in the ARW model are the Euler equations cast in a flux form where the vertical coordinate, $\eta$, is defined by a normalized hydrostatic pressure,
@@ -58,7 +59,7 @@ Write more about this figure!
 
 \section{Model setup}
 \label{sec:modelsetup}
-@Area description. Sea names: Beaufort and ??. By Canada and Alaska, this is because data from the area has been used for research by others @citations. The area is not ice free any part of the year @cite, and provides a good place to simulate cloud and sea ice interaction.
+@Area description. Sea names: Beaufort and ??. By Canada and Alaska, this is because data from the area has been used for research by others @citations. The area is not ice free any part of the year @cite, and provides a good place to simulate cloud and sea ice interaction. Approximately 7 hours behind UTC time, the times given in the WRF ARW modeling system are UTC. This means that figures showing 1200 UTC are for approximately 0500 in the morning local time in Canada and Alaska.
 \\
 I ran ARW with a horisontal resolution of 4 km, and 72 vertical layers. This resolution is sufficient to resolve clouds @citation. 300$\cdot$ 300 gridpoints, with 4 km spacing, between .
 \\
