@@ -1,4 +1,4 @@
-\chapter{The WRF-ARW Modeling System}
+\chapter{Model and methods}
 \label{chap:modmet}
 \section{Description of the WRF-ARW Modeling System}
 \label{sec:modeldes}
@@ -106,7 +106,7 @@ The area is not completely ice free any part of the year,% @cite,
  and provides a good place to simulate cloud and sea ice interaction. The area is over several time zones but is approximately 7 hours behind UTC time. The times given in the WRF-ARW modeling system are UTC. This means that figures showing 1200 UTC are for approximately 0500 h local time in Canada and Alaska.
 
 I ran ARW with a horisontal resolution of 4~km spacing between the grid points, and a vertical resolution of 72 vertical layers from the surface to the model top at 10hPa. This resolution is sufficient to resolve clouds.% @citation. 300~$\cdot$~300 gridpoints, with 4~km spacing, between .
-The vertical layers in the ARW model are often referred to as eta levels, because of the choice of $\eta$ as the vertical coordinate. These levels have uneven vertical spacing. The fact that this $\eta$ is the traditional $\sigma$-coordinate, means that the altitude of each level is dependent on pressure, therefore the level height varies in both time and space. As a consequence of pressure dependence, the levels in the lower troposphere are closer to each other than the levels higher up in the troposphere. Therefore the low clouds in the area can be resolved. Approximate heights for the lowest 10 eta levels is shown in Table~\ref{tab:etaheights}.
+The vertical layers in the ARW model are often referred to as eta levels, because of the choice of $\eta$ as the vertical coordinate. These levels have uneven vertical spacing. The fact that this $\eta$ is the traditional $\sigma$-coordinate, means that the altitude of each level is dependent on pressure, therefore the level height varies in both time and space. As a consequence of pressure dependence, the levels in the lower troposphere are closer to each other than the levels higher up in the troposphere. Therefore the low clouds in the area can be resolved. Approximate heights for the lowest 11 eta levels is shown in Table~\ref{tab:etaheights}.
 
 \begin{table}[H]
 \centering
@@ -177,17 +177,15 @@ To run the model without ice and with an increased number of aerosols I manipula
 Elaborate on removal or placing of sea ice. Elaborate on multiplying the aerosol number concentration with a factor 10 or 100. By use of ncap2 from NetCDF (NCO).
 
 \subsection{Changed ice run}
-The sea ice variable in the wrfinput\_d01 file was simply multiplied by 0 in every gridpoint and by that removed.
-%Removed ice from the input file for the model run by using NCO and ncap2. 
+The sea ice was removed. 
 The point of this is to compare the run with no ice to the control run, and see if there are any changes to the cloud properties.
 
 \subsection{Changed aerosols run}
-The increase in aerosol concentration was a bit more complicated, but the same method. The number of water and ice friendly aerosols were multiplied by 100 and so were their tendencies and respective concentrations at the boundaries of the area. %wrfbdy is a lateral boundary file, contains the WRF lateral boundary conditions~\citep{Wang2015}.
-The goal is to find changes in cloud properties compared to those in the control run, for that purpose the aerosol concentration was multiplied by a factor of 10 and another by a factor of 100. Hoping to get a signal.
+The increase in aerosol concentration was a bit more complicated, but the same method. The number of water and ice friendly aerosols were multiplied by 100 and so were their tendencies and respective concentrations at the boundaries of the area. The goal is to find changes in cloud properties compared to those in the control run, for that purpose the aerosol concentration was multiplied by a factor of 10 and another by a factor of 100. Hoping to get a signal.
 
 \section{Input data}
 \label{sec:inputdata}
-The model runs were initialized with data downloaded from the European Centre for Medium-Range Weather Forecasts (ECMWF).%was downloaded from their site and used as input for initial and boundary?? conditions.
+The model runs were initialized with data downloaded from the European Centre for Medium-Range Weather Forecasts (ECMWF)~@cite web page.%was downloaded from their site and used as input for initial and boundary?? conditions.
 The downloaded data is from the ERA-Interim dataset, which is a global atmospheric reanalysis from 1979 to present and continues to be updated in real time.%~\citet{ecmwf}.@make bib for ecmwf
 Through WPS the data from ERA-Interim was interpolated over the area, with a 2 degree minute spacing between the points, to be used to initialize the model. The data used is in 6-hourly atmospheric fields on pressure levels, for the first five days of September 2012, which was the period the model was run for. This is done to make sure the initial meteorological conditions are the same in every run, so that the effects of changing a variable in the input files for the modeling system are only due to that change.
 
