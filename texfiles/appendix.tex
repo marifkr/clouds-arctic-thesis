@@ -1,0 +1,9 @@
+\chapter{Appendix?}
+Possibly appendix. Anything that I want to include that isn't appropriate or necessary in the thesis.
+
+\subsection{Manipulation of input files}
+wrfinput\_d01 and wrfbdy\_d01 are input files for domain 1, in my case the only domain, and are made by real.exe. These files are then used as initialization or forcing when wrf.exe is run.
+To run the model without ice and with an increased number of aerosols I manipulated the input files for WRF. I used a netCDF Operator (NCO) tool, ncap2. This allowed me to manipulate the netCDF files from my terminal window in the folder where they were located.
+Elaborate on removal or placing of sea ice. Elaborate on multiplying the aerosol number concentration with a factor 10 or 100. By use of ncap2 from NetCDF (NCO).
+The sea ice variable in the wrfinput\_d01 file was simply multiplied by 0 in every gridpoint and by that removed. 
+
