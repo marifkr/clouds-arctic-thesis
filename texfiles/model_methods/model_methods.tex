@@ -66,7 +66,7 @@ The choice of cumulus parameterization was based on the grid resolution, and the
 
 Yonsei University scheme was chosen for the PBL. It is a non-local-K scheme with explicit entrainment layer and parabolic profile in unstable mixed layer~\citep{Wang2015}.
 
-The land-surface model choice came to Noah Land Surface Model. The Noah Land Surface Model, is a unified NCEP/NCAR/AFWA (National Centers for Environmental Prediction, National Centre for Atmospheric Research, Air Force Weather Agency) scheme with soil temperature and moisture in four layers which provides sensible and latent heat fluxes to the PBL scheme~\citep{Wang2015}. Additionally, it predicts soil ice, and fractional snow cover effects, which could be important in the Arctic, but it is probably not the most important choice, since there is very little land in the area investigated, figure~\ref{fig:area}.
+The land-surface model choice came to Noah Land Surface Model. The Noah Land Surface Model, is a unified NCEP/NCAR/AFWA (National Centers for Environmental Prediction, National Centre for Atmospheric Research, Air Force Weather Agency) scheme with soil temperature and moisture in four layers which provides sensible and latent heat fluxes to the PBL scheme~\citep{Wang2015}. Additionally, it predicts soil ice, and fractional snow cover effects, which could be important in the Arctic, but it is probably not the most important choice, since there is very little land in the area investigated, see figure~\ref{fig:area} in Chapter~\ref{chap:introduction}.
 
 The radiation schemes were chosen simply because they are the best match for the microphysics scheme at the time of writing. According to~\citet{Thompson2014} the Rapid Radiative Transfer Model (RRTM) for General Circulation Models (GCMs) (RRTMG) schemes for SW and LW are the only radiation schemes which include the effects of the effective radii calculated in aerosol-aware. The RRTMG schemes are accurate schemes using look-up tables for efficiency, and accounts for multiple bands and microphysics species, and includes the Monte Carlo Independent Column Approximation (MCICA) method of random cloud overlap~\citep{Wang2015}. Major trace gases are constant in my runs, and their values are $CO_2=379e-6$, $N_2O=319e-9$, $CH_4=1774e-9$~\citep{Wang2015}.
 
@@ -87,7 +87,7 @@ The microphysics option 28, the aerosol-aware scheme~\citep{Thompson2014} is bui
 \label{fig:microphysics}
 \end{figure}
 
-Figure~\ref{fig:microphysics} show the processes in the microphysics scheme developed by~\citet{Reisner1998}, which the first bulk microphysics scheme by Thompson~\citep{Thompson2004} was based on. The aerosol-aware scheme is an extension of the Thompson bulk microphysics scheme described in~\citet{Thompson2008}. The figure shows a schematic of five hydrometeors, cloud water (c), rain (r), ice (i), snow (s) and graupel (g), and if just the mass mixing ratio is calculated or if both the mass mixing ratio and the number concentration is calculated. For each of the hydrometeors, prognostic equations are used with all the sources and sink terms included.%, as exemplified by this equation from~\citet{Reisner1998}
+Figure~\ref{fig:microphysics} show the processes in the microphysics scheme developed by~\citet{Reisner1998}, which the first bulk microphysics scheme by Thompson~\citep{Thompson2004} was based on. The aerosol-aware scheme~\citep{Thompson2014} is an extension of the updated Thompson bulk microphysics scheme described in~\citet{Thompson2008}. The figure shows a schematic of five hydrometeors, cloud water (c), rain (r), ice (i), snow (s) and graupel (g), and if just the mass mixing ratio is calculated or if both the mass mixing ratio and the number concentration is calculated. For each of the hydrometeors, prognostic equations are used with all the sources and sink terms included.%, as exemplified by this equation from~\citet{Reisner1998}
 %\begin{equation}
 %
 %\end{equation}
@@ -100,7 +100,7 @@ The correlated-k method is capable of achieving accuracy comparable with that of
 
 \section{Model setup}
 \label{sec:modelsetup}
-The area covers parts of the Beaufort Sea and the East Siberian Sea, by Canada and Alaska. This area was chosen because data from the area has been used for related studies~\citep{Intrieri2002,Shupe2004,Kay2009,Wu2012,Palm2010,Schweiger2008} %sjekk dette!!,
+The covers parts of the Beaufort Sea and the East Siberian Sea, by Canada and Alaska. This area was chosen because data from the area has been used for related studies~\citep{Intrieri2002,Shupe2004,Kay2009,Wu2012,Palm2010,Schweiger2008} %sjekk dette!!,
 which were mentioned in Chapter~\ref{chap:background}~Background.%, to give the reader some background material and an understanding of the subject of this study.
 The area is not completely ice free any part of the year,% @cite,
  and provides a good place to simulate cloud and sea ice interaction. The area is over several time zones but is approximately 7 hours behind UTC time. The times given in the WRF-ARW modeling system are UTC. This means that figures showing 1200 UTC are for approximately 0500 h local time in Canada and Alaska.
