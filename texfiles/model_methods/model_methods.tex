@@ -17,7 +17,7 @@ WPS is used primarily for real data simulations~\citep{Wang2015}, like the study
 
 \begin{figure}
 \centering
-\includegraphics[width=\textwidth]{model_methods/wrfflowchart}
+\includegraphics[width=0.9\textwidth]{model_methods/wrfflowchart}
 \caption{Flowchart for the WRF ARW Modeling System Version 3. From~\citet{Wang2015}.}
 \label{fig:wrfflowchart}
 \end{figure}
@@ -35,7 +35,7 @@ The vertical coordinate is the traditional $\sigma$ coordinate used in many hydr
 
 \begin{figure}
 \centering
-\includegraphics[scale=1]{model_methods/sigma.pdf}
+\includegraphics[scale=0.9]{model_methods/sigma.pdf}
 \caption{This figure is shown as presented in~\citet{Skamarock2008}, and is a schematic of the terrain following a $\sigma$ coordinate. $P_{hs}$ and $P_{ht}$ is the hydrostatic pressure at the surface and the top respectively.}
 \label{fig:sigma}
 \end{figure}
@@ -49,26 +49,26 @@ The physics options in WRF fall into several categories, each containing several
 \centering
 \caption{Table of physics categories and choice of scheme for this thesis}
 \label{tab:physics} 
-\begin{tabular}{L{6.cm} L{6.cm}}
+\begin{tabular}{L{5.5cm} L{5.5cm}}
 \centering
 \textbf{Physics categories} & \textbf{Scheme selected within category}\\ \hline
 (1) microphysics & aerorol-aware ~\citep{Reisner1998, Thompson2004, Thompson2008, Thompson2014}. Option 28.\\
 (2) cumulus parameterization & Grell 3D  @cite authors. Option 5.\\
 (3) planetary boundary layer (PBL) &  Yonsei University scheme @cite authors. Option 1.\\
 (4) land-surface model & Noah Land Surface Model @cite authors. Option 2.\\
-(5) radiation & RRTMG LW \& SW ~\citep{Mlawer1997, Iacono2000, Iacono2003, Iacono2008}. Radiation options 4.\\
+(5) radiation & RRTMG LW \& SW ~\citep{Mlawer1997, Iacono2000, Iacono2003, Iacono2008}. Radiation options 4.
 \end{tabular}
 \end{table}
 
 The microphysics includes explicitly resolved water vapor, cloud, and precipitation processes. The aerosol-aware scheme was chosen to have scavenging of aerosols and have proper enough representation of aerosols to study aerosol-cloud interactions, without using the WRF model coupled with chemistry (WRF-Chem).
 
-The choice of cumulus parameterization was based on the grid resolution, and the best fit for it. A horisontal grid spacing of 4~km can be fine enough to not use cumulus parameterization, but in this thesis I chose a parameterization that was more suitable for grid sizes less than 10~km, the Grell 3D parameterization. Grell 3D is an improved multi-closure, multi-parameter ensamble method with typically 144 sub-grid members, that may be used on high resolution~\citep{Wang2015}, like my 4~km grid spacing.
+The choice of cumulus parameterization was based on the grid resolution, and the best fit for it. A horisontal grid spacing of 4~km can be fine enough to not use cumulus parameterization, but in this thesis we chose a parameterization that was more suitable for grid sizes less than 10~km, the Grell 3D parameterization. Grell 3D is an improved multi-closure, multi-parameter ensamble method with typically 144 sub-grid members, that may be used on high resolution~\citep{Wang2015}, like my 4~km grid spacing.
 
 Yonsei University scheme was chosen for the PBL. It is a non-local-K scheme with explicit entrainment layer and parabolic profile in unstable mixed layer~\citep{Wang2015}.
 
 The land-surface model choice came to Noah Land Surface Model. The Noah Land Surface Model, is a unified NCEP/NCAR/AFWA (National Centers for Environmental Prediction, National Centre for Atmospheric Research, Air Force Weather Agency) scheme with soil temperature and moisture in four layers which provides sensible and latent heat fluxes to the PBL scheme~\citep{Wang2015}. Additionally, it predicts soil ice, and fractional snow cover effects, which could be important in the Arctic, but it is probably not the most important choice, since there is very little land in the area investigated, see figure~\ref{fig:area} in Chapter~\ref{chap:introduction}.
 
-The radiation schemes were chosen simply because they are the best match for the microphysics scheme at the time of writing. According to~\citet{Thompson2014} the Rapid Radiative Transfer Model (RRTM) for General Circulation Models (GCMs) (RRTMG) schemes for SW and LW are the only radiation schemes which include the effects of the effective radii calculated in aerosol-aware. The RRTMG schemes are accurate schemes using look-up tables for efficiency, and accounts for multiple bands and microphysics species, and includes the Monte Carlo Independent Column Approximation (MCICA) method of random cloud overlap~\citep{Wang2015}. Major trace gases are constant in my runs, and their values are $CO_2=379e-6$, $N_2O=319e-9$, $CH_4=1774e-9$~\citep{Wang2015}.
+The radiation schemes were chosen simply because they are the best match for the microphysics scheme at the time of writing. According to~\citet{Thompson2014} the Rapid Radiative Transfer Model (RRTM) for General Circulation Models (GCMs) (RRTMG) schemes for SW and LW are the only radiation schemes which include the effects of the effective radii calculated in aerosol-aware. The RRTMG schemes are accurate schemes using look-up tables for efficiency, and accounts for multiple bands and microphysics species, and includes the Monte Carlo Independent Column Approximation (MCICA) method of random cloud overlap~\citep{Wang2015}.% Major trace gases are constant in my runs, and their values are $CO_2=379e-6$, $N_2O=319e-9$, $CH_4=1774e-9$~\citep{Wang2015}.
 
 \section{Schemes}
 \label{sec:schemes}
@@ -80,9 +80,9 @@ in which particles and their precursors are emitted by natural and anthropogenic
 ~\citep{Thompson2014}.
 The microphysics option 28, the aerosol-aware scheme~\citep{Thompson2014} is built on the schematic shown in figure~\ref{fig:microphysics}, from~\citet{Reisner1998}. It is a double moment scheme, which means it computes both mass mixing ratios, Q, and number concentrations, N, for the same water species (hydrometeors). 
 
-\begin{figure}
+\begin{figure}[h]
 \centering
-\includegraphics[scale=0.8]{model_methods/microphysics.pdf}
+\includegraphics[width=0.9\textwidth]{model_methods/microphysics.pdf}
 \caption{Cloud microphysical parameterization scheme typically used i NWP models as shown in~\citet{Reisner1998}. A full list of the acronyms used in the schematic can be found in~\citet{Reisner1998}.}
 \label{fig:microphysics}
 \end{figure}
@@ -92,7 +92,6 @@ Figure~\ref{fig:microphysics} show the processes in the microphysics scheme deve
 %
 %\end{equation}
  % which was originally built on this~\citep{Thompson2004}, but there is not much left of it in the code now (@cite the code comments?).
-
 \subsection{The RRTMG radiation schemes}
 The RRTM scheme described in~\citet{Mlawer1997} uses the correlated-k method, which is an appriximated technique for the accelerated calculation of fluxes and cooling rates for inhomogeneous atmospheres~\citep{Mlawer1997}. %\textbf{@define inhomogeneous atmosphere}.
 The correlated-k method is capable of achieving accuracy comparable with that of line-by-line models with an extreme reduction in the number of radiative transfer operations performed~\citep{Mlawer1997}, which by that reduces computational cost and increases computational efficiency. The Line-By-Line Radiative Transfer Model (LBLRTM) is used both to calculate the absorption coefficients used to generate the k distributions needed by RRTM and  to evaluate the RRTM calculations of fluxes and cooling rates~\citep{Iacono2000}. 
@@ -112,7 +111,7 @@ The vertical layers in the ARW model are often referred to as eta levels, becaus
 \centering
 \caption{Approximate height for each level in meters above the sea surface for the part of the level that is over the sea, and meters above topography for the part of the level that is over land.}
 \label{tab:etaheights} 
-\begin{tabular}{C{6.cm} C{6.cm}}
+\begin{tabular}{C{4.cm} C{5.cm}}
 \centering
 \textbf{Eta level} & \textbf{Approximate height}\\ \hline
 1 & 10~m\\
@@ -137,37 +136,36 @@ To include increase in aerosol concentrations due to lack of sea ice I used the 
 %Choice of schemes and reasons should be presented. As should how WPS and real.exe and wrf.exe works. At least short about what they do and contribute with to get to the end results. Explain some of the improvements in the micro physics scheme in combination with the revised radiation schemes (RRTMG for SW and LW).
 
 \section{Model runs}
+%\begin{table}[H]
+%\centering
+%\caption{Table showing the name of the runs and what is included}
+%\label{tab:runs} 
+%\begin{tabular}{L{2.3cm} L{2.3cm} L{2cm} L{1.5cm} L{1cm} L{1cm} L{3cm}}
+%\centering
+%Name & Horisontal resolution & Dimensions & Vertical layers & $\Delta$t & Sea ice & Aerosol concentration\\ \hline
+%control & 4~km x 4~km & 300 x 300 & 72& 24~s & yes & control\\
+%NoIce & 4~km x 4~km & 300 x 300 & 72 & 24~s & no & control\\
+%Aero10 & 4~km x 4~km & 300 x 300 & 72 & 24~s & yes & control x 10\\
+%Aero10NoIce & 4~km x 4~km & 300 x 300 & 72 & 24~s & no & control x 10\\
+%Aero100 & 4~km x 4~km & 300 x 300 & 72 & 24~s & yes & control x 100\\
+%Aero100NoIce & 4~km x 4~km & 300 x 300 & 72 & 24~s & no & control x 100 \\
+%\end{tabular}
+%\end{table}
+%
+%Which table?
 \begin{table}[H]
 \centering
-\caption{Table showing the name of the runs and what is included}
-\label{tab:runs} 
-\begin{tabular}{L{2.3cm} L{2.3cm} L{2cm} L{1.5cm} L{1cm} L{1cm} L{3cm}}
-\centering
-Name & Horisontal resolution & Dimensions & Vertical layers & $\Delta$t & Sea ice & Aerosol concentration\\ \hline
-control & 4~km x 4~km & 300 x 300 & 72& 24~s & yes & control\\
-NoIce & 4~km x 4~km & 300 x 300 & 72 & 24~s & no & control\\
-Aero10 & 4~km x 4~km & 300 x 300 & 72 & 24~s & yes & control x 10\\
-Aero10NoIce & 4~km x 4~km & 300 x 300 & 72 & 24~s & no & control x 10\\
-Aero100 & 4~km x 4~km & 300 x 300 & 72 & 24~s & yes & control x 100\\
-Aero100NoIce & 4~km x 4~km & 300 x 300 & 72 & 24~s & no & control x 100 \\
-\end{tabular}
-\end{table}
-
-Which table?
-
-\begin{table}[H]
-\centering
-\caption{Caption could say: Table showing the names of the runs and if they have sea ice or not, and if the aerosol concentration has been increased by a factor of 10 or 100 through input files. All the runs have the same horisontal resolution of 4kmx4km, dimensons 300x300, vertical layers 72 and time step 24 s.}
+\caption{Table showing the names of the runs and if they have sea ice or not, and if the aerosol concentration has been increased by a factor of 10 or 100 through input files. All the runs have the same horisontal resolution of 4kmx4km, dimensons 300x300, vertical layers 72 and time step 24 s.}
 \label{tab:runs} 
 \begin{tabular}{L{2.3cm} L{2cm} L{3cm}}
 \centering
 Name & Sea ice & Aerosol concentration\\ \hline
-control & initial & control \\
-NoIce & removed & control \\
-Aero10 & initial & control x 10 \\
-Aero10NoIce & removed & control x 10 \\
-Aero100 & initial & control x 100 \\
-Aero100NoIce & removed & control x 100 \\
+control & initial & control\\
+NoIce & removed & control\\
+Aero10 & initial & control x 10\\
+Aero10NoIce & removed & control x 10\\
+Aero100 & initial & control x 100\\
+Aero100NoIce & removed & control x 100\\
 \end{tabular}
 \end{table}
 
