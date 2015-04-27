@@ -1,9 +1,11 @@
 \chapter{Model and methods}
 \label{chap:modmet}
+To produce results for the thesis, a formulation of the Weather Research and Forecasting (WRF) Model called the Advanced Research WRF (ARW) has been used. The model is described in the first part of this chapter. Then follows a brief description of the schemes treating cloud microphysical processes and radiation, that were applied in this study. Model setup and runs are summarized before two short sections on the input data and processing of the model output at the very end of this chapter.
+
 \section{Description of the WRF-ARW Modeling System}
 \label{sec:modeldes}
 %(What did Johanne and Kjetil and Linda Bjørn Egil think was important enough to write about in their thesees?)
-To produce results for the thesis, a formulation of the Weather Research and Forecasting (WRF) Model called the Advanced Research WRF (ARW) has been used, Version 3.6.1, released in April 2014. The model is primarily developed at the National Centre for Atmospheric Research (NCAR) in Boulder, Colorado. The ARW model is the first fully compressible conservative form nonhydrostatic model designed for both research and operational numerical weather prediction (NWP) applications~\citep{Skamarock2008}. 
+The version of the WRF-ARW modeling system used is 3.6.1, which was released in April 2014. The model is primarily developed at the National Centre for Atmospheric Research (NCAR) in Boulder, Colorado. The ARW model is the first fully compressible conservative form nonhydrostatic model designed for both research and operational numerical weather prediction (NWP) applications~\citep{Skamarock2008}. 
 
 As can be seen from figure~\ref{fig:wrfflowchart} the WRF-ARW Modeling System consists of four major programs~\citep{Wang2015}:
 \begin{itemize}
@@ -183,8 +185,8 @@ The increase in aerosol concentration was a bit more complicated, but the same m
 
 \section{Input data}
 \label{sec:inputdata}
-The model runs were initialized with data downloaded from the European Centre for Medium-Range Weather Forecasts (ECMWF)~@cite web page.%was downloaded from their site and used as input for initial and boundary?? conditions.
-The downloaded data is from the ERA-Interim dataset, which is a global atmospheric reanalysis from 1979 to present and continues to be updated in real time.%~\citet{ecmwf}.@make bib for ecmwf
+The model runs were initialized with data downloaded from the European Centre for Medium-Range Weather Forecasts (ECMWF)~\citet{ecmwf}%@cite web page.%was downloaded from their site and used as input for initial and boundary?? conditions.
+The downloaded data is from the ERA-Interim dataset, which is a global atmospheric reanalysis from 1979 to present and continues to be updated in real time~\citet{ecmwf}.%@make bib for ecmwf
 Through WPS the data from ERA-Interim was interpolated over the area, with a 2 degree minute spacing between the points, to be used to initialize the model. The data used is in 6-hourly atmospheric fields on pressure levels, for the first five days of September 2012, which was the period the model was run for. This is done to make sure the initial meteorological conditions are the same in every run, so that the effects of changing a variable in the input files for the modeling system are only due to that change.
 
 %Explain the use of climatological data for aerosol input.
