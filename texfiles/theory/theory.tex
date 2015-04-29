@@ -23,15 +23,24 @@ Stefan–Boltzmanns law states that the flux density emitted by a blackbody is p
 \begin{equation}
 F = \epsilon_{\lambda} \sigma T^4
 \end{equation}
-where $\epsilon = 1$ in the emissivity. $F [W~m^{-2}]$ is the flux density emitted  by the body, and $\sigma = 5.67\cdot 10^{-8} Jm^{-2}sec^{-1}deg^{-4}$ is the Stefan–Boltzmann constant. A blackbody both absorbs and emits at maximum, and the ratio of absorption and emission to the maximum is given by the absorptivity, $\alpha_{\lambda}$, and the emissivity, $\epsilon_{\lambda}$ for wavelength $\lambda$.
-A cloud can be defined as a 
+where $\epsilon_{\lambda} = 1$ is the emissivity for a blackbody at wavelength $\lambda$. $F [W~m^{-2}]$ is the flux density emitted  by the body, and $\sigma = 5.67\cdot 10^{-8} Jm^{-2}sec^{-1}deg^{-4}$ is the Stefan–Boltzmann constant. A blackbody both absorbs and emits at maximum, and the ratio of absorption and emission to the maximum is given by the absorptivity, $\alpha_{\lambda}$, and the emissivity, $\epsilon_{\lambda}$, for wavelength $\lambda$. Kirchoff's law states that the absorptivity and emissitivty for a medium are equal for each wavelength: $\alpha_{\lambda} = \epsilon_{\lambda}$. Kirchoff's law is only applicable at local thermodynamic equilibrium in the lower 60-70~km of the atmosphere. Since this study focuses on the lowest 2-3~km of the troposphere, the law is applicable.
+
+A cloud can be defined as a a gray body, which means that $\alpha_{\lambda}$and $\epsilon_{\lambda}$ are not maximum, $\alpha_{\lambda}=\epsilon_{\lambda}<1$~\citep{Liou2002}. %The cloud LW? emissivity is given by
+%\begin{equation}
+%\epsilon_{\lambda} = @fill in
+%\end{equation}
+
+Since the gray body does not have maximum absorption, some of the radiation flux incident on the medium must be reflected. For a cloud this is represented by the cloud albedo, given by
+\begin{equation}
+@@
+\end{equation}
 
 \subsection{Cloud optical depth}
 Cloud optical depth or cloud optical thickness, $\tau$, is a measure of the cumulative depletion that a beam of radiation directed straight downward (zenith angle $\theta = 0$) would experience in passing through a defined cloud layer. The cloud optical depth is given by~\citep{Twomey1977}
 \begin{equation}
 \tau = \int_0^h k_{E}dz = \pi \int_0^h \int_0^{\infty}r^2Q_E(r/\lambda)n(r,z)drdz
 \end{equation}
-at height z above cloud base for a cloud of depth $h$, containing $n(r,z)\Delta r$ drop of radius from $r$ to $r+\Delta r$ per cubic centimeter. 
+at height z above cloud base for a cloud of depth $h$, containing $n(r)dr$ drops with radius in the interval ($r, r + dr$) per cubic centimeter. 
 $Q_E(r/\lambda$ is the extinction efficiency and $k_{E}$ is the extinction coefficient~\citep{Twomey1977}. In the visible, for $\lambda<<r$, $Q_E\approx 2$ is a good approximation~\citep{Liou2002}, and we get the simpler expression
 \begin{equation}
 \tau = 2\pi N r_e^2h
