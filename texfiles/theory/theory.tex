@@ -16,6 +16,14 @@ Low clouds have bases below 2000~m. Stratus (St) are layered clouds that form wh
 
 The air in the Arctic is very stable in winter (polar night), and clean since there are not many sources for pollution. In Autumn the sea ice extent reaches a minimum after the summer melting and leaves open water to influence low clouds and their properties.  Some of the cloud radiative properties are presented in the next section.
 
+\begin{figure}
+\centering
+\includegraphics[width=0.85\textwidth]{theory/dropletsize.png}
+\caption{Size of CCN, typical cloud droplet, large cloud droplet, borderline between cloud droplets and raindrops and typical size of raindrop.% Adapted
+ From~\citep{McDonald1958}.}
+\label{fig:dropletsize}
+\end{figure}
+
 \section{Cloud effects on radiation}
 Is this where I should include the part about heating (not cooling) effect of low cloud in the Arctic, as opposed to global mean which is cooling?
 
@@ -36,8 +44,11 @@ A cloud can be defined as a a gray body, which means that $\alpha_{\lambda}$and 
 
 Since the gray body does not have maximum absorption, some of the radiation flux incident on the medium must be reflected. For a cloud this is represented by the cloud albedo, given by
 \begin{equation}
-@@
+A = \frac{(1-g)\tau}{1+(1-g)\tau} = \frac{1-g}{\frac{1}{\tau}+(1-g)}
 \end{equation}
+%should this equation have a label? yes@
+
+So now I have to explain about the asymmetry factor (g) and the single scattering albedo ($\tilde{\omega}$) which has been approximated to one for this equation to be valid for the cloud albedo. According to Twomey, g=0.8 or 0.9 for warm clouds. g=1 is pure forward scattering and g=-1 is pure back-scattering. The asymmetry factor gives the direction of the scattered radiation. $g=\overline{\cos \theta}$ where $\theta$ is the scattering angle. A power-averaged value of the cosine of the scattering angle~\citep{Twomey1974}.
 
 \subsection{Cloud optical depth}
 Cloud optical depth or cloud optical thickness, $\tau$, is a measure of the cumulative depletion that a beam of radiation directed straight downward (zenith angle $\theta = 0$) would experience in passing through a defined cloud layer. The cloud optical depth is given by~\citep{Twomey1977}
@@ -68,14 +79,12 @@ where $r_e$ is the effective radius.
 
 %Ice is more effective in reflecting SW than water. Snow has a higher albedo than rain. Is there any use in presenting some albedo values for water, snow, ice? Or open water versus sea ice? New ice versus old sea ice?
 
-%Make sure to include something on how LWC/LWP and eff
-
 \subsection{Liquid Water Content and Path}
  The amount of condensed water can be expressed by the liquid water content (LWC) in the cloud, often presented with units g~m$^{-3}$ and is proportional to the cloud droplet number concentration. From~\citet{Rogers1989} we can express the number of droplets with radius $r$ by
 \begin{equation}
 N = \int n(r) dr
 \end{equation}
-where $N$ is the cloud droplet number concentration (c~m$^{-3}$), and $n(r)$ is the number of droplets with radius $r$. When we use the median volume radius, $\overline{r}$ ($\mu~m$), the LWC can be written
+where $N$ is the cloud droplet number concentration (cm$^{-3}$), and $n(r)$ is the number of droplets with radius $r$. When we use the median volume radius, $\overline{r}$ ($\mu m$), the LWC can be written
 \begin{eqnarray}
 LWC &=& \int \rho_L \frac{4}{3} \pi r^3 n(r) dr\\
 &=& \frac{4}{3} \pi \rho_L \int r^3 n(r) dr\\
@@ -94,7 +103,6 @@ The LWP is the column of liquid water in a cloud and is usually expressed by $g~
 %How does this influence the radiation???!!
 A higher LWC or LWP increases the reflectivity of the cloud, and thereby reduces the SW radiation reaching the surface.
 
-%ective radii plays in, if this is to be mentioned in the results or discussion!!
 
 \section{Aerosols and clouds}%Aerosols and clouds som tittel??
 For low clouds to form there must be available aerosols. Aerosols act as cloud condensation nuclei (CCN) by letting water vapor condense on them. This is how a cloud droplet is formed. For an ice particle to be present in a low cloud, an ice nuclei (IN) and low temperatures %(-5 to -20$^o$C)@? 
@@ -107,7 +115,7 @@ They also have an effect on climate through clouds, an indirect effect. The amou
 \subsection{The first indirect effect}% (Maybe just call it all indirect effects and refer to Lohmann and Feichter)
 If there are few CCNs in an area, a cloud formed there would be a clean cloud with few, but large droplets and therefore have a low albedo and precipitate easily. If the area had high aerosol concentration, the cloud would be polluted and have more numerous but smaller droplet, which means it would have a higher albedo and precipitation would be suppressed. 
 The first indirect effect, suggested by~\citet{Twomey1974}, describes the enhancement of cloud albedo as a consequence of an increase in aerosol content and thereby available CCNs.
-By increasing droplet concentration and hence the optical thickness of a cloud, see equation 3.3%@
+By increasing droplet concentration and hence the optical thickness of a cloud, see equation 3.3%@give it a label?
 , pollution acts to increase the reflectance of clouds. It is clear from equation 3.3 that if the droplet concentration is increased, so is the optical thickness of the cloud.
 
 The cloud optical depth will change with changes in aerosol number concentrations and changes in clouds and their properties. For instance if a cloud has many small droplets, the cloud optical depth will be higher. Whereas fewer cloud droplets will yield a lower optical depth, resulting in more SW radiation reaching the ground —  having a warming effect on the area. 
@@ -124,3 +132,5 @@ The second indirect effect, or the cloud lifetime effect, suggests more numerous
 Cloud presence is due to water vapor condensing on CCNs and possibly freezing if the aerosol's structure resembles that of an ice crystal, IN. Processes known to affect the local aerosol concentration are: precipitation because the precipitation will wash out aerosols from the air when falling through it, this is also known as scavenging. Pollution, increases in aerosol concentration might inhibit precipitation and cause longer-lived, more persistent clouds, which will in turn affect the radiation balance.
 
 %Not only the aerosol burden is important, if it is the same for two areas with different meteorological forcing that would also affect the cloud properties. Say an area has a weaker updraft than another area, a cloud formed due to the weaker updraft will have lower LWC, lower albedo and little precipitation. The cloud formed in a stronger updraft will have higher LWC, higher albedo and be more precipitating.
+
+ 
