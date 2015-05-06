@@ -1,65 +1,27 @@
 \chapter{Results and discussion}
 \label{chap:results}
-\section{one for each run with belonging discussion}
-For now we will only look at the difference in some variables from two runs. The control run and the run with no ice (and unchanged initial aerosol concentrations).
-%First lets have a look at the.... changes in something from the control run when the sea ice was removed.
-Here I have simply included some figures that show the difference between the two runs for some variables at 20:00UTC and Eta level 5 ($\sim$ 370m, from table~\ref{tab:etaheights}) for cloud water mixing ratio (see figure~\ref{fig:qcloud}) and effective radius (see figure~\ref{fig:re_cloud}), since these two variables also vary with height. But not discussed them, this due to an NCL memory issue and lack of brain capacity at late hours. A better presentation of results (more than just these figures) will definitely be included in the next edition.
+In this chapter I will present the findings made in this study.  The daily averaged differences have been calculated by subtracting the field from the control run for one time from the same field at the same time from a different run, these differences have then been added together and divided by the number of differences that were added together.
+\section{Consequences of removal of sea ice, without manually changing the aerosol concentration}
+Lets start with average difference in LWP for NoIce - Control, day 2 (day 1 has been left out of this discussion to avoid the spin-up time). There is a slight difference in LWP for the whole field (2.04$gm^{-2}$), but the area of interest in this case is where the sea ice is no longer present. There the increase in LWP is higher significantly higher, >25$gm^{-2}$ for the most northern part. This implies that there is a new cloud forming in that area, that could not form when there was sea ice. The removal of the sea ice has allowed for increased evaporation and an increase in latent heat flux as can be seen from figure(@LH NoIce), where the area that sea ice was removed from is obvious. The northern-most part of the study area also has an increase in the cloud droplet number concentration (CDNC) with about the same shape and size as the LWP. The avergae increase in the CDNC would be approximately 5 droplets per cubic centimeter (@show conversion from $10^6/kg$ to $per cc$), but since this is the average over 11 layers, the cloud could be in just a few, and have a CDNC of approximately 25 $cm^{-3}$ if it streches over two layers for example. The increase in effective radius in the same area could also be due to a lack of cloud there earlier, where as now that it has formed, the droplets actually have a radius.The small "blob" at 140$^o$W and about 81$^o$N has decreased effective radius, most likely(@or has CCNs changed?more from the ocean?) because the cloud already was saturated in that area, which can be seen from the LWP from the control run, in figure~\ref{fig:LWPr1Day2}.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.95\textwidth]{../diff_SWUPT.png}
+\includegraphics[width=\textwidth]{theory/LWP_Day2.pdf}
 \caption{Difference in upward SW radiation flux at top of the atmosphere (TOA). How much more (red) or less (blue) SW radiation reaches the TOA in the no ice run, compared to the control run.}
-\label{fig:swupt}
+\label{fig:LWPr1Day2}
 \end{figure}
 
-\begin{figure}
-\centering
-\includegraphics[width=0.95\textwidth]{../diff_LWUPT.png}
-\caption{Difference in upward LW radiation flux at TOA. How much more (red) or less (blue) LW radiation reaches the TOA in the run without ice, compared to the control run.}
-\label{fig:lwupt}
-\end{figure}
+The kind of U-shape that we can see in the figure for difference in effective radius is also clear in the difference in downward radiation at the ground surface, for both SW and LW. The SW radiation flux at ground surface has been reduced, which is due to the increase in LWP. This can be explained by equations(@refer to eqn for LWP and optical depth and albedo??), where it is clear that an increase in the LWP for a column would increase the cloud optical depth, and thereby also the albedo of that column. The downward LW radiation flux at the surface has been increased due to the increase in LWP, which means that there is more water in the clouds and they emit more LW to the ground. The LW at the top of the atmosphere (TOA) does not experience such an increase, in fact it experiences a slight decrease. That it doesn't experience the same increase is explained by the equation for cloud LW emissivity(@refer, but find it first!), which is dependent of temperature. We see from the vertical cross section showing temperature contours (@refer and make), that the temperature is higher in lower clouds, than in the higher –- therefore the low clouds have higher emittance of LW. The removal of sea ice has a larger effect on lower clouds than on higher clouds, since the increase in evaporation from the surface doesn't reach high up in the troposphere, especially not in the Arctic, due to the static stability of the lower atmosphere in the Arctic(@cite someone?). Also the LWP showed in this study is only for the lowermost 11 layers and can only explain what happens in those layers, it can not be used as a final explanation for radiation changes that are only at the bottom and top of the modeled atmosphere.
 
-\begin{figure}
-\centering
-\includegraphics[width=0.95\textwidth]{../diff_SWDOWN.png}
-\caption{Difference in downward SW radiation flux at ground surface. How much more (red) or less (blue) SW radiation reaches the surface in the run without ice, compared to the control run.}
-\label{fig:swdown}
-\end{figure}
+%Include figure with vertical temperature changes? or just show vertical temperature for all runs in one plot with subplots?
+Of course, the removal of sea ice would reduce the reflected SW radiation flux at TOA. The albedo of sea ice varies between (@input values), depending on the age of the ice and is typically (@insert value), where as the albedo of the ocean often is taken as (@insert value). Thus the change in SW at TOA is mainly negative over the area of ocean where there was sea ice in the control run. The two blobs of increased SW at TOA can be recognized as the tips of the pillars in the U-shape I referred to earlier in figure(@which one?the effective radius?) which also represent an increase in LWP and reduction in SW at surface and increase of LW at surface, this is therefore most likely due to the enhanced albedo caused by new clouds at those locations. Since these figures don't show in-cloud changes, simply the difference between two fields.
 
-\begin{figure}
-\centering
-\includegraphics[width=0.95\textwidth]{../diff_GLW.png}
-\caption{Difference in downward LW radiation flux at ground surface. How much more (red) or less (blue) LW radiation reaches the surface in the run without ice, compared to the control run.}
-\label{fig:glw}
-\end{figure}
+The heat fluxes are almost unchanged for most of the study area by the removal of sea ice, except for the area where the sea ice has been removed. Especially for the northernmost part of the study area and "sea ice removed area" the fluxes are a lot higher than in the control run. This is not surprising, since one would expect the ocean surface to hold a higher temperature than the sea ice. Also a lot more heat would be released due to evaporation than in the case when sea ice is present.
 
-\begin{figure}
-\centering
-\includegraphics[width=0.95\textwidth]{../diff_LH.png}
-\caption{Difference in latent heat flux at surface. How much higher (red) or lower (blue) the flux is in the run without ice, compared to the control run. The average difference in this field is 0.3884583~Wm$^{-2}$.}
-\label{fig:lh}
-\end{figure}
+\section{What about if we left the sea ice unchanged, but increased the aerosol number concentration by a factor of 10 for the whole period?}
+The increase in available CCNs leads to obvious increases in CDNC and LWP, and the expected reduction in $r_e$. If we look back to equation(@the one that combines LWP, effective radius and cloud optical depth). As for the NoIce run, the increase in LWP, in this case a lot higher, leads to an increase in clouds and their reflectance (albedo), therefore the SW at TOA is higher, here the signal is not disrupted by any changes made to the sea ice, so the increase is obvious. Thus the SW at the surface is significantly lower than in the control run. This represents a cooling of (@calculate the flux changes into temperature changes?). The average LW radiation flux at the surface is higher due to the increase in LWP and emittance by the thicker and denser(is this true) clouds.
 
-\begin{figure}
-\centering
-\includegraphics[width=0.95\textwidth]{../diff_HFX.png}
-\caption{Difference in sensible heat flux at surface. How much higher (red) or lower (blue) the flux is in the run without ice, compared to the control run. The average difference in this field is -3.391964~Wm$^{-2}$.}
-\label{fig:hfx}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=0.95\textwidth]{../diff_QCLOUD.png}
-\caption{Difference in cloud water mixing ratio, how much larger (red) or smaller (blue) the droplets were in the run without ice, compared to the control run.}
-\label{fig:qcloud}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=0.95\textwidth]{../diff_RE_CLOUD.png}
-\caption{Difference in effective radius. How much larger (red) or smaller (blue) the droplets were in the run without ice, compared to the control run.}
-\label{fig:re_cloud}
-\end{figure}
+The effect on the heat fluxes by increasing the aerosol number concentration is not clear, and i 
 
 %Her kan det være interessant å se på\\
 %Differanser i\\
@@ -67,15 +29,15 @@ Here I have simply included some figures that show the difference between the tw
 %- LW fluks\\
 %- LH \\
 %- SH, følbar varme... har jeg det?\\
-%- Dråpestørrelse\\ level 5
-%- Skyvannmengde\\ level 5
+%- Dråpestørrelse\\
+%- Skyvannmengde\\
 
 %Må få laget disse figurene sånn at Jon Egill og Kari kan se på dem, og sånn at jeg kan tenke på dem og reflektere og diskutere med meg selv!
 
 %Må ha skala på labelbar som gjør det leselig, og som fremhever de små forskjellene -- for de kan ha stor betydning..!
 
+% Må også oppgi gjennomsnittsverdi for hele feltet (for å hjelpe leseren) of minimums og maksimumsverdiene, siden de ikke er med på labal baren.
+
 %Hvordan de forskjellige tingene påvirker hverandre må være dekket i teorien.!
 
-%Jon Egill hadde tenkt eksamen 22. juni.....
-
-%- HFX, sensible heat flux at the surface. Upward heat flux at surface. W/m2
+%Jon Egill har avtalt eksamen 19. juni. Erik Berge er sensor!
