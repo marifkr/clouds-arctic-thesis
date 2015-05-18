@@ -5,7 +5,10 @@ In this chapter I will present the findings made in this study.  The daily avera
 \section{Reference figures from the control run}
 First we want to have something to compare with and to look back to when studying the differences from the control run to the runs with changed sea ice and/or aerosol concentration. I shall include figures for diurnally averaged fields of LWP, $r_e$ of cloud droplet, cloud droplet number concentration (CDNC), both LW and SW up at the TOA and down at the surface. Also the IWP, cloud ice number concentration (CINC), and $r_e$ of snow and ice may be of interest. In addition, the state of the weather situation should be considered when interpreting the results. Therefore maps with wind barbs for the wind at 10~m height and temperature at 2~m are included in this section. \textit{(De ligger i slutten av kapittelet forelopig, slik at de ikke er i veien for leseren utover i teksten.)}	
 
-\section{Consequences of removal of sea ice, without manually changing 	the aerosol concentration}
+%-----------------------
+\section{Removed sea ice}
+%-----------------------
+\subsection{Day 2}
 Lets start with average difference in LWP for NoIce - Control, day 2 (see figure~\ref{fig:relwpcdnc_r2Day2}). \textit{(day 1 has been left out of this discussion to avoid the spin-up time. I want to look more closely into day 1 as well, which is when the atmosphere is still almost the same as it was for the control run, will be included in next draft.)} There is a slight difference in LWP for the whole field (2.04$gm^{-2}$, see figure~\ref{fig:relwpcdnc_r2Day2}), but the area of interest in this case is where the sea ice is no longer present. There the increase in LWP is significantly higher, >25$gm^{-2}$ for the most northern part (which is in the bottom right corner). This implies that there is a new cloud forming in that area, that could not form when there was sea ice. The removal of the sea ice has allowed for increased evaporation and an increase in latent heat (LH) flux which can be seen from figure~\ref{fig:lhdiff_r2Day2}, where the area that sea ice was removed from is obvious. The northernmost part of the study area also has an increase in the cloud droplet number concentration (CDNC), figure~\ref{fig:relwpcdnc_r2Day2}, with about the same shape and size as the LWP, which fits well with equation~\ref{eqn:lwc_prop_cdnc}, which we know from the theory presented in chapter~\ref{chap:theory}. 
 
 \begin{equation}
@@ -65,7 +68,21 @@ Of course, the removal of sea ice would reduce the reflected SW radiation flux a
 
 The heat fluxes are almost unchanged for most of the study area by the removal of sea ice, except for the area where the sea ice has been removed (see figures~\ref{fig:lhdiff_r2Day2} and~\ref{fig:shdiff_r2Day2}). Especially for the northernmost part of the study area and "sea ice removed area" the fluxes are a lot higher than in the control run. This is not surprising, since one would expect the ocean surface to hold a higher temperature than the sea ice. Also a lot more heat would be released due to evaporation than in the case when sea ice is present.
 
-\section{What about if we left the sea ice unchanged, but increased the aerosol number concentration by a factor of 10 for the whole period?}
+\subsection{Day 5}
+I still can't explain what is going on i figure~\ref{fig:relwpcdnc_r2Day5}. I have tried to look into differences in rain, and snow, and graupel and ice content, but I can't seem to figure it out...
+\begin{figure}[h!]
+\centering
+\includegraphics[width=\textwidth]{results/cdnclwpre_r2Day5.png}
+\caption{The average differences in $r_e$, LWP and CDNC from left to right, for day 5. (preliminary figure)}
+\label{fig:relwpcdnc_r2Day5}
+\end{figure}
+%Why the crap does the effective radius, LWP and CDNC go down significantly and simultaneously for the removal of sea ice at day 5?? What is up with this system? Could it be rain? From the figure I made it doesn't look like it is due to rain, 'cause it actually looks like rain is also reduced in this case, which is STRANGE!... what??? And the heat flux differences also look crazy, very clear increase right next to an equally clear decrease, the switch happens at the sea ice edge. That makes sense :) but the rest doesn't!!
+%Jon Egill suggested that I check ice and snow too, see if that can explain the difference!
+
+%-------------------------------------
+\section{Increased aerosol concentration}
+%-------------------------------------
+\subsection{Day2}
 The increase in available CCNs leads to obvious increases in CDNC and LWP, and the expected reduction in $r_e$, see figure~\ref{fig:cdnclwpre_Aero10}.% If we look back to equation~\ref{eqn:cloudtau}, we see that (@the one that combines LWP, effective radius and cloud optical depth).
 \begin{figure}[h!]
 \centering
@@ -83,19 +100,7 @@ The increase in available CCNs leads to obvious increases in CDNC and LWP, and t
 \end{figure}
 The effect on the heat fluxes by increasing the aerosol number concentration is not clear, and probably insignificant (not shown).
 
-\section{Day 5, with no ice, and unchanged aerosols}
-I still can't explain what is going on i figure~\ref{fig:relwpcdnc_r2Day5}. I have tried to look into differences in rain, and snow, and graupel and ice content, but I can't seem to figure it out...
-\begin{figure}[h!]
-\centering
-\includegraphics[width=\textwidth]{results/cdnclwpre_r2Day5.png}
-\caption{The average differences in $r_e$, LWP and CDNC from left to right, for day 5. (preliminary figure)}
-\label{fig:relwpcdnc_r2Day5}
-\end{figure}
-%Why the crap does the effective radius, LWP and CDNC go down significantly and simultaneously for the removal of sea ice at day 5?? What is up with this system? Could it be rain? From the figure I made it doesn't look like it is due to rain, 'cause it actually looks like rain is also reduced in this case, which is STRANGE!... what??? And the heat flux differences also look crazy, very clear increase right next to an equally clear decrease, the switch happens at the sea ice edge. That makes sense :) but the rest doesn't!!
-%Jon Egill suggested that I check ice and snow too, see if that can explain the difference!
-
-%\newpage
-\section{Day 5, sea ice unchanged and aerosol concentration multiplied by 10}
+\subsection{Day 5}
 %Also, why can we see the sea ice edge in the areo10-control?? The sea ice has not been changed for this run! I suggest that this is due to the decrease in SW reaching the surface, and therefore the small part of the downwelling SW radiation that is absorbed when it reaches the sea ice is smaller than when the SW is higher. Therefore the SH and LH is lower where there is ice. The change here is small, and not of the same order as when the sea ice is removed. (check the sea ice anyway, is there a difference between sea ice in control and sea ice in aero 10?
 %--------------
 The LW cloud emissivity is sensitive to an increase in water amount as long as the LWP is less than $\approx$ 40-45 g/m$^2$. It is clear in day 5 from the control run that the LWP was around 60-100 g/m$^2$ in the middle lower area of figure~\ref{fig:LWPr1Day5}.%@ (around these lat and lon?@).
