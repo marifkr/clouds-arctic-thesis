@@ -40,13 +40,6 @@ where $\epsilon_{\lambda} = 1$ is the emissivity for a blackbody at wavelength $
 
 A cloud can be defined as a a gray body, which means that $\alpha_{\lambda}$and $\epsilon_{\lambda}$ are not maximum, $\alpha_{\lambda}=\epsilon_{\lambda}<1$~\citep{Liou2002}. 
 
-Since the gray body does not have maximum absorption, some of the radiation flux incident on the medium must be reflected. For a cloud this is represented by the cloud albedo, given by~\citep{Hobbs1993}
-\begin{equation}
-A = \frac{(1-g)\tau_{sw}}{1+(1-g)\tau_{sw}} = \frac{1-g}{\frac{1}{\tau_{sw}}+(1-g)}
-\label{eqn:cloudalbedo_theory}
-\end{equation}
-
-So now I have to explain about the asymmetry factor ($g$) and the single scattering albedo ($\tilde{\omega}$) which has been approximated to one for this equation to be valid for the cloud albedo. According to Twomey, $g=0.8$ or $0.9$ for warm clouds. $g=1$ is pure forward scattering and $g=-1$ is pure back-scattering. The asymmetry factor gives the direction of the scattered radiation. $g=\overline{\cos \theta}$ where $\theta$ is the scattering angle. A power-averaged value of the cosine of the scattering angle~\citep{Twomey1974}.
 
 \subsection{Cloud optical depth}
 Cloud optical depth or cloud optical thickness in the SW, $\tau_{sw}$, is a measure of the cumulative depletion that a beam of radiation directed straight downward (zenith angle $\theta = 0$) would experience in passing through a defined cloud layer. The cloud optical depth is given by~\citep{Twomey1977}
@@ -81,7 +74,7 @@ The amount of condensed water can be expressed by the liquid water content (LWC)
 \begin{equation}
 N = \int n(r) dr
 \end{equation}
-where $N$ is the CDNC ($\text{cm}^{-3}$), and $n(r)$ is the number of droplets with radius $r$. If we approximate the radius to be the effective radius, $r_e$ ($\mu\text{m}$), the LWC can be written
+where $N$ is the CDNC ($\text{cm}^{-3}$), and $n(r)$ is the number of droplets with radius $r$. If we approximate the radius to be the effective radius, $r_e$ ($\mu\text{m}$), the LWC can be written (\textbf{@@ should this be $r_e$ or $\overline{r}$??}
 \begin{eqnarray}
 \text{LWC} &=& \int \rho_l \frac{4}{3} \pi r^3 n(r) dr\\
 &=& \frac{4}{3} \pi \rho_l \int r^3 n(r) dr\\
@@ -127,6 +120,19 @@ where $\beta$ is the diffusivity factor, having an approximate value of 1.66. Eq
 \tau_{lw} = \frac{3LWP}{4\rho_l r_e}
 \end{equation}
 which is simply half of $\tau_{sw}$. The difference in cloud optical depth for SW and LW is due to the difference in the extinction efficiency, $Q_E(r/\lambda)$, which is dependent on the wavelength, ratio $r/\lambda$. Since longer waves are closer to the size of $r$ than shorter waves, $Q_E$ is smaller for longer waves.
+
+\subsection{Cloud albedo}
+\citet{Twomey1974} shows that the cloud albedo depends on the
+The optical depth of a cloud determines how much of the incident SW radiation is reflected.
+Clouds are an important contributor to the earth system albedo. The cloud albedo is given by~\citep{Hobbs1993}
+\begin{equation}
+A = \frac{(1-g)\tau_{sw}}{1+(1-g)\tau_{sw}} = \frac{1-g}{\frac{1}{\tau_{sw}}+(1-g)}
+\label{eqn:cloudalbedo_theory}
+\end{equation}
+
+So now I have to explain about the asymmetry factor ($g$) and the single scattering albedo ($\tilde{\omega}$) which has been approximated to one for this equation to be valid for the cloud albedo. According to Twomey, $g=0.8$ or $0.9$ for warm clouds. $g=1$ is pure forward scattering and $g=-1$ is pure back-scattering. The asymmetry factor gives the direction of the scattered radiation. $g=\overline{\cos \theta}$ where $\theta$ is the scattering angle. A power-averaged value of the cosine of the scattering angle~\citep{Twomey1974}.
+
+\subsection{Ice water path}
 
 \section{Aerosols and clouds}%Aerosols and clouds som tittel??
 For low clouds to form there must be available aerosols. Aerosols act as cloud condensation nuclei (CCN) by letting water vapor condense on them. This is how a cloud droplet is formed. For an ice particle to be present in a low cloud, an ice nuclei (IN) and low temperatures (-5 to -20$^o$C) (@check this!)
