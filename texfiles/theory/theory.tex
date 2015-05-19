@@ -1,9 +1,8 @@
 \chapter{Theory of Clouds and Radiation}%("Theory of ...."?)
 \label{chap:theory}
-In this chapter, a brief overview of clouds in the Arctic, with focus on stratus, is presented first. Followed by how cloud properties can influence radiation. Last in this chapter, a section on aerosol-cloud interactions is included.
+In this chapter, a brief overview of clouds in the Arctic, with focus on stratus, is presented. Followed by how cloud properties can influence radiation. Last in this chapter, a section on cloud effects on aerosols is included.
 
-%How clouds scatter and absorb SW and LW radiation.
-%Explain something about blackbodies, clouds and blackbodies?
+In this thesis shortwave (SW) radiation refers to solar radiation incident on the earth-atmosphere system, with wavelengths in the visible spectrum ($\lambda = @wallacehobbs2006$). Longwave (LW) radiation refers to wavelengths emitted by the earth-atmosphere system, with wavelengths in the infrared spectrum ($\lambda = @$). 
 
 \section{Arctic clouds}% Arctic stratus??
 % Move to introduction: The Arctic cloud cover is dominated by low clouds~\citep{Klein1993}.
@@ -13,21 +12,14 @@ According to~\citet{Klein1993} stratus in the Arctic basin peaks during summer a
 %(, as opposed to other areas.)
 %Low clouds have bases below 2000~m. Stratus (St) are layered clouds that form when extensive areas of stable air are lifted. Stratus clouds are normally between 0.5 and 1~km thick, whereas they can be several km wide~\citep{Aguado2010}.
 
+As mentioned in Chapter~\ref{chap:introduction} there is no solar radiation to reflect during winter and the polar night in the Arctic, whereas in the summer the zenith angle is so high that even though there is sunlight 24 hours a day the cooling effect in summer does not average out the heating effect the clouds have in winter. A high zenith angle, means that the radiation has to travel through more atmosphere, which gives a higher optical depth and stronger depletion of the radiation beam. Consequently, the low clouds' ability to absorb and emit terrestrial radiation dominates over their reflective effect on the solar radiation.
+
 %Are there any typical cloud properties special to the arctic? CURRY!
+%Are they typically warm or cold clouds? Or mixed...? And what does that mean?? Wallace2006 can help :)
 The stratus clouds in the Arctic are typically thin (check with Curry@).
 The air in the Arctic is very stable in winter (polar night), and clean since there are not many sources for pollution. In Autumn the sea ice extent reaches a minimum after the summer melt and leaves open water to influence low clouds and their properties. Some of the cloud radiative properties  are presented in the next section.
 
-\begin{figure}
-\centering
-\includegraphics[width=0.85\textwidth]{theory/dropletsize.png}
-\caption{Typical sizes of cloud condensation nuclei (CCN), cloud droplet, large cloud droplet, borderline between cloud droplet and raindrop and typical size of raindrop.% Adapted
- From~\citep{McDonald1958}.}
-\label{fig:dropletsize}
-\end{figure}
-
 \section{Cloud effects on radiation}
-As mentioned in Chapter~\ref{chap:introduction} there is no solar radiation to reflect during winter and the polar night in the Arctic, whereas in the summer the zenith angle is so high that even though there is sunlight 24 hours a day the cooling effect in summer does not average out the heating effect the clouds have in winter. A high zenith angle, means that the radiation has to travel through more atmosphere, which gives a higher optical depth and stronger depletion of the radiation beam. Consequently, the low clouds' ability to absorb and emit terrestrial radiation dominates over their reflective effect on the solar radiation.
-
 The cloud microphysical properties that determine the cloud radiative properties include: the amount of condensed water, the size and shape of the cloud particles, and if the particles are liquid or ice~\citep{Curry1996}.
 
 \subsection{The Cloud -- a gray body}
@@ -45,7 +37,7 @@ The cloud LW emissivity, $\epsilon_{lw}$, is a measure of the emittance of LW ra
 \epsilon_{lw} = 1 - \exp(-\beta \tau_{lw})
 \label{eqn:epsilon_lw}
 \end{equation}
-where $\beta$ is the diffusivity factor, having an approximate value of 1.66, and $\tau_{lw}$ is the cloud optical depth in the LW.
+where $\beta$ is the diffusivity factor, having an approximate value of 1.66, and $\tau_{lw}$ is the cloud optical depth for longer wavelengths. Equation~\ref{eqn:stefanboltzmann} shows that if one assumes constant cloud temperature, the flux density emitted by the cloud increases with increasing $\tau_{lw}$, since that increases $\epsilon_{lw}$.
 
 \subsection{Cloud optical depth}
 \label{sec:cloudoptdep}
@@ -53,31 +45,46 @@ Cloud optical depth (or cloud optical thickness) in the SW, $\tau_{sw}$, is a me
 \begin{equation}
 \tau_{sw} = \int_0^h k_{E}dz = \pi \int_0^h \int_0^{\infty} r^2 Q_E(r/\lambda) n(r,z) dr dz
 \end{equation}
-at height z above cloud base for a cloud of depth $h$, containing $n(r)dr$ drops with radius in the interval ($r, r + dr$) per cubic centimeter ($\text{cm}^{-3}}$. $Q_E(r/\lambda)$ is the extinction efficiency and $k_{E}$ is the extinction coefficient~\citep{Twomey1977}. In the visible, for $\lambda<<r$, $Q_E\approx 2$ is a good approximation~\citep{Hobbs1993}, and we get the simpler expression
+at height z above cloud base for a cloud of depth $h$, containing $n(r)dr$ drops with radius in the interval ($r, r + dr$) per cubic centimeter ($\text{cm}^{-3}}$. $Q_E(r/\lambda)$ is the extinction efficiency and $k_{E}$ is the extinction coefficient~\citep{Twomey1977}. The extinction efficiency is a measure of how well a particle removes the incident radiation, either by scattering or absorption. In the visible, for $\lambda<<r$, $Q_E\approx 2$ is a good approximation~\citep{Hobbs1993}, and we get the simpler expression
 \begin{equation}
-\tau_{sw} = 2\pi N r_e^2h
+\tau_{sw} = 2\pi N r_e^2 h
 \label{eqn:cloudtau_sw1}
 \end{equation}
 where it is assumed that the cloud droplet radius can be approximated by the effective radius, $r_e$.
+For longer wavelengths, the extinction efficiency can be assumed $Q_E \approx 4$ (@check this!) , and thereby gives a simpler expression for the cloud optical depth in the LW
+\begin{equation}
+\tau_{lw} = 4\pi N r_e^2 h
+\label{eqn:cloudtau_lw1}
+\end{equation}
+Knowing equation~\ref{eqn:cloudtau_lw1} it is clear that an increase in $\tau_{lw}$ will decrease the second term in equation~\ref{eqn:epsilon_lw}, and hence increase $\epsilon_{lw}$, which following Stefan-Boltzmann's law, equation~\ref{eqn:stefanboltzmann}, means that the flux density emitted by the cloud is increased, provided the cloud temperature is kept constant.
 
 \subsection{Cloud droplet effective radius}
 The cloud droplet effective radius determines important radiative properties of a cloud, cloud albedo ($A$) and cloud emissivity ($\epsilon$)~\citep{Hansen1974}%how does it affect epsilon???@
-, and is therefore of particular interest.
+, and is therefore of particular interest. It can be seen from equations~\ref{eqn:cloudtau_sw1} and ~\ref{eqn:cloudtau_lw1} that $r_e$ changes the cloud optical depth in the SW $\tau_{sw}$, and the cloud optical depth in the LW, $\tau_{lw}$. It follows from equations~\ref{eqn:cloudalbedo} and \ref{eqn:epsilon_lw} that changes in the cloud optical depth in SW and LW changes the cloud albedo $A$ and emisivity $\epsilon_{lw}$.
 
 The cloud droplet effective radius is a mean of the size distribution of cloud droplets, weighted by the droplet cross section. The effective radius, $r_e$, may be written
 \begin{equation}
 r_e = \frac{\int r^3 n(r) dr}{\int r^2 n(r) dr}
 \end{equation}
 
+\begin{figure}
+\centering
+\includegraphics[width=0.85\textwidth]{theory/dropletsize.png}
+\caption{Typical sizes of cloud condensation nuclei (CCN), cloud droplet, large cloud droplet, borderline between cloud droplet and raindrop and typical size of raindrop.% Adapted
+ From~\citep{McDonald1958}.}
+\label{fig:dropletsize}
+\end{figure}
+
+Typical size of a cloud droplet is depicted in figure~\ref{fig:dropletsize}. The figure also includes typical sizes of cloud condensation nuclei (CCN), large droplet, borderline between cloud droplet and raindrop and typical size of a raindrop.
+
 \subsection{Cloud albedo}
 %Clouds contribute the most to the planetary albedo~\citep{Twomey1974}. The cloud albedo is given by~\citep{Hobbs1993}
-In section~\ref{sec:cloudoptdep} it was stated that the incident SW radiation on a cloud layer is either transmitted or scattered. The incident radiation is scattered by single drops, and the single-scattering albedo, $\overline{\omega}$, is the fraction of energy that is not absorbed in a single-scattering event, but scattered. $\overline{\omega}$ can to a good approximation be assumed equal to 1. Which means that the absorption of SW is negligible for cloud water, and supports that it is all transmitted or scattered. When the single-scattering albedo is taken to unity, the albedo (or reflectance of a whole cloud or cloud layer is given by~\citep{Hobbs1993}%\citep{Meador1980}
+In section~\ref{sec:cloudoptdep} it was stated that the incident SW radiation on a cloud layer is either transmitted or scattered. The scattered radiation is scattered by single droplets, and the single-scattering albedo, $\overline{\omega}$, is the fraction of energy that is not absorbed in a single-scattering event, but scattered. $\overline{\omega}$ can to a good approximation be assumed equal to 1. Which means that the absorption of SW is negligible for cloud water, which supports that the SW radiation is either transmitted or scattered. When the single-scattering albedo is taken to unity, the albedo (or reflectance) of a cloud layer is given by~\citep{Hobbs1993}%\citep{Meador1980}
 \begin{equation}
 A = \frac{(1-g)\tau_{sw}}{1+(1-g)\tau_{sw}} = \frac{1-g}{\frac{1}{\tau_{sw}}+(1-g)}
 \label{eqn:cloudalbedo_theory}
 \end{equation}
-The cloud albedo, $A$, is then a function of the SW optical depth of a cloud, $\tau_{sw}$, and the asymmetry factor $g$. 
-So now I have to explain about the asymmetry factor ($g$) and the single scattering albedo ($\tilde{\omega}$) which has been approximated to one for this equation to be valid for the cloud albedo. According to Twomey, $g=0.8$ or $0.9$ for warm clouds. $g=1$ is pure forward scattering and $g=-1$ is pure back-scattering. The asymmetry factor gives the direction of the scattered radiation. $g=\overline{\cos \theta}$ where $\theta$ is the scattering angle. A power-averaged value of the cosine of the scattering angle~\citep{Twomey1974}.
+The cloud albedo, $A$, is then a function of the SW optical depth of a cloud, $\tau_{sw}$, and the asymmetry factor $g$. The asymmetry factor gives the direction of scattered radiation by the cloud, and is given by $g=\overline{\cos \theta}$ where $\theta$ is the scattering angle. $g$ is a power-averaged value of the cosine of the scattering angle~\citep{Twomey1974}. $g=1$ indicates pure forward scattering and $g=-1$ indicates pure back-scattering. According to Twomey, $g=0.8$ or $0.9$ for warm clouds.
 %It is obvious from equations for $A$ and $\epsilon$ that a when $r_e$ is small - the albedo increases, and when it is larger the cloud albedo decreases. What about emissivity??
 
 %How do clouds reflect radiation? What is the effect of more water? Or more ice? What about the droplet size? (effective radius)\\
@@ -85,7 +92,7 @@ So now I have to explain about the asymmetry factor ($g$) and the single scatter
 
 %Ice is more effective in reflecting SW than water. Snow has a higher albedo than rain. Is there any use in presenting some albedo values for water, snow, ice? Or open water versus sea ice? New ice versus old sea ice?
 
-\subsection{Liquid Water Content and Path}
+\subsection{Liquid water content and path}
 The amount of condensed water can be expressed by the liquid water content (LWC) in the cloud, often presented with units $\text{g~m}^{-3}$ and is proportional to the cloud droplet number concentration (CDNC), and cloud particle size. From~\citet{Rogers1989} we can express the number of droplets with radius $r$ by
 \begin{equation}
 N = \int n(r) dr
@@ -131,9 +138,9 @@ It is now clear that, if the droplet size is constant, an increase in the LWP in
 Equation~\ref{eqn:epsilon_lw} shows a dependence of the cloud optical depth in the LW spectra, which is given by
 \begin{equation}
 \tau_{lw} = \frac{3LWP}{4\rho_l r_e}
+\label{eqn:tau_lw}
 \end{equation}
 which is simply half of $\tau_{sw}$. The difference in cloud optical depth for SW and LW is due to the difference in the extinction efficiency, $Q_E(r/\lambda)$, which is dependent on the wavelength, ratio $r/\lambda$. Since longer waves are closer to the size of $r$ than shorter waves, $Q_E$ is smaller for longer waves.
-
 
 
 \subsection{Ice water path}
@@ -159,9 +166,10 @@ The cloud optical depth will change with changes in aerosol number concentration
 The second indirect effect, or the cloud lifetimeIc effect, suggests more numerous but smaller droplets reduce the precipitation efficiency and by that enhances the cloud lifetime and hence the cloud reflectivity~\citep{Albrecht1989}. This effect has been estimated to be roughly as large as the first indirect effect~\citep{Lohmann2005}.
 
 %Production of DMS by phytoplankton Charlson 1987....
-\subsection{Aerosol-cloud interactions}
-
+\subsection{Cloud effects on aerosols}
 Cloud presence is due to water vapor condensing on CCNs and possibly freezing if the aerosol's structure resembles that of an ice crystal, IN. Processes known to affect the local aerosol concentration are: precipitation because the precipitation will wash out aerosols from the air when falling through it, this is also known as scavenging. Pollution, increases in aerosol concentration might inhibit precipitation and cause longer-lived, more persistent clouds, which will in turn affect the radiation balance.
+
+%Figure~\ref{fig:dropletsize} shows that droplets have to grow to a size of typically .....@ for precipitation to form.
 
 %Not only the aerosol burden is important, if it is the same for two areas with different meteorological forcing that would also affect the cloud properties. Say an area has a weaker updraft than another area, a cloud formed due to the weaker updraft will have lower LWC, lower albedo and little precipitation. The cloud formed in a stronger updraft will have higher LWC, higher albedo and be more precipitating.
 
