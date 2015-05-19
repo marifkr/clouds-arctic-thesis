@@ -36,17 +36,24 @@ Stefan–Boltzmanns law states that the flux density emitted by a blackbody is p
 F = \epsilon_{\lambda} \sigma T^4
 \label{eqn:stefanboltzmann}
 \end{equation}
-where $\epsilon_{\lambda} = 1$ is the emissivity for a blackbody at wavelength $\lambda$. $F$ ($\text{W~m}^{-2}$) is the flux density emitted  by the body, and $\sigma = 5.67\cdot 10^{-8} \text{Jm}^{-2}\text{sec}^{-1}\text{K}^{-4}$ is the Stefan–Boltzmann constant. A blackbody both absorbs and emits at maximum, and the ratio of absorption and emission to the maximum is given by the absorptivity, $\alpha_{\lambda}$, and the emissivity, $\epsilon_{\lambda}$, for wavelength $\lambda$. Kirchoff's law states that the absorptivity and emissitivty for a medium are equal for each wavelength: $\alpha_{\lambda} = \epsilon_{\lambda}$~\citep{Liou2002}. Kirchoff's law is only applicable at local thermodynamic equilibrium in the lower 60-70~km of the atmosphere. Since this study focuses on the lowest 2~km of the troposphere, the law is applicable.
+where $\epsilon_{\lambda} = 1$ is the emissivity for a blackbody at wavelength $\lambda$. $F$ ($\text{W~m}^{-2}$) is the flux density emitted  by the body, and $\sigma = 5.67\cdot 10^{-8} \text{Jm}^{-2}\text{sec}^{-1}\text{K}^{-4}$ is the Stefan–Boltzmann constant. A blackbody both absorbs and emits at maximum, and the ratio of absorption and emission to the maximum is given by the absorptivity, $\alpha_{\lambda}$, and the emissivity, $\epsilon_{\lambda}$, for wavelength $\lambda$. Kirchoff's law states that the absorptivity and emissitivty for a medium are equal for each wavelength: $\alpha_{\lambda} = \epsilon_{\lambda}$~\citep{Liou2002}. Kirchoff's law is only applicable for LW radiation at local thermodynamic equilibrium in the lower 60-70~km of the atmosphere. Since this study focuses on the lowest 2~km of the troposphere, the law is applicable.
 
-A cloud can be defined as a a gray body, which means that $\alpha_{\lambda}$and $\epsilon_{\lambda}$ are not maximum, $\alpha_{\lambda}=\epsilon_{\lambda}<1$~\citep{Liou2002}. 
+A cloud can be defined as a a gray body, which means that $\alpha_{\lambda}$and $\epsilon_{\lambda}$ are not maximum, $\alpha_{\lambda}=\epsilon_{\lambda}<1$~\citep{Liou2002}.
 
+The cloud LW emissivity, $\epsilon_{lw}$, is a measure of the emittance of LW radiation by the cloud. From Stefan-Boltzmann's law, equation~\ref{eqn:stefanboltzmann}, the flux density emitted by a body depends on the body's temperature and it's emissivity. The cloud longwave emissivity is given by
+\begin{equation}
+\epsilon_{lw} = 1 - \exp(-\beta \tau_{lw})
+\label{eqn:epsilon_lw}
+\end{equation}
+where $\beta$ is the diffusivity factor, having an approximate value of 1.66, and $\tau_{lw}$ is the cloud optical depth in the LW.
 
 \subsection{Cloud optical depth}
-Cloud optical depth or cloud optical thickness in the SW, $\tau_{sw}$, is a measure of the cumulative depletion that a beam of radiation directed straight downward (zenith angle $\theta = 0$) would experience in passing through a defined cloud layer. The cloud optical depth is given by~\citep{Twomey1977}
+\label{sec:cloudoptdep}
+Cloud optical depth (or cloud optical thickness) in the SW, $\tau_{sw}$, is a measure of the cumulative depletion that a beam of radiation directed straight downward (zenith angle $\theta = 0$) would experience in passing through a defined cloud layer. Of the incident SW radiation on a cloud with optical depth $\tau_{sw}$, a fraction $e^{-\tau_{sw}}$ is not scattered and is defined as the transmisivity of the cloud -- the radiation that is not absorbed or scattered in passing through the cloud~\citep{Wallace2006}. The remaining $1-e^{\tau_{sw}}$ has been scattered on or more times in passing through the cloud layer. The cloud optical depth is given by~\citep{Twomey1977}
 \begin{equation}
 \tau_{sw} = \int_0^h k_{E}dz = \pi \int_0^h \int_0^{\infty} r^2 Q_E(r/\lambda) n(r,z) dr dz
 \end{equation}
-at height z above cloud base for a cloud of depth $h$, containing $n(r)dr$ drops with radius in the interval ($r, r + dr$) per cubic centimeter ($\text{cm}^{-3}}$. $Q_E(r/\lambda)$ is the extinction efficiency and $k_{E}$ is the extinction coefficient~\citep{Twomey1977}. In the visible, for $\lambda<<r$, $Q_E\approx 2$ is a good approximation~\citep{Liou2002}, and we get the simpler expression
+at height z above cloud base for a cloud of depth $h$, containing $n(r)dr$ drops with radius in the interval ($r, r + dr$) per cubic centimeter ($\text{cm}^{-3}}$. $Q_E(r/\lambda)$ is the extinction efficiency and $k_{E}$ is the extinction coefficient~\citep{Twomey1977}. In the visible, for $\lambda<<r$, $Q_E\approx 2$ is a good approximation~\citep{Hobbs1993}, and we get the simpler expression
 \begin{equation}
 \tau_{sw} = 2\pi N r_e^2h
 \label{eqn:cloudtau_sw1}
@@ -54,14 +61,23 @@ at height z above cloud base for a cloud of depth $h$, containing $n(r)dr$ drops
 where it is assumed that the cloud droplet radius can be approximated by the effective radius, $r_e$.
 
 \subsection{Cloud droplet effective radius}
-The cloud droplet effective radius determines important radiative properties of a cloud, cloud albedo ($A$) and cloud emissivity ($\epsilon$)~\citep{Hansen1974}, and is therefore of particular interest.
+The cloud droplet effective radius determines important radiative properties of a cloud, cloud albedo ($A$) and cloud emissivity ($\epsilon$)~\citep{Hansen1974}%how does it affect epsilon???@
+, and is therefore of particular interest.
 
-The cloud droplet effective radius is a weighted mean of the size distribution of cloud droplets. The effective radius may be written
+The cloud droplet effective radius is a mean of the size distribution of cloud droplets, weighted by the droplet cross section. The effective radius, $r_e$, may be written
 \begin{equation}
 r_e = \frac{\int r^3 n(r) dr}{\int r^2 n(r) dr}
 \end{equation}
-where $r_e$ is the effective radius.
 
+\subsection{Cloud albedo}
+%Clouds contribute the most to the planetary albedo~\citep{Twomey1974}. The cloud albedo is given by~\citep{Hobbs1993}
+In section~\ref{sec:cloudoptdep} it was stated that the incident SW radiation on a cloud layer is either transmitted or scattered. The incident radiation is scattered by single drops, and the single-scattering albedo, $\overline{\omega}$, is the fraction of energy that is not absorbed in a single-scattering event, but scattered. $\overline{\omega}$ can to a good approximation be assumed equal to 1. Which means that the absorption of SW is negligible for cloud water, and supports that it is all transmitted or scattered. When the single-scattering albedo is taken to unity, the albedo (or reflectance of a whole cloud or cloud layer is given by~\citep{Hobbs1993}%\citep{Meador1980}
+\begin{equation}
+A = \frac{(1-g)\tau_{sw}}{1+(1-g)\tau_{sw}} = \frac{1-g}{\frac{1}{\tau_{sw}}+(1-g)}
+\label{eqn:cloudalbedo_theory}
+\end{equation}
+The cloud albedo, $A$, is then a function of the SW optical depth of a cloud, $\tau_{sw}$, and the asymmetry factor $g$. 
+So now I have to explain about the asymmetry factor ($g$) and the single scattering albedo ($\tilde{\omega}$) which has been approximated to one for this equation to be valid for the cloud albedo. According to Twomey, $g=0.8$ or $0.9$ for warm clouds. $g=1$ is pure forward scattering and $g=-1$ is pure back-scattering. The asymmetry factor gives the direction of the scattered radiation. $g=\overline{\cos \theta}$ where $\theta$ is the scattering angle. A power-averaged value of the cosine of the scattering angle~\citep{Twomey1974}.
 %It is obvious from equations for $A$ and $\epsilon$ that a when $r_e$ is small - the albedo increases, and when it is larger the cloud albedo decreases. What about emissivity??
 
 %How do clouds reflect radiation? What is the effect of more water? Or more ice? What about the droplet size? (effective radius)\\
@@ -110,27 +126,15 @@ the cloud optical depth in the visible ($\tau_sw$) can be written as a function 
 \label{eqn:cloudtau_sw}
 \end{eqnarray}
 %How does this influence the radiation???!!
-It is now clear that, if the droplet size is constant, an increase in the LWP increases the optical depth of a cloud in the visible, $\tau_sw$. In increase in $\tau_sw$ would make the denominator in equation~\ref{eqn:cloudalbedo_theory} for the cloud albedo, $A$, smaller and thereby increase the cloud albedo. An increase in $A$ also means a reduction in SW radiation reaching the surface. In that way, an increase in LWP would have a cooling effect. But, we also need to consider the LW radiation. We agreed that since the cloud is a gray body, the absorptivity and emissivity of the cloud was not 1. The part that is not absorbed in the SW is reflected, due to $A$. The cloud LW emissivity, $\epsilon_{lw}$, on the other hand tells us about the emittance of LW radiation by the cloud. From Stefan-Boltzmann's law, equation~\ref{eqn:stefanboltzmann}, we saw that the flux density emitted by a body depends on the body's temperature and it's emissivity. The cloud longwave emissivity is given by
-\begin{equation}
-\epsilon_{lw} = 1 - \exp(-\beta \tau_{lw})
-\label{eqn:epsilon_lw}
-\end{equation}
-where $\beta$ is the diffusivity factor, having an approximate value of 1.66. Equation~\ref{eqn:epsilon_lw} shows a dependence of the cloud optical depth in the LW spectra, which is given by
+It is now clear that, if the droplet size is constant, an increase in the LWP increases the optical depth of a cloud in the visible, $\tau_sw$. In increase in $\tau_sw$ would make the denominator in equation~\ref{eqn:cloudalbedo_theory} for the cloud albedo, $A$, smaller and thereby increase the cloud albedo. An increase in $A$ also means a reduction in SW radiation reaching the surface. In that way, an increase in LWP would have a cooling effect. But, we also need to consider the LW radiation. We agreed that since the cloud is a gray body, the absorptivity and emissivity of the cloud was not 1. The part that is not absorbed in the SW is reflected, due to $A$. 
+
+Equation~\ref{eqn:epsilon_lw} shows a dependence of the cloud optical depth in the LW spectra, which is given by
 \begin{equation}
 \tau_{lw} = \frac{3LWP}{4\rho_l r_e}
 \end{equation}
 which is simply half of $\tau_{sw}$. The difference in cloud optical depth for SW and LW is due to the difference in the extinction efficiency, $Q_E(r/\lambda)$, which is dependent on the wavelength, ratio $r/\lambda$. Since longer waves are closer to the size of $r$ than shorter waves, $Q_E$ is smaller for longer waves.
 
-\subsection{Cloud albedo}
-\citet{Twomey1974} shows that the cloud albedo depends on the
-The optical depth of a cloud determines how much of the incident SW radiation is reflected.
-Clouds are an important contributor to the earth system albedo. The cloud albedo is given by~\citep{Hobbs1993}
-\begin{equation}
-A = \frac{(1-g)\tau_{sw}}{1+(1-g)\tau_{sw}} = \frac{1-g}{\frac{1}{\tau_{sw}}+(1-g)}
-\label{eqn:cloudalbedo_theory}
-\end{equation}
 
-So now I have to explain about the asymmetry factor ($g$) and the single scattering albedo ($\tilde{\omega}$) which has been approximated to one for this equation to be valid for the cloud albedo. According to Twomey, $g=0.8$ or $0.9$ for warm clouds. $g=1$ is pure forward scattering and $g=-1$ is pure back-scattering. The asymmetry factor gives the direction of the scattered radiation. $g=\overline{\cos \theta}$ where $\theta$ is the scattering angle. A power-averaged value of the cosine of the scattering angle~\citep{Twomey1974}.
 
 \subsection{Ice water path}
 
