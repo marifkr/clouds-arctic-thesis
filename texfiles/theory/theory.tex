@@ -4,7 +4,6 @@ In this thesis the term shortwave (SW) refers to the wavelength band that carrie
 
 In this chapter how cloud properties can influence radiation is presented, followed by a section on cloud effects on aerosols. Lastly a brief overview of clouds in the Arctic, with focus on stratus, is presented. 
 
-
 \section{Cloud effects on radiation}
 The cloud microphysical properties that determine the cloud radiative properties include: the amount of condensed water, the size and shape of the cloud particles, and if the particles are liquid or ice~\citep{Curry1996}.
 
@@ -49,7 +48,7 @@ Knowing equation~\ref{eqn:epsilon_lw} it is clear that an increase in $\tau_{lw}
 In section~\ref{sec:cloudoptdep} it was stated that the incident SW radiation on a cloud layer is either transmitted or scattered. The scattered radiation is scattered by single droplets, and the single-scattering albedo, $\overline{\omega}$, is the fraction of energy that is not absorbed in a single-scattering event, but scattered. $\overline{\omega}$ can to a good approximation be assumed equal to 1. Which means that the absorption of SW is negligible for cloud water, which supports that the SW radiation is either transmitted or scattered. When the single-scattering albedo is taken to unity, the albedo (or reflectance) of a cloud layer is given by~\citep{Hobbs1993}%\citep{Meador1980}
 \begin{equation}
 A = \frac{(1-g)\tau_{sw}}{1+(1-g)\tau_{sw}} = \frac{1-g}{\frac{1}{\tau_{sw}}+(1-g)}
-\label{eqn:cloudalbedo_theory}
+\label{eqn:cloudalbedo}
 \end{equation}
 The cloud albedo, $A$, is then a function of the SW optical depth of a cloud, $\tau_{sw}$, and the asymmetry factor $g$. The asymmetry factor gives the direction of scattered radiation by the cloud, and is given by $g=\overline{\cos \theta}$ where $\theta$ is the scattering angle. $g$ is a power-averaged value of the cosine of the scattering angle~\citep{Twomey1974}. $g=1$ indicates pure forward scattering and $g=-1$ indicates pure back-scattering. According to Twomey, $g=0.8$ or $0.9$ for warm clouds, which means that most of the scattered energy is scattered forward.
 
@@ -68,7 +67,7 @@ The cloud droplet effective radius is a mean of the size distribution of cloud d
 r_e = \frac{\int r^3 n(r) dr}{\int r^2 n(r) dr}
 \end{equation}
 
-It can be seen from equations~\ref{eqn:cloudtau_sw1} and ~\ref{eqn:cloudtau_lw1} that a decrease in $r_e$, when $N$ and $h$ is kept constant decreases the optical depth of the cloud in both SW, $\tau_{sw}$ and LW, $\tau_{lw}$. Whereas an increase in $r_e$ increases the cloud optical depths. It has already been established from equations~\ref{eqn:cloudalbedo_theory} and \ref{eqn:epsilon_lw} that a(n) decrease (increase) in the cloud optical depth leads to a(n) deacrease (increase) in the cloud albedo $A$ and emissivity $\epsilon_{lw}$.
+It can be seen from equations~\ref{eqn:cloudtau_sw1} and ~\ref{eqn:cloudtau_lw1} that a decrease in $r_e$, when $N$ and $h$ is kept constant decreases the optical depth of the cloud in both SW, $\tau_{sw}$ and LW, $\tau_{lw}$. Whereas an increase in $r_e$ increases the cloud optical depths. It has already been established from equations~\ref{eqn:cloudalbedo} and \ref{eqn:epsilon_lw} that a(n) decrease (increase) in the cloud optical depth leads to a(n) deacrease (increase) in the cloud albedo $A$ and emissivity $\epsilon_{lw}$.
 
 \begin{figure}
 \centering
@@ -120,7 +119,7 @@ the cloud optical depth in the visible ($\tau_{sw}$) can be written as a functio
 \end{eqnarray}
 Where $\text{( LWC }h \approx \text{LWP )}$
 %How does this influence the radiation???!!
-It is now clear that, if the droplet size is constant, an increase in the LWP increases the optical depth of a cloud in the SW spectra, $\tau_sw$. An increase in $\tau_sw$ would make the denominator in equation~\ref{eqn:cloudalbedo_theory} for the cloud albedo, $A$, smaller and thereby increase the cloud albedo. An increase in $A$ also means a reduction in SW radiation reaching the surface. In that way, an increase in LWP would have a cooling effect. But, we also need to consider the LW radiation. 
+It is now clear that, if the droplet size is constant, an increase in the LWP increases the optical depth of a cloud in the SW spectra, $\tau_sw$. An increase in $\tau_sw$ would make the denominator in equation~\ref{eqn:cloudalbedo} for the cloud albedo, $A$, smaller and thereby increase the cloud albedo. An increase in $A$ also means a reduction in SW radiation reaching the surface. In that way, an increase in LWP would have a cooling effect. But, we also need to consider the LW radiation. 
 
 Equation~\ref{eqn:epsilon_lw} shows a dependence of the cloud optical depth in the LW spectra, which is given by
 \begin{equation}
@@ -129,41 +128,46 @@ Equation~\ref{eqn:epsilon_lw} shows a dependence of the cloud optical depth in t
 \end{equation}
 which is simply half of $\tau_{sw}$. The difference in cloud optical depth for SW and LW is due to the difference in the extinction efficiency, $Q_E(r/\lambda)$, which is dependent on the wavelength, ratio $r/\lambda$. Since longer waves are closer to the size of $r$ than shorter waves, $Q_E$ is smaller for longer waves.
 
-
 \subsection{Ice water path}
+The cloud may also consist of ice, not just liquid water, and for that 
 
-\section{Aerosols and clouds}%Aerosols and clouds som tittel??
-Aerosols have a direct effect on the climate by scattering and absorbing SW radiation, and scattering, absorbing and emitting LW radiation. A small subset of the atmospheric aerosols also serve as particles which water vapor can condense on to form droplets~\citep{Wallace2006}. Aerosols upon which water vapor can condense are called cloud condensation nuclei (CCN). For low temperatures ($\sim$-20 to -5$\deg$C)~\citep{Wallace2006}, a few aerosols act as ice nuclei (IN) which if present allow for cloud ice to form. With INs cloud ice can form through heterogeneous freezing, contact nucleation and deposition~\citep{Wallace2006}. Heterogeneous freezing is when a droplet already contains a freezing nucleus and is brought to lower temperatures so that the already condensed water on the particle freezes. Contact nucleation is when a supercooled droplet (droplet with temperature below 0$\deg$C) is hit by a suitable IN, and deposition is when water vapor freezes directly on the IN.
+\section{Aerosols and clouds}
+Aerosols have a direct effect on the climate by scattering and absorbing SW radiation, and scattering, absorbing and emitting LW radiation. A small subset of the atmospheric aerosols also serve as particles which water vapor can condense on to form droplets~\citep{Wallace2006}. Aerosols upon which water vapor can condense are called cloud condensation nuclei (CCN). Typical size for CCN is shown in figure~\ref{fig:dropletsize}. For low temperatures ($\sim$-20 to -5$\deg$C)~\citep{Wallace2006}, a few aerosols act as ice nuclei (IN) which if present allow for cloud ice to form. With IN cloud ice can form through heterogeneous freezing, contact nucleation and deposition~\citep{Wallace2006}. Heterogeneous freezing is when a droplet already contains a freezing nucleus and is brought to lower temperatures so that the already condensed water on the particle freezes. Contact nucleation is when a supercooled droplet (droplet with temperature below 0$\deg$C) is hit by a suitable ice nucleus, and deposition is when water vapor freezes directly on the nucleus.
 
-For low clouds to form there must be available aerosols. Aerosols act as cloud condensation nuclei (CCN) by letting water vapor condense on them. This is how a cloud droplet is formed. For an ice particle to be present in a low cloud, an ice nuclei (IN) and low temperatures (-5 to -20$^o$C)
-are necessary. If an IN hits a cloud droplet with temperature below zero, a super-cooled droplet, the droplet will freeze.
+@Mention which aerosols act as what, and how many of the total aerosol burden!
 
-
-They also have an effect on climate through clouds, an indirect effect. The amount of CCNs and INs available affect the properties of the clouds in the area. There are two known indirect effects that aerosols have on radiation, through clouds. The first and second indirect effects
-%The first was proposed by~\citet{Twomey1974}.% and is often referred to as the Twomey effect. The second indirect effect was proposed by~\citet{Albrecht1989}.% and is also known as the lifetime effect.
-
+Through clouds the aerosols that act as CCN or IN also have an indirect effect. The amount of CCN and IN available affect the properties of the clouds. There are two known indirect effects that aerosols have on climate, through clouds.
+ 
 \subsection{The first indirect effect}
-If there are few CCNs in an area, a cloud formed there would be a clean cloud with few, but large droplets and therefore have a low albedo and precipitate easily. If the area had high aerosol concentration, the cloud would be polluted and have more numerous but smaller droplet, which means it would have a higher albedo and precipitation would be suppressed. 
-The first indirect effect, suggested by~\citet{Twomey1974}, describes the enhancement of cloud albedo as a consequence of an increase in aerosol content and thereby available CCNs.
-By increasing the CDNC and hence the optical thickness of a cloud, see equation~\ref{eqn:cloudtau_sw}, one can see from equation~\ref{eqn:cloudalbedo_theory} that pollution acts to increase the albedo of clouds.
+The first indirect effect was proposed by~\citet{Twomey1974} and is often referred to as the Twomey effect. It describes the enhancement of cloud albedo as a consequence of an increase in aerosol content and thereby available CCN.
 
-Equation~\ref{eqn:cloudtau_sw1} shows that, if the effective radius is kept constant, the cloud optical depth will change with changes in CDNC. The CDNC is affected by the number of available CCNs, and as the aerosol number concentration changes so will the number of CCNs, and hence the CDNC and optical depth. Furthermore if a cloud has many small droplets, the cloud optical depth will be higher. Whereas fewer cloud droplets will yield a lower optical depth, provided $r_e$ is kept constant, resulting in more SW radiation reaching the ground -- having a warming effect on the area. 
+If there are few CCN in an area, a cloud formed there would be a clean cloud with few, but large droplets and therefore have a low albedo. If the area had high aerosol concentration, the cloud would be polluted and have more numerous but smaller droplet, provided the LWP is the same, which means it would have a higher optical depth in the SW according to equation~\ref{eqn:cloudtau_sw}, which through equation~\ref{eqn:cloudalbedo} gives a higher albedo.
 
-(Include a figure showing the indirect effect)
+Equation~\ref{eqn:cloudtau_sw1} shows that, if the effective radius is kept constant, the cloud optical depth will change with changes in CDNC ($N$ in the equation). The CDNC is affected by the number of available CCN, and as the aerosol number concentration changes so will the number of CCN, and hence the CDNC and optical depth. Furthermore if a cloud has many small droplets, the cloud optical depth will be higher. Whereas fewer cloud droplets will yield a lower optical depth, provided $r_e$ is kept constant, resulting in more SW radiation reaching the ground.
+
+\begin{figure}
+\centering
+\includegraphics[width=1.1\textwidth]{theory/indirecteffects.pdf}
+\caption{Figure showing the first indirect effect (albedo effect) to the left and the second indirect effect (lifetime effect) to the right. The figure includes a time axis to show the time scale of a precipitation process. The upper and lower panel show the clean and polluted case respectively. The figure is taken from~\cite{Stevens2009}.}
+\label{fig:indirecteffects}
+\end{figure}
+
+The increase in cloud albedo due to pollution is shown in the left-most 4 figures in figure~\ref{fig:indirecteffects}. The figure shows that with more CCN available, in a polluted environment, the cloud or cloud layer, appears brigther than when the air is clean (fewer available CCN).
 
 \subsection{The second indirect effect}
-The second indirect effect, or the cloud lifetime effect, suggests more numerous but smaller droplets reduce the precipitation efficiency and by that enhances the cloud lifetime and hence the cloud reflectivity~\citep{Albrecht1989}. 
+The second indirect effect was proposed by~\citet{Albrecht1989}, and is also known as the lifetime effect.
 
-Figure~\ref{fig:dropletsize} shows that droplets have to grow to a size of typically 1000$\mu\text{m}$ for precipitation to form. A rain drop is formed when smaller droplets collide and coalesce into a larger droplet, which also falls to collect smaller droplets until it is large enough to fall out of a cloud as precipitation. The second indirect effect suggests that if the water vapor is spread over a higher number of droplets, giving them a smaller effective radius they will prohibit them from growing to a raindrop. The theory is that if the cloud does not precipitate, it will grow denser and live longer since the cloud water is not removed by precipitation. According to~\citet{Lohmann2005} this effect had been estimated to be of the same order as the first indirect effect. It has since been shown by~\citep{Stevens2009} that the effect is in fact small globally averaged. When a cloud does not precipitate it can be entrained by dryer air which leads to evaporation of the cloud droplets, and the cloud ceases to exist.
+The second indirect effect suggests more numerous but smaller droplets reduce the precipitation efficiency and by that enhances the cloud lifetime and hence the cloud reflectivity~\citep{Albrecht1989}. The effect is depicted in figure~\ref{fig:indirecteffects} as the lifetime effect, where it is shown that in the lower panel, the polluted case, the cloud does not precipitate and is therefore still present after an hour, where as the cloud in the upper panel, the clean case, is gone due precipitation.
+
+Figure~\ref{fig:dropletsize} shows that droplets have to grow to a size of typically 1000$\mu\text{m}$ for precipitation to form. A rain drop is formed when smaller droplets collide and coalesce into a larger droplet, which also falls to collect smaller droplets until it is large enough to fall out of a cloud as precipitation. The second indirect effect suggests that an increase in aerosol burden leads to the water vapor being spread over a higher number of droplets, giving them a smaller effective radius which will prohibit them from growing to a raindrop. The hypothesis is that if the cloud does not precipitate, it will grow denser and live longer since the cloud water is not removed by precipitation. According to~\citet{Lohmann2005} this effect had been estimated to be of the same order as the first indirect effect. It has since been shown that the effect is in fact small globally averaged~\citep{Stevens2009}. \citet{Stevens2009} state that in the cases where an increased aerosol burden prohibits precipitation, the cloud can be entrained by dryer air which leads to evaporation of the cloud droplets, and the cloud ceases to exist. On the other hand, an increase in aerosol burden in deep precipitating clouds may lead to more, not less precipitation~\citep{Stevens2008}.
 
 %Production of DMS by phytoplankton Charlson 1987....
-\subsection{Cloud effects on aerosols}
-Cloud presence is due to water vapor condensing on CCNs and possibly freezing if the aerosol's structure resembles that of an ice crystal, IN. Processes known to affect the local aerosol concentration are: precipitation because the precipitation will wash out aerosols from the air when falling through it, this is also known as scavenging. Pollution, increases in aerosol concentration might inhibit precipitation and cause longer-lived, more persistent clouds, which will in turn affect the radiation balance.
-
+%-------- Droppe dette?
+%\subsection{Cloud effects on aerosols}
+%Cloud presence is due to water vapor condensing on CCNs and possibly freezing if the aerosol's structure resembles that of an ice crystal, IN. Processes known to affect the local aerosol concentration are: precipitation because the precipitation will wash out aerosols from the air when falling through it, this is also known as scavenging. Pollution, increases in aerosol concentration might inhibit precipitation and cause longer-lived, more persistent clouds, which will in turn affect the radiation balance.
 
 %Not only the aerosol burden is important, if it is the same for two areas with different meteorological forcing that would also affect the cloud properties. Say an area has a weaker updraft than another area, a cloud formed due to the weaker updraft will have lower LWC, lower albedo and little precipitation. The cloud formed in a stronger updraft will have higher LWC, higher albedo and be more precipitating.
-
- 
+%--------
 
 \section{Arctic stratus}
 % Move to introduction: The Arctic cloud cover is dominated by low clouds~\citep{Klein1993}.
@@ -195,6 +199,7 @@ As mentioned in Chapter~\ref{chap:introduction} there is no solar radiation to r
 %Are there any typical cloud properties special to the arctic? CURRY!
 %Are they typically warm or cold clouds? And what does that mean?? Wallace2006 can help :)
 
-
 The stratus clouds in the Arctic are typically thin (check with Curry@).
 The air in the Arctic is very stable in winter (polar night), and clean since there are not many sources for pollution. In Autumn the sea ice extent reaches a minimum after the summer melt and leaves open water to influence low clouds and their properties. Some of the cloud radiative properties  are presented in the next section.
+
+The tools and methods used to study Arctic clouds in this thesis are described in the following chapter.
