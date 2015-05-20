@@ -1,4 +1,4 @@
-\documentclass[11pt]{book}
+\documentclass[11pt, a4paper]{book}
 %\documentclass[a4paper,12pt]{article}
 
 %---- from GEO4012
@@ -21,15 +21,24 @@
 %\usepackage{mathptmx}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{color}
 %\usepackage{textcomp}
 %\usepackage{varioref}
 \usepackage{float}
 \usepackage{graphicx}
+\usepackage{template/uiosloforside}
 %\usepackage{pxfonts}
 \usepackage{array}
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+% Farge til Osloforside
+\definecolor{Blue}{rgb}{0, 0.64, 1}
+\definecolor{Purple}{rgb}{0.68, 0.254, 1}
+\newcommand{\boxcolor}{Purple}
+\definecolor{White}{rgb}{1,1, 1}
+\renewcommand{\textcolor}{White}
 
 %\usepackage[python]{optional}
 %\usepackage{listings}
@@ -45,7 +54,9 @@
 \date{}
 
 %\begin{document}
-\maketitle
+%\maketitle
+
+ \uiosloforside[kind=Master thesis in Geosciences Meteorology and oceanography, dept=Department of Geosciences, boxcolor=\boxcolor, textcolor=\textcolor, date=1 June 2015] 
 \frontmatter
 \include{abstract}
 \include{acknowledgements}
