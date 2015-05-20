@@ -40,7 +40,7 @@ The cloud LW emissivity, $\epsilon_{lw}$, is a measure of the emittance of LW ra
 \epsilon_{lw} = 1 - \exp(-\beta \tau_{lw})
 \label{eqn:epsilon_lw}
 \end{equation}
-where $\beta$ is the diffusivity factor, having an approximate value of 1.66, and $\tau_{lw}$ is the cloud optical depth for longer wavelengths. Equation~\ref{eqn:stefanboltzmann} shows that if one assumes constant cloud temperature, the flux density emitted by the cloud increases with increasing $\tau_{lw}$, since that increases $\epsilon_{lw}$.
+where $\beta$ is the diffusivity factor, having an approximate value of 1.66, and $\tau_{lw}$ is the cloud optical depth for longer wavelengths. Equation~\ref{eqn:stefanboltzmann} shows that if one assumes constant cloud temperature, the flux density emitted by the cloud increases with increasing $\epsilon_{lw}$, which increases with increasing $\tau_{lw}$. Name some typical values, and calculate F?@
 
 \subsection{Cloud optical depth}
 \label{sec:cloudoptdep}
@@ -59,7 +59,23 @@ For longer wavelengths, the extinction efficiency can be assumed $Q_E \approx 4$
 \tau_{lw} = 4\pi N r_e^2 h
 \label{eqn:cloudtau_lw1}
 \end{equation}
-Knowing equation~\ref{eqn:cloudtau_lw1} it is clear that an increase in $\tau_{lw}$ will decrease the second term in equation~\ref{eqn:epsilon_lw}, and hence increase $\epsilon_{lw}$, which following Stefan-Boltzmann's law, equation~\ref{eqn:stefanboltzmann}, means that the flux density emitted by the cloud is increased, provided the cloud temperature is kept constant.
+Knowing equation~\ref{eqn:epsilon_lw} it is clear that an increase in $\tau_{lw}$ will decrease the second term in equation~\ref{eqn:epsilon_lw}, and hence increase $\epsilon_{lw}$, which following Stefan-Boltzmann's law, equation~\ref{eqn:stefanboltzmann}, means that the flux density emitted by the cloud is increased, provided the cloud temperature is kept constant.
+
+\subsection{Cloud albedo}
+%Clouds contribute the most to the planetary albedo~\citep{Twomey1974}. The cloud albedo is given by~\citep{Hobbs1993}
+In section~\ref{sec:cloudoptdep} it was stated that the incident SW radiation on a cloud layer is either transmitted or scattered. The scattered radiation is scattered by single droplets, and the single-scattering albedo, $\overline{\omega}$, is the fraction of energy that is not absorbed in a single-scattering event, but scattered. $\overline{\omega}$ can to a good approximation be assumed equal to 1. Which means that the absorption of SW is negligible for cloud water, which supports that the SW radiation is either transmitted or scattered. When the single-scattering albedo is taken to unity, the albedo (or reflectance) of a cloud layer is given by~\citep{Hobbs1993}%\citep{Meador1980}
+\begin{equation}
+A = \frac{(1-g)\tau_{sw}}{1+(1-g)\tau_{sw}} = \frac{1-g}{\frac{1}{\tau_{sw}}+(1-g)}
+\label{eqn:cloudalbedo_theory}
+\end{equation}
+The cloud albedo, $A$, is then a function of the SW optical depth of a cloud, $\tau_{sw}$, and the asymmetry factor $g$. The asymmetry factor gives the direction of scattered radiation by the cloud, and is given by $g=\overline{\cos \theta}$ where $\theta$ is the scattering angle. $g$ is a power-averaged value of the cosine of the scattering angle~\citep{Twomey1974}. $g=1$ indicates pure forward scattering and $g=-1$ indicates pure back-scattering. According to Twomey, $g=0.8$ or $0.9$ for warm clouds, which means that most of the scattered energy is scattered forward.
+
+%It is obvious from equations for $A$ and $\epsilon$ that a when $r_e$ is small - the albedo increases, and when it is larger the cloud albedo decreases. What about emissivity??
+
+%How do clouds reflect radiation? What is the effect of more water? Or more ice? What about the droplet size? (effective radius)\\
+%How do clouds absorb and emit radiation? Effect of more or less water or ice? Droplet size?    INCLUDE RADIATION EQUATION!
+
+%Ice is more effective in reflecting SW than water. Snow has a higher albedo than rain. Is there any use in presenting some albedo values for water, snow, ice? Or open water versus sea ice? New ice versus old sea ice?
 
 \subsection{Cloud droplet effective radius}
 The cloud droplet effective radius determines important radiative properties of a cloud, cloud albedo ($A$) and cloud emissivity ($\epsilon$)~\citep{Hansen1974}%how does it affect epsilon???@
@@ -80,20 +96,6 @@ r_e = \frac{\int r^3 n(r) dr}{\int r^2 n(r) dr}
 
 Typical size of a cloud droplet is depicted in figure~\ref{fig:dropletsize}. The figure also includes typical sizes of cloud condensation nuclei (CCN), large droplet, borderline between cloud droplet and raindrop and typical size of a raindrop.
 
-\subsection{Cloud albedo}
-%Clouds contribute the most to the planetary albedo~\citep{Twomey1974}. The cloud albedo is given by~\citep{Hobbs1993}
-In section~\ref{sec:cloudoptdep} it was stated that the incident SW radiation on a cloud layer is either transmitted or scattered. The scattered radiation is scattered by single droplets, and the single-scattering albedo, $\overline{\omega}$, is the fraction of energy that is not absorbed in a single-scattering event, but scattered. $\overline{\omega}$ can to a good approximation be assumed equal to 1. Which means that the absorption of SW is negligible for cloud water, which supports that the SW radiation is either transmitted or scattered. When the single-scattering albedo is taken to unity, the albedo (or reflectance) of a cloud layer is given by~\citep{Hobbs1993}%\citep{Meador1980}
-\begin{equation}
-A = \frac{(1-g)\tau_{sw}}{1+(1-g)\tau_{sw}} = \frac{1-g}{\frac{1}{\tau_{sw}}+(1-g)}
-\label{eqn:cloudalbedo_theory}
-\end{equation}
-The cloud albedo, $A$, is then a function of the SW optical depth of a cloud, $\tau_{sw}$, and the asymmetry factor $g$. The asymmetry factor gives the direction of scattered radiation by the cloud, and is given by $g=\overline{\cos \theta}$ where $\theta$ is the scattering angle. $g$ is a power-averaged value of the cosine of the scattering angle~\citep{Twomey1974}. $g=1$ indicates pure forward scattering and $g=-1$ indicates pure back-scattering. According to Twomey, $g=0.8$ or $0.9$ for warm clouds -- most of the scattered energy is scattered forward.
-%It is obvious from equations for $A$ and $\epsilon$ that a when $r_e$ is small - the albedo increases, and when it is larger the cloud albedo decreases. What about emissivity??
-
-%How do clouds reflect radiation? What is the effect of more water? Or more ice? What about the droplet size? (effective radius)\\
-%How do clouds absorb and emit radiation? Effect of more or less water or ice? Droplet size?    INCLUDE RADIATION EQUATION!
-
-%Ice is more effective in reflecting SW than water. Snow has a higher albedo than rain. Is there any use in presenting some albedo values for water, snow, ice? Or open water versus sea ice? New ice versus old sea ice?
 
 \subsection{Liquid water content and path}
 The amount of condensed water can be expressed by the liquid water content (LWC) in the cloud, often presented with units $\text{g~m}^{-3}$ and is proportional to the cloud droplet number concentration (CDNC), and cloud particle size. From~\citet{Rogers1989} we can express the number of droplets with radius $r$ by
