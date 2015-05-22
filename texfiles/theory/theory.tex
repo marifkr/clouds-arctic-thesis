@@ -17,40 +17,34 @@ where $\epsilon_{\lambda} = 1$ is the emissivity for a blackbody at wavelength $
 
 A cloud can be defined as a a gray body, which means that $\alpha_{\lambda}$and $\epsilon_{\lambda}$ are not maximum, $\alpha_{\lambda}=\epsilon_{\lambda}<1$~\citep{Liou2002}.
 
-The cloud LW emissivity, $\epsilon_{lw}$, is a measure of the emittance of LW radiation by the cloud. From Stefan-Boltzmann's law, equation~\ref{eqn:stefanboltzmann}, the flux density emitted by a body depends on the body's temperature and it's emissivity. The cloud longwave emissivity is given by
+The cloud LW emissivity, $\epsilon$, is a measure of the emittance of LW radiation by the cloud. From Stefan-Boltzmann's law, equation~\ref{eqn:stefanboltzmann}, the flux density emitted by a body depends on the body's temperature and it's emissivity. The cloud longwave emissivity is given by~\cite{Liou1992}
 \begin{equation}
-\epsilon_{lw} = 1 - \exp(-\beta \tau_{lw})
+\epsilon = 1 - \exp(-k_v^c LWP)
 \label{eqn:epsilon_lw}
 \end{equation}
-where $\beta$ is the diffusivity factor, having an approximate value of 1.66, and $\tau_{lw}$ is the cloud optical depth for longer wavelengths. Equation~\ref{eqn:stefanboltzmann} shows that if one assumes constant cloud temperature, the flux density emitted by the cloud increases with increasing $\epsilon_{lw}$, which increases with increasing $\tau_{lw}$. Name some typical values, and calculate F?@
+where $k_v^c$ is the mass absorption coefficient of cloud particles, LWP is the liquid water path, which is the vertically integrated amount of water, and is further explained in section~\ref{sec:lwc}. Equation~\ref{eqn:stefanboltzmann} shows that if one assumes constant cloud temperature, the flux density emitted by the cloud increases with increasing $\epsilon$, which increases with increasing LWP. Name some typical values, and calculate F?@
 
 \subsection{Cloud optical depth}
 \label{sec:cloudoptdep}
-Cloud optical depth (or cloud optical thickness) in the SW, $\tau_{sw}$, is a measure of the cumulative depletion that a beam of radiation directed straight downward (zenith angle $\theta = 0$) would experience in passing through a defined cloud layer. Of the incident SW radiation on a cloud with optical depth $\tau_{sw}$, a fraction $e^{-\tau_{sw}}$ is not scattered and is defined as the transmisivity of the cloud -- the radiation that is not absorbed or scattered in passing through the cloud~\citep{Wallace2006}. The remaining $1-e^{\tau_{sw}}$ has been scattered on or more times in passing through the cloud layer. The cloud optical depth is given by~\citep{Twomey1977}
+Cloud optical depth (or cloud optical thickness), $\tau$, is a measure of the cumulative depletion that a beam of radiation directed straight downward (zenith angle $\theta = 0$) would experience in passing through a defined cloud layer. Of the incident SW radiation on a cloud with optical depth $\tau$, a fraction $e^{-\tau}$ is not scattered and is defined as the transmissivity of the cloud -- the radiation that is not absorbed or scattered in passing through the cloud~\citep{Wallace2006}. The remaining $1-e^{\tau}$ has been scattered one or more times in passing through the cloud layer. The cloud optical depth is given by~\citep{Twomey1977}
 \begin{equation}
-\tau_{sw} = \int_0^h k_{E}dz = \pi \int_0^h \int_0^{\infty} r^2 Q_E(r/\lambda) n(r,z) dr dz
+\tau = \int_0^h k_{E}dz = \pi \int_0^h \int_0^{\infty} r^2 Q_E(r/\lambda) n(r,z) dr dz
 \end{equation}
 at height z above cloud base for a cloud of depth $h$, containing $n(r)dr$ drops with radius in the interval ($r, r + dr$) per cubic centimeter ($\text{cm}^{-3}$). $Q_E(r/\lambda)$ is the extinction efficiency and $k_{E}$ is the extinction coefficient~\citep{Twomey1977}. The extinction efficiency is a measure of how well a particle removes the incident radiation, either by scattering or absorption. In the visible, for $\lambda<<r$, $Q_E\approx 2$ is a good approximation~\citep{Hobbs1993}, and we get the simpler expression
 \begin{equation}
-\tau_{sw} = 2\pi N r_e^2 h
-\label{eqn:cloudtau_sw1}
+\tau = 2\pi N r_e^2 h
+\label{eqn:cloudtau1}
 \end{equation}
 where it is assumed that the cloud droplet radius can be approximated by the effective radius, $r_e$.
-For longer wavelengths, the extinction efficiency can be assumed $Q_E \approx 4$ (@check this!) , and thereby gives a simpler expression for the cloud optical depth in the LW
-\begin{equation}
-\tau_{lw} = 4\pi N r_e^2 h
-\label{eqn:cloudtau_lw1}
-\end{equation}
-Knowing equation~\ref{eqn:epsilon_lw} it is clear that an increase in $\tau_{lw}$ will decrease the second term in equation~\ref{eqn:epsilon_lw}, and hence increase $\epsilon_{lw}$, which following Stefan-Boltzmann's law, equation~\ref{eqn:stefanboltzmann}, means that the flux density emitted by the cloud is increased, provided the cloud temperature is kept constant.
 
 \subsection{Cloud albedo}
 %Clouds contribute the most to the planetary albedo~\citep{Twomey1974}. The cloud albedo is given by~\citep{Hobbs1993}
 In section~\ref{sec:cloudoptdep} it was stated that the incident SW radiation on a cloud layer is either transmitted or scattered. The scattered radiation is scattered by single droplets, and the single-scattering albedo, $\overline{\omega}$, is the fraction of energy that is not absorbed in a single-scattering event, but scattered. $\overline{\omega}$ can to a good approximation be assumed equal to 1. Which means that the absorption of SW is negligible for cloud water, which supports that the SW radiation is either transmitted or scattered. When the single-scattering albedo is taken to unity, the albedo (or reflectance) of a cloud layer is given by~\citep{Hobbs1993}%\citep{Meador1980}
 \begin{equation}
-A = \frac{(1-g)\tau_{sw}}{1+(1-g)\tau_{sw}} = \frac{1-g}{\frac{1}{\tau_{sw}}+(1-g)}
+A = \frac{(1-g)\tau}{1+(1-g)\tau} = \frac{1-g}{\frac{1}{\tau}+(1-g)}
 \label{eqn:cloudalbedo}
 \end{equation}
-The cloud albedo, $A$, is then a function of the SW optical depth of a cloud, $\tau_{sw}$, and the asymmetry factor $g$. The asymmetry factor gives the direction of scattered radiation by the cloud, and is given by $g=\overline{\cos \theta}$ where $\theta$ is the scattering angle. $g$ is a power-averaged value of the cosine of the scattering angle~\citep{Twomey1974}. $g=1$ indicates pure forward scattering and $g=-1$ indicates pure back-scattering. According to Twomey, $g=0.8$ or $0.9$ for warm clouds, which means that most of the scattered energy is scattered forward.
+The cloud albedo, $A$, is then a function of the SW optical depth of a cloud, $\tau$, and the asymmetry factor $g$. The asymmetry factor gives the direction of scattered radiation by the cloud, and is given by $g=\overline{\cos \theta}$ where $\theta$ is the scattering angle. $g$ is a power-averaged value of the cosine of the scattering angle~\citep{Twomey1974}. $g=1$ indicates pure forward scattering and $g=-1$ indicates pure back-scattering. According to Twomey, $g=0.8$ or $0.9$ for warm clouds, which means that most of the scattered energy is scattered forward.
 
 %It is obvious from equations for $A$ and $\epsilon$ that a when $r_e$ is small - the albedo increases, and when it is larger the cloud albedo decreases. What about emissivity??
 
@@ -65,9 +59,10 @@ The cloud droplet effective radius determines important radiative properties of 
 The cloud droplet effective radius is a mean of the size distribution of cloud droplets, weighted by the droplet cross section. The effective radius, $r_e$, may be written
 \begin{equation}
 r_e = \frac{\int r^3 n(r) dr}{\int r^2 n(r) dr}
+\label{eqn:re}
 \end{equation}
 
-It can be seen from equations~\ref{eqn:cloudtau_sw1} and ~\ref{eqn:cloudtau_lw1} that a decrease in $r_e$, when $N$ and $h$ is kept constant decreases the optical depth of the cloud in both SW, $\tau_{sw}$ and LW, $\tau_{lw}$. Whereas an increase in $r_e$ increases the cloud optical depths. It has already been established from equations~\ref{eqn:cloudalbedo} and \ref{eqn:epsilon_lw} that a(n) decrease (increase) in the cloud optical depth leads to a(n) deacrease (increase) in the cloud albedo $A$ and emissivity $\epsilon_{lw}$.
+It can be seen from equation~\ref{eqn:cloudtau1} that a decrease in $r_e$, when $N$ and $h$ is kept constant decreases the optical depth of the cloud. Whereas an increase in $r_e$ increases the cloud optical depth. It has already been established from equation~\ref{eqn:cloudalbedo} that a(n) decrease (increase) in the cloud optical depth leads to a(n) decrease (increase) in the cloud albedo $A$. The effect of $r_e$ on $\epsilon$ is through the LWP and is described in the following section.
 
 \begin{figure}
 \centering
@@ -80,19 +75,27 @@ The effective radius is typically on the order of a few micro meters $\mu\text{m
 
 
 \subsection{Liquid water content and path}
-The amount of condensed water can be expressed by the liquid water content (LWC) in the cloud, often presented with units $\text{g~m}^{-3}$ and is proportional to the cloud droplet number concentration (CDNC), and cloud particle size. From~\citet{Rogers1989} we can express the number of droplets with radius $r$ by
+\label{sec:lwc}
+The amount of condensed water can be expressed by the liquid water content (LWC) in the cloud, often presented with units $\text{g~m}^{-3}$ and is proportional to the cloud droplet number concentration (CDNC), and cloud particle size. From~\citet{Rogers1989} the number of droplets with radius $r$ can be expressed by
 \begin{equation}
 N = \int n(r) dr
 \end{equation}
-where $N$ is the CDNC ($\text{cm}^{-3}$), and $n(r)$ is the number of droplets with radius $r$. If we approximate the radius to be the effective radius, $r_e$ ($\mu\text{m}$), the LWC can be written (\textbf{@@ should this be $r_e$ or $\overline{r}$??}
+where $N$ is the CDNC ($\text{cm}^{-3}$), and $n(r)$ is the number of droplets with radius $r$. If the radius is approximated to be the mean volume radius $\overline{r}$, the LWC for spherical droplets can be written
 \begin{eqnarray}
 \text{LWC} &=& \int \rho_l \frac{4}{3} \pi r^3 n(r) dr\\
 &=& \frac{4}{3} \pi \rho_l \int r^3 n(r) dr\\
-&=& \frac{4}{3} \pi \rho_l r_e^3 \int n(r) dr\\
-&=& \frac{4}{3} \pi \rho_l r_e^3 N 
+&=& \frac{4}{3} \pi \rho_l \overline{r}^3 \int n(r) dr\\
+&=& \frac{4}{3} \pi \rho_l \overline{r}^3 N 
 \label{eqn:LWC}
 \end{eqnarray}
-where the last equation shows the proportionality of LWC to the cloud droplet number concentration $N$, and to $r_e$. $\rho_L$ is the density of liquid water.
+where the last equation shows the proportionality of LWC to the cloud droplet number concentration $N$, and to $\overline{r}$. $\rho_L$ is the density of liquid water. Knowing the effective radius from equation~\ref{eqn:re}, it is preferred to express the LWC as a function of that. The effective radius $r_e$ and $\overline{r}$ are related by
+\begin{equation}
+r_e = \kappa \overline{r}
+\end{equation}
+where $\kappa = 1.14$ for continental clouds and $\kappa = 1.08$ for maritime clouds~\citep{Martin1994}. $\kappa$ is close to unity and if it is simply taken to unity the LWC may be written
+\begin{equation}
+\text{LWC} = \pi \rho_l r_e^3 N
+\end{equation}
 
 Another common measure of condensed water is the liquid water path (LWP).
 If the LWC is integrated over a column, from the base to the top, it gives the LWP of that column.
@@ -101,35 +104,37 @@ If the LWC is integrated over a column, from the base to the top, it gives the L
 \end{equation}
 The LWP is the column of liquid water in a cloud and is usually expressed in $\text{g~m}^{-2}$.
 
-What effect a change in LWP has on incoming and outgoing radiation can be seen when the cloud optical depth is expressed as a function of LWP. Recall the cloud optical depth for SW radiation from equation~\ref{eqn:cloudtau_sw1} and rewrite it to get the CDNC ($N$) on the left side
+What effect a change in LWP has on incoming and outgoing radiation can be seen when the cloud optical depth is expressed as a function of LWP. Recall the cloud optical depth for SW radiation from equation~\ref{eqn:cloudtau1} and rewrite it to get the CDNC ($N$) on the left side
 \begin{equation}
-N = \frac{\tau_{sw}}{2\pi r^2_e h}
+N = \frac{\tau}{2\pi r^2_e h}
 \end{equation}
 If the equation for LWC, equation~\ref{eqn:LWC}, is also rewritten to get $N$ on the left side, like so
 \begin{equation}
 N = \frac{3\text{LWC}}{4\pi \rho_l r^3_e}
 \end{equation}
-the cloud optical depth in the visible ($\tau_{sw}$) can be written as a function of LWP and $r_e$:
+the cloud optical depth in the visible ($\tau$) can be written as a function of LWP and $r_e$:
 \begin{eqnarray}
-\frac{\tau_{sw}}{2\pi r^2_e h} &=& \frac{3\text{LWC}}{4\pi \rho_l r^3_e}\\
-\tau_{sw} &=& \frac{2\pi r^2_3 h 3\text{LWC}}{4\pi \rho_l r^3_e}\\
-\tau_{sw} &=& \frac{3\text{LWC} h}{2\rho_l r_e}\\
-\tau_{sw} &=& \frac{3\text{LWP}}{2\rho_l r_e}
-\label{eqn:cloudtau_sw}
+\frac{\tau}{2\pi r^2_e h} &=& \frac{3\text{LWC}}{4\pi \rho_l r^3_e}\\
+\tau &=& \frac{2\pi r^2_3 h 3\text{LWC}}{4\pi \rho_l r^3_e}\\
+\tau &=& \frac{3\text{LWC} h}{2\rho_l r_e}\\
+\tau &=& \frac{3\text{LWP}}{2\rho_l r_e}
+\label{eqn:cloudtau}
 \end{eqnarray}
 Where $\text{( LWC }h \approx \text{LWP )}$
 %How does this influence the radiation???!!
-It is now clear that, if the droplet size is constant, an increase in the LWP increases the optical depth of a cloud in the SW spectra, $\tau_sw$. An increase in $\tau_sw$ would make the denominator in equation~\ref{eqn:cloudalbedo} for the cloud albedo, $A$, smaller and thereby increase the cloud albedo. An increase in $A$ also means a reduction in SW radiation reaching the surface. In that way, an increase in LWP would have a cooling effect. But, we also need to consider the LW radiation. 
-
-Equation~\ref{eqn:epsilon_lw} shows a dependence of the cloud optical depth in the LW spectra, which is given by
-\begin{equation}
-\tau_{lw} = \frac{3LWP}{4\rho_l r_e}
-\label{eqn:tau_lw}
-\end{equation}
-which is simply half of $\tau_{sw}$. The difference in cloud optical depth for SW and LW is due to the difference in the extinction efficiency, $Q_E(r/\lambda)$, which is dependent on the wavelength, ratio $r/\lambda$. Since longer waves are closer to the size of $r$ than shorter waves, $Q_E$ is smaller for longer waves.
+It is now clear that, if the droplet size is constant, an increase in the LWP increases the optical depth of a cloud, $\tau$. An increase in $\tau$ would make the denominator in equation~\ref{eqn:cloudalbedo} for the cloud albedo, $A$, smaller and thereby increase the cloud albedo. An increase in $A$ also means a reduction in SW radiation reaching the surface. In that way, an increase in LWP would have a cooling effect on the surface. But, the LW radiation must also be considered. A change in LWP changes the cloud emissivity. Equation~\ref{eqn:epsilon_lw} shows that $\epsilon$ increases (decreases) with increasing (decreasing) LWP. Meaning that and increase in LWP would increase the flux density emitted by the cloud, following Stefan-Boltzmann's law from equation~\ref{eqn:stefanboltzmann}, and have a warming effect on the surface. Thus, a change in LWP gives opposite effects for shorter and longer wavelengths.
 
 \subsection{Ice water path}
-The cloud may also consist of ice, not just liquid water, and for that 
+ Clouds also consist of ice, not just liquid water. The amount of ice in a cloud for a given ice crystal size distribution is given by the ice water content (IWC)~\cite{Liou2002}
+\begin{equation}
+\text{IWC} = \int V \rho_i n(L)dL
+\end{equation}
+where $L$ is the maximum dimension of an ice crystal, $V$ is the volume, $\rho_i$ is the density of ice and $n(L)$ is the ice-crystal size distribution. As for the water droplets the cloud optical depth, $\tau$, and mean effective crystal size, $D_e$, are related through
+\begin{equation}
+\tau \approx \text{IWP}(c + b/D_e)
+\label{eqn:icetau}
+\end{equation}
+where IWP denotes the ice water path $\text{IWP} = \text{IWC} \cdot h$ for a layer of thickness h, and $c \approx -6.656 \times 10^{-3}$ and $b \approx 3.686$ for ice columns~\citep{Liou2002}. Equation\ref{eqn:icetau} clearly shows that an increase in the IWP increases the cloud optical depth (when $D_e$ is kept constant), which in turn, according to equation\ref{eqn:cloudalbedo}, increases the cloud albedo. The opposite is obvious for $D_e$; when $D_e$ increases, the optical depth decreases, provided the IWP is unchanged, which in turn decreases $A$.
 
 \section{Aerosols and clouds}
 Aerosols have a direct effect on the climate by scattering and absorbing SW radiation, and scattering, absorbing and emitting LW radiation. A small subset of the atmospheric aerosols also serve as particles which water vapor can condense on to form droplets~\citep{Wallace2006}. Aerosols upon which water vapor can condense are called cloud condensation nuclei (CCN). Typical size for CCN is shown in figure~\ref{fig:dropletsize}. For low temperatures ($\sim$-20 to -5$\deg$C)~\citep{Wallace2006}, a few aerosols act as ice nuclei (IN) which if present allow for cloud ice to form. With IN cloud ice can form through heterogeneous freezing, contact nucleation and deposition~\citep{Wallace2006}. Heterogeneous freezing is when a droplet already contains a freezing nucleus and is brought to lower temperatures so that the already condensed water on the particle freezes. Contact nucleation is when a supercooled droplet (droplet with temperature below 0$\deg$C) is hit by a suitable ice nucleus, and deposition is when water vapor freezes directly on the nucleus.
@@ -141,9 +146,9 @@ Through clouds the aerosols that act as CCN or IN also have an indirect effect. 
 \subsection{The first indirect effect}
 The first indirect effect was proposed by~\citet{Twomey1974} and is often referred to as the Twomey effect. It describes the enhancement of cloud albedo as a consequence of an increase in aerosol content and thereby available CCN.
 
-If there are few CCN in an area, a cloud formed there would be a clean cloud with few, but large droplets and therefore have a low albedo. If the area had high aerosol concentration, the cloud would be polluted and have more numerous but smaller droplet, provided the LWP is the same, which means it would have a higher optical depth in the SW according to equation~\ref{eqn:cloudtau_sw}, which through equation~\ref{eqn:cloudalbedo} gives a higher albedo.
+If there are few CCN in an area, a cloud formed there would be a clean cloud with few, but large droplets and therefore have a low albedo. If the area had high aerosol concentration, the cloud would be polluted and have more numerous but smaller droplet, provided the LWP is the same, which means it would have a higher optical depth in the SW according to equation~\ref{eqn:cloudtau}, which through equation~\ref{eqn:cloudalbedo} gives a higher albedo.
 
-Equation~\ref{eqn:cloudtau_sw1} shows that, if the effective radius is kept constant, the cloud optical depth will change with changes in CDNC ($N$ in the equation). The CDNC is affected by the number of available CCN, and as the aerosol number concentration changes so will the number of CCN, and hence the CDNC and optical depth. Furthermore if a cloud has many small droplets, the cloud optical depth will be higher. Whereas fewer cloud droplets will yield a lower optical depth, provided $r_e$ is kept constant, resulting in more SW radiation reaching the ground.
+Equation~\ref{eqn:cloudtau1} shows that, if the effective radius is kept constant, the cloud optical depth will change with changes in CDNC ($N$ in the equation). The CDNC is affected by the number of available CCN, and as the aerosol number concentration changes so will the number of CCN, and hence the CDNC and optical depth. Furthermore if a cloud has many small droplets, the cloud optical depth will be higher. Whereas fewer cloud droplets will yield a lower optical depth, provided $r_e$ is kept constant, resulting in more SW radiation reaching the ground.
 
 \begin{figure}
 \centering
