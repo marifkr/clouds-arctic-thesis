@@ -19,7 +19,7 @@ A cloud can be defined as a a gray body, which means that $\alpha_{\lambda}$and 
 
 The cloud LW emissivity, $\epsilon$, is a measure of the emittance of LW radiation by the cloud. From Stefan-Boltzmann's law, equation~\ref{eqn:stefanboltzmann}, the flux density emitted by a body depends on the body's temperature and it's emissivity. The cloud longwave emissivity is given by~\cite{Liou1992}
 \begin{equation}
-\epsilon = 1 - \exp(-k_v^c LWP)
+\epsilon = 1 - \exp(-k_v^c \text{LWP})
 \label{eqn:epsilon_lw}
 \end{equation}
 where $k_v^c$ is the mass absorption coefficient of cloud particles, LWP is the liquid water path, which is the vertically integrated amount of water, and is further explained in section~\ref{sec:lwc}. Equation~\ref{eqn:stefanboltzmann} shows that if one assumes constant cloud temperature, the flux density emitted by the cloud increases with increasing $\epsilon$, which increases with increasing LWP. Name some typical values, and calculate F?@
@@ -120,9 +120,17 @@ the cloud optical depth in the visible ($\tau$) can be written as a function of 
 \tau &=& \frac{3\text{LWP}}{2\rho_l r_e}
 \label{eqn:cloudtau}
 \end{eqnarray}
-Where $\text{( LWC }h \approx \text{LWP )}$
-%How does this influence the radiation???!!
-It is now clear that, if the droplet size is constant, an increase in the LWP increases the optical depth of a cloud, $\tau$. An increase in $\tau$ would make the denominator in equation~\ref{eqn:cloudalbedo} for the cloud albedo, $A$, smaller and thereby increase the cloud albedo. An increase in $A$ also means a reduction in SW radiation reaching the surface. In that way, an increase in LWP would have a cooling effect on the surface. But, the LW radiation must also be considered. A change in LWP changes the cloud emissivity. Equation~\ref{eqn:epsilon_lw} shows that $\epsilon$ increases (decreases) with increasing (decreasing) LWP. Meaning that and increase in LWP would increase the flux density emitted by the cloud, following Stefan-Boltzmann's law from equation~\ref{eqn:stefanboltzmann}, and have a warming effect on the surface. Thus, a change in LWP gives opposite effects for shorter and longer wavelengths.
+Where $\text{ LWC }h \approx \text{LWP}$. It is now clear that, if the droplet size is constant, an increase in the LWP increases the optical depth of a cloud, $\tau$. An increase in $\tau$ would make the denominator in equation~\ref{eqn:cloudalbedo} for the cloud albedo, $A$, smaller and thereby increase the cloud albedo. An increase in $A$ also means a reduction in SW radiation reaching the surface. In that way, an increase in LWP would have a cooling effect on the surface.
+But, the LW radiation must also be considered. A change in LWP changes the cloud emissivity. Equation~\ref{eqn:epsilon_lw} shows that $\epsilon$ increases (decreases) with increasing (decreasing) LWP. Meaning that and increase in LWP would increase the flux density emitted by the cloud, following Stefan-Boltzmann's law from equation~\ref{eqn:stefanboltzmann}, and have a warming effect on the surface. Thus, a change in LWP gives opposite effects warming for shorter and longer wavelengths.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.6\textwidth]{theory/eps_alb.pdf}
+\caption{Cloud LW emissivity and SW albedo as a function of liquid water path (LWP), for clouds containing no ice.}
+\label{fig:epsalb}
+\end{figure}
+
+In figure~\ref{fig:epsalb} both SW cloud albedo, $A$, and the LW cloud emissivity, $\epsilon$, are shown as functions of the LWP for ice-free clouds. It is based on equations~\ref{eqn:epsilon_lw},~\ref{eqn:cloudalbedo} and~\ref{eqn:cloudtau}, where $k_v^c=0.14$, $g=0.85$, $\rho_l=1000\text{kg/m}^3$, $r_e = 10\mu\text{m}$. A cloud emissivity less than unity is mainly a consequence of low LWP, as it is saturated in the LW already at a LWP of 40 to 45 $\text{g/m}^2$. A further increase in LWP does not increase the LW emission by the cloud and hence not the downward LW at the surface, but it does on the other hand still increase the cloud albedo. The increase in reflected SW radiation with LWP would thus work to even out the effect of emission of LW to the ground. 
 
 \subsection{Ice water path}
  Clouds also consist of ice, not just liquid water. The amount of ice in a cloud for a given ice crystal size distribution is given by the ice water content (IWC)~\cite{Liou2002}
