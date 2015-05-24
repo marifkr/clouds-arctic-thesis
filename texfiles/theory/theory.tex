@@ -86,7 +86,6 @@ where $N$ is the CDNC ($\text{cm}^{-3}$), and $n(r)$ is the number of droplets w
 &=& \frac{4}{3} \pi \rho_l \int r^3 n(r) dr\\
 &=& \frac{4}{3} \pi \rho_l \overline{r}^3 \int n(r) dr\\
 &=& \frac{4}{3} \pi \rho_l \overline{r}^3 N 
-\label{eqn:LWC}
 \end{eqnarray}
 where the last equation shows the proportionality of LWC to the cloud droplet number concentration $N$, and to $\overline{r}$. $\rho_L$ is the density of liquid water. Knowing the effective radius from equation~\ref{eqn:re}, it is preferred to express the LWC as a function of that. The effective radius $r_e$ and $\overline{r}$ are related by
 \begin{equation}
@@ -95,6 +94,7 @@ r_e = \kappa \overline{r}
 where $\kappa = 1.14$ for continental clouds and $\kappa = 1.08$ for maritime clouds~\citep{Martin1994}. $\kappa$ is close to unity and if it is simply taken to unity the LWC may be written
 \begin{equation}
 \text{LWC} = \pi \rho_l r_e^3 N
+\label{eqn:LWC}
 \end{equation}
 
 Another common measure of condensed water is the liquid water path (LWP).

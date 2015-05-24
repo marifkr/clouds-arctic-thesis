@@ -1,12 +1,14 @@
 \chapter{Results and discussion}
 \label{chap:results}
-In this chapter I will present the findings made in this thesis. First a look into what the weather situation is in the control run, and how that influences the cloud pattern and properties. This chapter mostly consists of a discussion of why there is a difference in certain variables for the clouds and radiation between the run with removed sea ice and the control run, and the run with increased aerosol number concentration and the control run. At the end, there is also a small section on the difference from the control run when both the sea ice is removed and the aerosol number concentration is increased.
+In this chapter, the findings made in the thesis are presented. This chapter mostly consists of a discussion of why there is a difference in certain cloud and radiation variables between the run with removed sea ice and the control run, and the run with increased aerosol number concentration and the control run. At the end, there is also a small section on the difference from the control run when both the sea ice is removed and the aerosol number concentration is increased.
 
-The results are discussed separately for removed sea ice and increased aerosol number concentration and for days 1 and 5. Where day 1 represents the closest to an "off line" run, whereas by day 5 the atmosphere has at least partly adjusted to the changes and the results are seen in a more realistic manner.
+The results are discussed separately for removed sea ice and increased aerosol number concentration and for days 1 and 5. Where day 1 represents the closest to an "off line" run, whereas by day 5 the atmosphere has had some time to adjust to the changes.
 
 I also try to answer if these results show a warming or cooling effect and if there is reason to believe that changes in sea ice extent and aerosol concentration will further influence the sea ice extent.
 
 The discussion is based on differences in daily averages for the fields. The daily averaged differences have been calculated by subtracting the field from the control run for one time from the same field at the same time from a different run, these differences have then been added together and divided by the number of differences that were added together.(@insert equation for clarity?)
+
+But first, to have a reference for the differences, the weather and cloud situation for the control run is presented.
 
 %--------------------
 \section{Reference figures from the control run}
@@ -15,11 +17,92 @@ Figure (@weather) shows the weather situation in the control run for days 1 and 
 
 By day 5 the wind direction has changed to south-easterly, see figure (@subfig weather5) and the clouds in the cross section, figure (@subfig cross section) are low stratus over the sea ice, and there is also some thin cloud formation at the mountain, probably formed by weaker orographic lifting. There is no IWC in the section (not shown).
 
-The LWP for day 1 and 5 is shown in figure (@subfig) and (@subfig) with the CDNC (@subfig) and (@subfig) and $r_e$ (@subfig) and (@subfig). One can clearly see that where the LWP is high, so is the CDNC.
+The LWP for day 1 and 5 is shown in figure (@subfig) and (@subfig) with the CDNC (@subfig) and (@subfig) and $r_e$ (@subfig) and (@subfig). One can clearly see that where the LWP is high, so is the CDNC, which is expected based on equation~\ref{eqn:LWC}. The pattern in $r_e$ is @different due to...@
+
+The fluxes of both SW and LW radiation at both the surface and at the top of the atmosphere (TOA) may be partly explained by the clouds, through looking at the LWP. Figure (@radiation) shows the downward SW at the surface (@subfig) and upward at TOA (@subfig) for day 1 and @more radiation and why it looks that way.
+
+The heat fluxes upward at the surface, latent heat (LH) and sensible heat (SH), are also of interest when studying clouds in the Arctic. The fluxes are shown in figure (@figure) for day 1 (LH (@subfig), SH (@subfig)) and day 5 (LH (@subfig), SH (@subfig)). Notice that the LH and SH is lower over the sea ice for both days 1 and 5. This because the sea ice is colder than the ocean, and works as a lid over that part of the ocean, not letting all the heat out.
+
+%--------- Cloud droplet and ice number concentrations
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{results/cdnc_cont_day1.png}
+\caption{Cloud droplet number concentration, plotted over the area, averaged over the lower 11 layers on the 1st day.}
+\label{fig:cdnc_cont_Day1}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{results/cdnc_cont_day5.png}
+\caption{Cloud droplet number concentration, plotted over the area, averaged over the lower 11 layers on the 5th day.}
+\label{fig:cdnc_cont_Day5}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{results/cinc_cont_day1.png}
+\caption{Cloud ice number concentration, plotted over the area, averaged over the lower 11 layers on the 1st day.}
+\label{fig:cinc_cont_Day1}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{results/cinc_cont_day5.png}
+\caption{Cloud ice number concentration, plotted over the area, averaged over the lower 11 layers on the 5th day.}
+\label{fig:cinc_cont_Day5}
+\end{figure}
+
+%---------- Wind barbs and temperature contours -- the weather situation
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{results/weather_cont_Day1.png}
+\caption{Map showing the mean wind at 10~m as wind barbs and mean temperature at 2~m as contours, for day 1 of the control run.}
+\label{fig:weather_cont_Day1}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{results/weather_cont_Day5.png}
+\caption{Map showing the mean wind at 10~m as wind barbs and mean temperature at 2~m as contours, for day 5 of the control run.}
+\label{fig:weather_cont_Day5}
+\end{figure}
+
+%---------- LWP control run, days 1 and 5
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{results/LWP_Day1.pdf}
+\caption{The liquid water path (LWP) average field for day 2 of the control run, with the average value for that field.}
+\label{fig:LWPr1Day1}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{results/LWP_Day5.pdf}
+\caption{The liquid water path (LWP) average field for day 5 of the control run, with the average value for that field.}
+\label{fig:LWPr1Day5}
+\end{figure}
+
+%----------- Effective radius, days 1 and 5
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{results/recloud_cont_day1.png}
+\caption{The effective radius of cloud droplets average field for day 2 over the lowermost 11 layers.}
+\label{fig:recloud_r1Day1}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{results/recloud_cont_day5.png}
+\caption{The effective radius of cloud droplets average field for day 5 over the lowermost 11 layers.}
+\label{fig:recloud_r1Day5}
+\end{figure}
+
 
 ---------
 
-First we want to have something to compare with and to look back to when studying the differences from the control run to the runs with changed sea ice and/or aerosol concentration. I shall include figures for diurnally averaged fields of LWP, $r_e$ of cloud droplet, cloud droplet number concentration (CDNC), both LW and SW up at the TOA and down at the surface. Also the IWP, cloud ice number concentration (CINC), and $r_e$ of snow and ice may be of interest. In addition, the state of the weather situation should be considered when interpreting the results. Therefore maps with wind barbs for the wind at 10~m height and temperature at 2~m are included in this section. \textit{(De ligger i slutten av kapittelet forelopig, slik at de ikke er i veien for leseren utover i teksten.)}	
+%First we want to have something to compare with and to look back to when studying the differences from the control run to the runs with changed sea ice and/or aerosol concentration. I shall include figures for diurnally averaged fields of LWP, $r_e$ of cloud droplet, cloud droplet number concentration (CDNC), both LW and SW up at the TOA and down at the surface. Also the IWP, cloud ice number concentration (CINC), and $r_e$ of snow and ice may be of interest. In addition, the state of the weather situation should be considered when interpreting the results. Therefore maps with wind barbs for the wind at 10~m height and temperature at 2~m are included in this section.
 
 %-----------------------
 \section{Removed sea ice}
@@ -100,17 +183,18 @@ The increase in available CCNs leads to obvious increases in CDNC and LWP, and t
 The effect on the heat fluxes by increasing the aerosol number concentration is not clear, and probably insignificant (not shown).
 
 \subsection{Day 5}
-%Also, why can we see the sea ice edge in the areo10-control?? The sea ice has not been changed for this run! I suggest that this is due to the decrease in SW reaching the surface, and therefore the small part of the downwelling SW radiation that is absorbed when it reaches the sea ice is smaller than when the SW is higher. Therefore the SH and LH is lower where there is ice. The change here is small, and not of the same order as when the sea ice is removed. (check the sea ice anyway, is there a difference between sea ice in control and sea ice in aero 10?
-%--------------
 The LW cloud emissivity is sensitive to an increase in water amount as long as the LWP is less than $\approx$ 40-45 g/m$^2$. It is clear in day 5 from the control run that the LWP was around 60-100 g/m$^2$ in the middle lower area of figure~\ref{fig:LWPr1Day5}.%@ (around these lat and lon?@).
 This is also seen in that there is no significant change in LW downward at the surface or upward at the TOA, see figure~\ref{fig:lwup_down_r3Day5}.
+
 \begin{figure}[h!]
 \centering
 \includegraphics[width=\textwidth]{results/diff_lwupdown_Aero10_Day5.png}
 \caption{The average difference in LW downward at the surface and upward at TOA on day 5, from left to right. (preliminary figure)}
 \label{fig:lwup_down_r3Day5}
 \end{figure}
+
 The area with lack of change in LW up or down is approximately the same area as where there is a negative change in LH and SH upward from the surface over the sea ice, see figure~\ref{fig:lhhfx_r3Day5}. Since there has been no change in LW there is no loss of warming from a decrease in LW reaching the surface, but the change can possibly be explained by looking at the SW radiation. The downward SW at the surface has been significantly decreased as a consequence of the increase in aerosol number concentration, see figure~\ref{fig:swup_down_r3Day5}. The SW radiation has been reflected by the smaller and more numerous droplets. This is known as the Twomey effect, and was described in Chapter~\ref{chap:theory}. 
+
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.9\textwidth]{results/diff_swupdown_Aero10_Day5.png}
@@ -157,82 +241,3 @@ Also the dynamics over ice and the ocean are different, so this could have an ef
 %Hvordan de forskjellige tingene påvirker hverandre må være dekket i teorien.!
 
 %Jon Egill har avtalt eksamen 19. juni. Erik Berge er sensor! Hvem er intern?
-
-\newpage
-\section{The control run figures}
-%--------- Cloud droplet and ice number concentrations
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.5\textwidth]{results/cdnc_cont_day1.png}
-\caption{Cloud droplet number concentration, plotted over the area, averaged over the lower 11 layers on the 2nd day.}
-\label{fig:cdnc_cont_Day2}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.5\textwidth]{results/cdnc_cont_day5.png}
-\caption{Cloud droplet number concentration, plotted over the area, averaged over the lower 11 layers on the 5th day.}
-\label{fig:cdnc_cont_Day5}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.5\textwidth]{results/cinc_cont_day1.png}
-\caption{Cloud ice number concentration, plotted over the area, averaged over the lower 11 layers on the 2nd day.}
-\label{fig:cinc_cont_Day2}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.5\textwidth]{results/cinc_cont_day5.png}
-\caption{Cloud ice number concentration, plotted over the area, averaged over the lower 11 layers on the 5th day.}
-\label{fig:cinc_cont_Day5}
-\end{figure}
-
-%---------- Wind barbs and temperature contours -- the weather situation
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.5\textwidth]{results/weather_cont_Day1.png}
-\caption{Map showing the mean wind at 10~m as wind barbs and mean temperature at 2~m as contours, for day 2 of the control run.}
-\label{fig:weather_cont_Day2}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.5\textwidth]{results/weather_cont_Day5.png}
-\caption{Map showing the mean wind at 10~m as wind barbs and mean temperature at 2~m as contours, for day 5 of the control run.}
-\label{fig:weather_cont_Day5}
-\end{figure}
-
-%---------- LWP control run, days 1 and 5
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.5\textwidth]{results/LWP_Day1.pdf}
-\caption{The liquid water path (LWP) average field for day 2 of the control run, with the average value for that field.}
-\label{fig:LWPr1Day2}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.5\textwidth]{results/LWP_Day5.pdf}
-\caption{The liquid water path (LWP) average field for day 5 of the control run, with the average value for that field.}
-\label{fig:LWPr1Day5}
-\end{figure}
-
-%----------- Effective radius, days 1 and 5
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.5\textwidth]{results/recloud_cont_day1.png}
-\caption{The effective radius of cloud droplets average field for day 2 over the lowermost 11 layers.}
-\label{fig:recloud_r1Day2}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.5\textwidth]{results/recloud_cont_day5.png}
-\caption{The effective radius of cloud droplets average field for day 5 over the lowermost 11 layers.}
-\label{fig:recloud_r1Day5}
-\end{figure}
-
