@@ -6,16 +6,66 @@ The results are discussed separately for removed sea ice and increased aerosol n
 
 I also try to answer if these results show a warming or cooling effect and if there is reason to believe that changes in sea ice extent and aerosol concentration will further influence the sea ice extent.
 
-The discussion is based on differences in daily averages for the fields. The daily averaged differences have been calculated by subtracting the field from the control run for one time from the same field at the same time from a different run, these differences have then been added together and divided by the number of differences that were added together.(@insert equation for clarity?)
+The discussion is based on differences in daily averages for the fields. The daily averaged differences have been calculated by subtracting the field from the control run for one time from the same field at the same time from a different run, these differences have then been added together and divided by the number of differences that were added together.(@ insert equation for clarity?)
 
 But first, to have a reference for the differences, the weather and cloud situation for the control run is presented.
 
 %--------------------
 \section{Reference figures from the control run}
 %--------------------
-Figure (@weather) shows the weather situation in the control run for days 1 and 5. The temperature at 2~m height is represented by red contour lines, and the wind speed and direction at 10~m height is shown by the arrows and their color. Day 1, figure (@subfig weather1) shows weak northerly winds ($\sim$ 5~m/s) bringing cold air (@input temperature) from the north over the sea ice, and the westerly winds over the ocean south of the sea ice bring moisture to the air over the sea ice which is seen as low stratus in figure (@subfig cross section), which shows the LWC in the vertical cross section over the red line in figure (@ref line cross). The thicker clouds over the island in figure (@subfig cross section) have been formed due to orographic lifting. The westerly winds over the sea ice towards the mountains at $\sim$76 N and 112 W has brought the air to saturation as it is lifted and formed thick clouds over the mountains with LWC of $\sim$@(input value from cross section). From figure (@subfig ice cross), showing the ice water content (IWC) in the section one can see that the thicker clouds over the mountain also contains ice in the upper part of the clouds, with about @(input value)~$\text{mg/m}^{-3}$. 
+Figure~\ref{fig:weather} shows the weather situation in the control run for days 1 and 5. The temperature at 2~m height is represented by red contour lines, and the wind speed and direction at 10~m height is shown by the 
+wind barbs and their color. Day 1, figure~\ref{subfig:weather_cont_day1} shows weak northerly winds ($\sim$ 5~m/s) bringing cold air (@ input temperature) from the north over the sea ice, and the westerly winds over the ocean south of the sea ice bring moisture to the air over the sea ice which is seen as low stratus in figure (@subfig cross section), which shows the LWC in the vertical cross section over the red line in figure (@ref line cross). The thicker clouds over the island in figure (@subfig cross section) have been formed due to orographic lifting. The westerly winds over the sea ice towards the mountains at $\sim$76$\degree$N and 112$\degree$W has brought the air to saturation as it is lifted and formed thick clouds over the mountains with LWC of $\sim$@(input value from cross section). From figure (@subfig ice cross), showing the ice water content (IWC) in the section one can see that the thicker clouds over the mountain also contains ice in the upper part of the clouds, with about @(input value)~$\text{mg/m}^{-3}$. 
 
-By day 5 the wind direction has changed to south-easterly, see figure (@subfig weather5) and the clouds in the cross section, figure (@subfig cross section) are low stratus over the sea ice, and there is also some thin cloud formation at the mountain, probably formed by weaker orographic lifting. There is no IWC in the section (not shown).
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{results/T2UV10_Control_Day1.pdf}
+        \caption{Day 1}
+        \label{subfig:weather_cont_day1}
+    \end{subfigure}
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{results/T2UV10_Control_Day5.pdf}
+        \caption{Day 5}
+        \label{subfig:weather_cont_day5}
+    \end{subfigure}
+    \caption{The temperature and wind pattern for days 1 and 5, from the control run. The temperature at 2~m height is represented by red contour lines and the wind speed and direction at 10~m height is shown by wind barbs and their color, where red is higher wind speed and blue is lower. The shortest tails on the wind barbs indicate 2.5~m/s each, the longer tails indicate 5~m/s and the longest indicate 10~m/s.}
+    \label{fig:weather}
+\end{figure}
+
+By day 5 the wind direction has changed to south-easterly, see figure~\ref{subfig:weather_cont_day5}, and the clouds in the cross section, figure~\ref{subfig:cross_LWC_Day5} are low stratus over the sea ice, and there is also some thin cloud formation at the mountain, probably formed by weaker orographic lifting. There is no IWC in the section for day 5 (not shown).
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{results/crossSec_LWC_Control_Day1.pdf}
+        \caption{LWC, control run, day 1.}
+        \label{subfig:cross_LWC_day1}
+    \end{subfigure}
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{results/crossSec_IWC_Control_Day1.pdf}
+        \caption{IWC, control run, day1.}
+        \label{subfig:cross_IWC_day1}
+    \end{subfigure}
+    
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{results/crossSec_LWC_Control_Day5.pdf}
+        \caption{LWC, control run, day 5.}
+        \label{subfig:cross_LWC_Day5}
+    \end{subfigure}
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{results/crossSec_line.pdf}
+        \caption{Line over which the vertcal cross sections are made.}
+        \label{subfig:cross_line}
+    \end{subfigure}
+    \caption{Vertical cross sections of averaged liquid ($\text{g/m}^3$) and ice  ($\text{mg/m}^3$) water content, and temperature ($\degree\text{C}$), from the control run, for days 1 and 5. LWC and IWC for day 1 are shown in figures~\ref{subfig:cross_LWC_day1} and~\ref{subfig:cross_IWC_day1} respectively. Figure~\ref{subfig:cross_LWC_Day5} shows the LWC for day 5. The IWC on day 5 was 0 in the section and is not shown. Figure~\ref{subfig:cross_line} shows a map of the area with the ice edge as a black contour line. The terrain height is represented by filled contours and the red line over the sea ice is the line over which the cross sections are made.}
+    \label{fig:weather}
+\end{figure}
 
 The LWP for day 1 and 5 is shown in figure (@subfig) and (@subfig) with the CDNC (@subfig) and (@subfig) and $r_e$ (@subfig) and (@subfig). One can clearly see that where the LWP is high, so is the CDNC, which is expected based on equation~\ref{eqn:LWC}. The pattern in $r_e$ is @different due to...@
 
@@ -52,37 +102,25 @@ The heat fluxes upward at the surface, latent heat (LH) and sensible heat (SH), 
 \label{fig:cinc_cont_Day5}
 \end{figure}
 
-%---------- Wind barbs and temperature contours -- the weather situation
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.5\textwidth]{results/weather_cont_Day1.png}
-\caption{Map showing the mean wind at 10~m as wind barbs and mean temperature at 2~m as contours, for day 1 of the control run.}
-\label{fig:weather_cont_Day1}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.5\textwidth]{results/weather_cont_Day5.png}
-\caption{Map showing the mean wind at 10~m as wind barbs and mean temperature at 2~m as contours, for day 5 of the control run.}
-\label{fig:weather_cont_Day5}
-\end{figure}
-
 %---------- LWP control run, days 1 and 5
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.5\textwidth]{results/LWP_Day1.pdf}
-\caption{The liquid water path (LWP) average field for day 2 of the control run, with the average value for that field.}
-\label{fig:LWPr1Day1}
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{results/LWP_Day1.pdf}
+        \caption{Day 1}
+        \label{subfig:LWPr1Day1}
+    \end{subfigure}
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{results/LWP_Day5.pdf}
+        \caption{Day 5}
+        \label{subfig:LWPr1Day5}
+    \end{subfigure}
+    \caption{The average liquid water path (LWP) for days 1 and 5, including the average value for the field.}
+    \label{fig:LWP}
 \end{figure}
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.5\textwidth]{results/LWP_Day5.pdf}
-\caption{The liquid water path (LWP) average field for day 5 of the control run, with the average value for that field.}
-\label{fig:LWPr1Day5}
-\end{figure}
-
 %----------- Effective radius, days 1 and 5
 
 \begin{figure}[h]
