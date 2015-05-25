@@ -11,7 +11,7 @@ The discussion is based on differences in daily averages for the fields. The dai
 But first, to have a reference for the differences, the weather and cloud situation for the control run is presented.
 
 %--------------------
-\section{Reference figures from the control run}
+\section{The control run}
 %--------------------
 Figure~\ref{fig:weather} shows the weather situation in the control run for days 1 and 5. The temperature at 2~m height is represented by red contour lines, and the wind speed and direction at 10~m height is shown by the 
 wind barbs and their color. Day 1, figure~\ref{subfig:weather_cont_day1} shows weak northerly winds ($\sim$ 5~m/s) bringing cold air, -3$\degree$C (270~K), from the north over the sea ice, and the westerly winds over the ocean south of the sea ice bring moisture to the air over the sea ice which is contributes to the low stratus in figure~\ref{subfig:cross_LWC_day1}. Figure~\ref{fig:sections} contains the vertical cross sections of LWC and IWC over the line shown in figure~\ref{subfig:cross_line}. The deeper clouds over the island in figure~\ref{subfig:cross_LWC_day1} have been formed due to orographic lifting, and the height of the "mountain" is $\sim$400~m according to the y-axis in the cross section, and the filled contours of terrain height in figure~\ref{subfig:cross_line}. The westerly winds over the sea ice, towards the mountain at $\sim$76$\degree$N and 112$\degree$W, increase in strength of the mountain and brings air to saturation as it is lifted and forms deeper clouds over the mountain with LWC of $\sim$0.1$\text{g/m}^3$. From figure~\ref{subfig:cross_IWC_day1}, showing the ice water content (IWC) in the section one can see that the thicker clouds over the mountain also contain ice in the upper part of the clouds, with about 5$\cdot\text{10}^{-3}$~$\text{mg/m}^3$. 
@@ -73,19 +73,17 @@ The fluxes of both SW and LW radiation at both the surface and at the top of the
 
 The heat fluxes upward at the surface, latent heat (LH) and sensible heat (SH), are also of interest when studying clouds in the Arctic. The fluxes are shown in figure (@figure) for day 1 (LH (@subfig), SH (@subfig)) and day 5 (LH (@subfig), SH (@subfig)). Notice that the LH and SH is lower over the sea ice for both days 1 and 5. This because the sea ice is colder than the ocean, and works as a lid over that part of the ocean, not letting all the heat out.
 
-Looking back to figure~\ref{fig:seaice} in Chapter~\ref{chap:modmet}, one can also see that the sea ice fraction is higher further north, which explains the lower LH for that area in the control run.
-
 %--------- Cloud droplet and ice number concentrations
 \begin{figure}
 	\begin{subfigure}{0.48\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{results/control/cdnc_cont_day1.png}
+		\includegraphics[width=\textwidth]{results/control/QNCLOUD_Day1.pdf}
 		\caption{Cloud droplet number concentration, averaged over the lower 11 layers and the 1st day.}
 		\label{subfig:cdnc_cont_Day1}
 	\end{subfigure}
 	\begin{subfigure}{0.48\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{results/control/cdnc_cont_day5.png}
+		\includegraphics[width=\textwidth]{results/control/QNCLOUD_day5.pdf}
 		\caption{Cloud droplet number concentration, averaged over the lower 11 layers and the 5th day.}
 		\label{subfig:cdnc_cont_Day5}
 	\end{subfigure}
@@ -96,13 +94,13 @@ Looking back to figure~\ref{fig:seaice} in Chapter~\ref{chap:modmet}, one can al
 \begin{figure}
 	\begin{subfigure}{0.48\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{results/control/cinc_cont_day1.png}
+		\includegraphics[width=\textwidth]{results/control/QNICE_day1.pdf}
 		\caption{Cloud ice number concentration, plotted over the area, averaged over the lower 11 layers on the 1st day.}
 		\label{subfig:cinc_cont_Day1}
 	\end{subfigure}
 	\begin{subfigure}{0.48\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{results/control/cinc_cont_day5.png}
+		\includegraphics[width=\textwidth]{results/control/QNICE_day5.pdf}
 		\caption{Cloud ice number concentration, plotted over the area, averaged over the lower 11 layers on the 5th day.}
 		\label{subfig:cinc_cont_Day5}
 	\end{subfigure}
@@ -153,9 +151,18 @@ Looking back to figure~\ref{fig:seaice} in Chapter~\ref{chap:modmet}, one can al
 %-------------------------------
 \section{Removed sea ice}
 %-------------------------------
+The sea ice that was there in the control run, but has been removed for NoIce, is shown in figure~\ref{fig:seaice}.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]{results/model_methods/seaiceplot.pdf}
+\caption{Sea ice fraction in Control (and Aero10).}
+\label{fig:seaice}
+\end{figure}
+
 \subsection{Day 1}
 \label{sec:noiceDay1}
-The average difference in LWP for NoIce - Control for day 1, shown in figure~\ref{subfig:LWPr2Day1}, is slight for the shole field ($\sim$0.23$\text{g/m}^-2$ increase). But the area of interest in this case is where the sea ice is not present, which it was in the control run. (The area of the sea ice was shown in Chapter~\ref{chap:modmet} in figure~\ref{fig:seaice} and is also included as a black contour in figure~\ref{subfig:cross_line}.) The area where there was sea ice in the control run shows a positive difference in LWP, especially furthest north (bottom right corner of the map) the LWP is significantly higher, >15$\text{g/m}^2$.
+The average difference in LWP for NoIce - Control for day 1, shown in figure~\ref{subfig:LWPr2Day1}, is slight for the shole field ($\sim$0.23$\text{g/m}^-2$ increase). But the area of interest in this case is where the sea ice is not present, which it was in the control run (figure~\ref{fig:seaice}). The sea ice edge is also included as a black contour in figure~\ref{subfig:cross_line}. The area where there was sea ice in the control run shows a positive difference in LWP. Especially furthest north (bottom right corner of the map) the LWP is significantly higher, >15$\text{g/m}^2$.
 
 \begin{figure}[h]
 \centering
@@ -177,7 +184,7 @@ The average difference in LWP for NoIce - Control for day 1, shown in figure~\re
 		\caption{$r_e$, NoIce, day 1}
 		\label{subfig:recloud_r2Day1}
 	\end{subfigure}
-\caption{The averaged difference in LWP, CDNC and $r_e$ of cloud droplets (from left to right) for the run with no ice minus the control run, over the lowermost 11 layers for day 1.}
+\caption{The averaged difference in LWP, CDNC and $r_e$ of cloud droplets (from left to right) over the lowermost 11 layers for day 1. NoIce-Control.}
 \label{fig:lwpcdncre_r2Day1}
 \end{figure}
 
@@ -202,12 +209,13 @@ This implies that there is a new cloud forming in that area, that could not form
 		\caption{Difference in skin temperature.}
 		\label{subfig:skin_r2Day1}
 	\end{subfigure}
-	\caption{Average difference in LH, SH and skin temperature for NoIce-Control, day1.}
+	\caption{Average difference in LH, SH and skin temperature for day1. NoIce-Control.}
 	\label{fig:lhshskin_r2Day1}
 \end{figure}
-The northernmost part of the study area also has an increase in the cloud droplet number concentration (CDNC), figure~\ref{subfig:cdnc_r2Day1}, in the same area as is covered by the red patch indicating an increase in the LWP, which fits well with equation~\ref{eqn:lwc_prop_cdnc}, which was presented in chapter~\ref{chap:theory}. There the amount of liquid water is proportional to the droplet number concentration, denoted by $N$ in the equation, and the LWP is the vertically integrated LWC. The average increase in the CDNC would be approximately 1 or 2 droplets per cubic centimeter in the northernmost area. The figure shows the numbers with units $10^6/\text{kg}$, which can be approximated to the more common units for CDNC, per cubic centimeter ($\text{cm}^{-3}$). Assuming that the cloud is close enough to the surface to assume a pressure $p=1000\text{hPa}$, and thereby the density to be $\rho_a = 1\text{kg/m}^3=1\text{kg/}10^6\text{cm}^3$, then $\text{CDNC} : 10^6/\text{kg} = \text{cm}^{-3}$. Since this is the average over 24 hours and 11 layers, to a height of about 1600~m, the CDNC could be higher at certain times, and in certain layers.
 
-The increase in effective radius in the same area as the LWP is increased also indicates the formation of a new cloud,figure~\ref{fig:recloud_r2Day1}, that could not form in the control run (see figure~\ref{fig:recloud_r1Day1}).
+The northernmost part of the study area also has an increase in the cloud droplet number concentration (CDNC), figure~\ref{subfig:CDNCr2Day1}, in the same area as is covered by the red patch indicating an increase in the LWP, which fits well with equation~\ref{eqn:LWC}, which was presented in chapter~\ref{chap:theory}. There the amount of liquid water is proportional to the droplet number concentration, denoted by $N$ in the equation, and the LWP is the vertically integrated LWC. The average increase in the CDNC would be approximately 1 or 2 droplets per cubic centimeter in the northernmost area. The figure shows the numbers with units $10^6/\text{kg}$, which can be approximated to the more common units for CDNC, per cubic centimeter ($\text{cm}^{-3}$). Assuming that the cloud is close enough to the surface to assume a pressure $p=1000\text{hPa}$, and thereby the density to be $\rho_a = 1\text{kg/m}^3=1\text{kg/}10^6\text{cm}^3$, then $\text{CDNC} : 10^6/\text{kg} = \text{cm}^{-3}$. Since this is the average over 24 hours and 11 layers, to a height of about 1600~m, the CDNC could be higher at certain times, and in certain layers.
+
+The increase in effective radius in the same area as the LWP is increased also indicates the formation of a new cloud,figure~\ref{subfig:recloud_r2Day1}, that could not form in the control run (see figure~\ref{subfig:recloud_r1Day1}).
 
 %The small "blob" at 140$^o$W and about 81$^o$N has decreased $r_e$, most likely because the cloud already was saturated in that area, which can be seen from the LWP from the control run, in figure~\ref{fig:LWPr1Day1}. The possible increase in aerosols from the ocean that would then lead to an increase in CCN would make the water in that cloud spread over more CCN, and by that leave the droplets with a smaller $r_e$.
 
@@ -241,12 +249,12 @@ The the two red patches at 80$\degree$N and 140-155$\degree$W in the figure for 
 		\caption{The average difference in LW flux up at TOA, day 1.}
 		\label{subfig:lwup_r2Day1}
 	\end{subfigure}
-	\caption{The average difference in SW and flux down at the surface and up at TOA, for day 1.}
+	\caption{The average difference in SW and LW flux down at the surface and up at TOA, for day 1. NoIce-Control.}
 	\label{fig:radiation_r2Day1}
 \end{figure}
 
 The downward LW radiation flux at the surface has been increased due to the increase in LWP, which means that there is more water in the clouds and they emit more LW to the ground. It was shown in Chapter~\ref{chap:theory} that an increase in LWP increases the emissivity of the cloud, shown in equation~\ref{eqn:epsilon_lw}, until the cloud is saturated with respect to LW radiation at about 40-45$\text{g/m}^2$, following figure~\ref{fig:epsalb}.
-The slight increase in the LW at TOA is because of increased temperature at the surface when the sea ice is removed (figure~\ref{fig:skintemp_r2_day1}).
+The slight increase in the LW at TOA is because of increased temperature at the surface when the sea ice is removed (figure~\ref{subfig:skintemp_r2_day1}).
 
 %The LW at the top of the atmosphere (TOA) does not experience such an increase, in fact it experiences a slight decrease. That it doesn't experience the same increase is explained by the Stefan-Boltzmann's law presented in chapter~\ref{chap:theory}, where the flux density emitted by a body, in this case a cloud, is dependent on the temperature and emissivity of the body (equation~\ref{eqn:stefanboltzmann}).
 %The temperature contours in figure~\ref{subfig:cross_LWC_day1}, from the control run, show that the temperature decreases with height and that the clouds hold a lower temperature than there is close to the sea ice. In the run with no ice, the situation is the same (see figure~\ref{subfig:cross_LWC_r2day1}), therefore if clouds with lower temperatures than the surface are the source of the LW reaching TOA the LW reaching TOA would be lower.
@@ -280,7 +288,7 @@ The average differences for LWP, CDNC and $r_e$ at day 5 are all negative, see f
 		\caption{$r_e$, NoIce, day 5}
 		\label{subfig:recloud_r2Day5}
 	\end{subfigure}
-\caption{The average difference in LWP, CDNC and $r_e$ of cloud droplets (from left to right) for the run with no ice, over the lowermost 11 layers for day 1.}
+\caption{The average difference in LWP, CDNC and $r_e$ of cloud droplets (from left to right) over the lowermost 11 layers for day 1. NoIce-Control.}
 \label{fig:lwpcdncre_r2Day5}
 \end{figure}
 
@@ -317,7 +325,7 @@ There is hardly any ice at all in the study area in the lowermost 11 layers, muc
 		\caption{Day 5}
 		\label{subfig:snowstory_Day5}
 	\end{subfigure}
-\caption{The average difference in mixing ratio of snow to air, over the lowermost 11 layers for days 1 to 5. The difference is calculated by subtracting the field from the control run from the field from the run with no ice.}
+\caption{The average difference in mixing ratio of snow to air, over the lowermost 11 layers for days 1 to 5. NoIce-Control.}
 \label{fig:snowstory}
 \end{figure}
 
@@ -353,7 +361,7 @@ The clouds in on the 5th day of the run with no ice is now significantly thinner
 		\caption{The average difference in LW flux up at TOA, day 5.}
 		\label{subfig:lwup_r2Day5}
 	\end{subfigure}
-	\caption{The average difference in SW and flux down at the surface and up at TOA, for day 5.}
+	\caption{The average difference in SW and LW flux down at the surface and up at TOA, for day 5. NoIce-Control.}
 	\label{fig:radiation_r2Day5}
 \end{figure}
 
@@ -382,7 +390,7 @@ For quite a large part of the area which is now sea ice free the downwelling LW 
 		\caption{Difference in skin temperature.}
 		\label{subfig:skin_r2Day5}
 	\end{subfigure}
-	\caption{Average difference in LH, SH and skin temperature for NoIce-Control, day 5.}
+	\caption{Average difference in LH, SH and skin temperature for day 5. NoIce-Control.}
 	\label{fig:lhshskin_r2Day5}
 \end{figure}
 
@@ -395,66 +403,162 @@ A higher skin temperature and increased surface heat fluxes pushes the lower clo
 \label{fig:cross_LWC_r2Day5}
 \end{figure}
 
-Looking at vertical cross sections from NoIce and Control the clouds seem to have the same temperature in both runs, but in NoIce the cloud does not stretch as close to the mountain as in Control, and between 100 and 120 on the x-axis NoIce has no cloud, which fits with the decrease in downwelling LW in that area (77$\degree$N and 117$\degree$W). The increase in downwelling LW on the other hand might be explained by the increase in cloud height.
+Looking at vertical cross sections from NoIce and Control the clouds seem to have the same temperature in both runs, but in NoIce the cloud does not stretch as close to the mountain as in Control, and between 100 and 120 on the x-axis NoIce has no cloud, which fits with the decrease in downwelling LW in that area (77$\degree$N and 117$\degree$W). The increase in downwelling LW on the other hand might be explained by the increase in cloud height. .....\textit{men den forklaringen er jeg veldig usikker på}
 
 %-------------------------------------
 \section{Increased aerosol concentration}
 %-------------------------------------
 \subsection{Day 1}
-The increase in available CCN leads to obvious increases in CDNC and LWP, and the expected reduction in $r_e$, see figure~\ref{fig:cdnclwpre_Aero10}.% If we look back to equation~\ref{eqn:cloudtau}, we see that (@the one that combines LWP, effective radius and cloud optical depth).
-\begin{figure}[h!]
+With an aerosol number concentration 10 times higher than that in the control run, the LWP and CDNC increase by about 11~$\text{g/m}^2$ and 16~$\text{cm}^{-3}$ respectively, see figure~\ref{fig:lwpcdncre_r3Day1}. The increases in CDNC and LWP are expected with such a high increase in available CCN. Remembering the first indirect effect described in Chapter~\ref{chap:theory}, one would expect a decrease in droplet size with the increase in numbers. $r_e$ has in fact decreased for the whole field in this run, and is shown in figure~\ref{subfig:recloud_r3Day1}
+
+\begin{figure}[h]
 \centering
-\includegraphics[width=\textwidth]{results/diff_cdnclwpre_Aero10_Day1.png}
-\caption{The average differences in $r_e$, LWP and CDNC from left to right, for day 1. (preliminary figure)}
-\label{fig:cdnclwpre_Aero10}
+	\begin{subfigure}{0.30\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{results/aero10/Diff_LWP_Day1Aero10.pdf}
+		\caption{LWP, Aero10, day 1}
+		\label{subfig:LWPr3Day1}
+	\end{subfigure}
+	\quad
+	\begin{subfigure}{0.30\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{results/aero10/diff_Aero10_QNCLOUD_Day1.pdf}
+		\caption{CDNC, Aero10, day 1}
+		\label{subfig:CDNCr3Day1}
+	\end{subfigure}
+	\quad
+	\begin{subfigure}{0.30\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{results/aero10/diff_Aero10_RE_CLOUD_Day1.pdf}
+		\caption{$r_e$, Aero10, day 1}
+		\label{subfig:recloud_r3Day1}
+	\end{subfigure}
+\caption{The averaged difference in LWP, CDNC and $r_e$ of cloud droplets (from left to right) over the lowermost 11 layers for day 1. Aero10-Control.}
+\label{fig:lwpcdncre_r3Day1}
 \end{figure}
 
-As for the NoIce run, the increase in LWP, in this case a lot higher, leads to an increase in clouds and their reflectance (albedo), therefore the SW at TOA is higher, here the signal is not disrupted by any changes made to the sea ice, so the increase is obvious, and is shown in figure~\ref{fig:swup_down_r3Day2}. Thus the SW at the surface is significantly lower than in the control run. This represents a cooling of (@calculate the flux changes into temperature changes?). The average LW radiation flux at the surface is higher due to the increase in LWP and thereby increased emittance by the clouds.% thicker and denser(is this true) clouds.
+The first indirect effect describes an increase in the cloud albedo as a consequence of more numerous and smaller droplets, and the upwelling SW at TOA is in fact increased by as much as $\sim$7~$\text{W/m}^2$ on average for the whole field on day 1 (see figure~\ref{subfig:swup_r3Day1}). As opposed to the run with no ice, the sea ice is unchanged in the run with increased aerosol number concentration (Aero10), so the signal here is clearly an increase in reflected SW. Over the sea ice however the increase in reflected SW is not as large as in the rest of the field, since the sea ice already has a relatively high albedo itself (around 0.6). The increase in the albedo of the clouds have significantly reduced the downwelling SW at the surface (figure~\ref{subfig:swdown_r3Day1}) compared to the control run. The change is $\sim$9~$\text{W/m}^2$ decrease on average for the study area, which represents a cooling. On the other hand the average LW radiation at the surface is higher (figure~\ref{subfig:glw_r3Day1}) due to the aforementioned increase in LWP and thereby increased emittance by the clouds, as follows from equation~\ref{eqn:epsilon_lw}. The increase in LW reaching the surface is $\sim$2.3~$\text{W/m}^2$. The most pronounced increase in LW at the surface is in areas where the LWP in the control run (figure~\ref{subfig:LWPr1Day1}) was lower and therefore not as close to saturation with respect to cloud LW emissivity. Two of these areas are 79$\degree$N, 135-140$\degree$W and 82$\degree$N, 125-135$\degree$W. 
+
 \begin{figure}
 \centering
-\includegraphics[width=\textwidth]{results/aero10/diff_swupdown_Aero10_Day1.png}
-\caption{The average difference in SW down at the surface, and up at TOA, from left to right, for day 2. (preliminary figure)}
-\label{fig:swup_down_r3Day1}
+	\begin{subfigure}{0.48\textwidth}
+		\includegraphics[width=\textwidth]{results/aero10/diff_Aero10_SWDOWN_Day1.pdf}
+		\caption{The average difference in SW flux down at the surface, day 1.}
+		\label{subfig:swdown_r3Day1}
+	\end{subfigure}
+	\quad
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{results/aero10/diff_Aero10_SWUPT_Day1.pdf}
+		\caption{The average difference in SW flux up at TOA, day 1.}
+		\label{subfig:swup_r3Day1}
+	\end{subfigure}
+	
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{results/aero10/diff_Aero10_GLW_Day1.pdf}
+		\caption{The average difference in LW flux down at the surface, day 1.}
+		\label{subfig:glw_r3Day1}
+	\end{subfigure}
+	\quad
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{results/aero10/diff_Aero10_LWUPT_Day1.pdf}
+		\caption{The average difference in LW flux up at TOA, day 1.}
+		\label{subfig:lwup_r3Day1}
+	\end{subfigure}
+	\caption{The average difference in SW and flux down at the surface and up at TOA, for day 1. Aero10-Control.}
+	\label{fig:radiation_r3Day1}
 \end{figure}
-The effect on the heat fluxes by increasing the aerosol number concentration is not clear, and probably insignificant (not shown).
+
+There is no clear response in the surface heat fluxes to the increased aerosol number concentration(not shown).
 
 \subsection{Day 5}
-The LW cloud emissivity is sensitive to an increase in water amount as long as the LWP is less than $\approx$ 40-45 g/m$^2$. It is clear in day 5 from the control run that the LWP was around 60-100 g/m$^2$ in the middle lower area of figure~\ref{fig:LWPr1Day5}.%@ (around these lat and lon?@).
-This is also seen in that there is no significant change in LW downward at the surface or upward at the TOA, see figure~\ref{fig:lwup_down_r3Day5}.
 
-\begin{figure}[h!]
+\begin{figure}[h]
 \centering
-\includegraphics[width=\textwidth]{results/diff_lwupdown_Aero10_Day5.png}
-\caption{The average difference in LW downward at the surface and upward at TOA on day 5, from left to right. (preliminary figure)}
-\label{fig:lwup_down_r3Day5}
+	\begin{subfigure}{0.30\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{results/aero10/Diff_LWP_Day5Aero10.pdf}
+		\caption{LWP, Aero10, day 5}
+		\label{subfig:LWPr3Day5}
+	\end{subfigure}
+	\begin{subfigure}{0.30\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{results/aero10/diff_Aero10_QNCLOUD_Day5.pdf}
+		\caption{CDNC, Aero10, day 5}
+		\label{subfig:CDNCr3Day5}
+	\end{subfigure}
+	\begin{subfigure}{0.30\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{results/aero10/diff_Aero10_RE_CLOUD_Day5.pdf}
+		\caption{$r_e$, Aero10, day 5}
+		\label{subfig:recloud_r3Day5}
+	\end{subfigure}
+\caption{The averaged difference in LWP, CDNC and $r_e$ of cloud droplets (from left to right) for the run with increased aerosol number concentration by a factor of 10 minus the control run, over the lowermost 11 layers for day 5.}
+\label{fig:lwpcdncre_r3Day5}
+\end{figure}
+The LW cloud emissivity is sensitive to an increase in water amount as long as the LWP is less than $\approx$ 40-45~$\text{g/m}^2$. Day 5 in the control run had LWP around 60-100~$\text{g/m}^2$ in the middle lower area of figure~\ref{subfig:LWPr1Day5}.%@ (around these lat and lon?@).
+This is also seen in that there is no significant change in LW downward at the surface or upward at the TOA, see figures~\ref{subfig:glw_r3Day5} and \ref{subfig:lwdown_r3Day5}.
+\begin{figure}
+\centering
+	\begin{subfigure}{0.48\textwidth}
+		\includegraphics[width=\textwidth]{results/aero10/diff_Aero10_SWDOWN_Day5.pdf}
+		\caption{The average difference in SW flux down at the surface, day 5.}
+		\label{subfig:swdown_r3Day5}
+	\end{subfigure}
+	\quad
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{results/aero10/diff_Aero10_SWUPT_Day5.pdf}
+		\caption{The average difference in SW flux up at TOA, day 5.}
+		\label{subfig:swup_r3Day5}
+	\end{subfigure}
+	
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{results/aero10/diff_Aero10_GLW_Day5.pdf}
+		\caption{The average difference in LW flux down at the surface, day 5.}
+		\label{subfig:glw_r3Day5}
+	\end{subfigure}
+	\quad
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{results/aero10/diff_Aero10_LWUPT_Day5.pdf}
+		\caption{The average difference in LW flux up at TOA, day 5.}
+		\label{subfig:lwup_r3Day5}
+	\end{subfigure}
+	\caption{The average difference in SW and LW flux down at the surface and up at TOA, for day 5. Aero10-Control.}
+	\label{fig:radiation_r3Day5}
 \end{figure}
 
-The area with lack of change in LW up or down is approximately the same area as where there is a negative change in LH and SH upward from the surface over the sea ice, see figure~\ref{fig:lhhfx_r3Day5}. Since there has been no change in LW there is no loss of warming from a decrease in LW reaching the surface, but the change can possibly be explained by looking at the SW radiation. The downward SW at the surface has been significantly decreased as a consequence of the increase in aerosol number concentration, see figure~\ref{fig:swup_down_r3Day5}. The SW radiation has been reflected by the smaller and more numerous droplets. This is known as the Twomey effect, and was described in Chapter~\ref{chap:theory}. 
-
-\begin{figure}[h!]
+The area with lack of change in LW up or down is approximately the same area as where there is a negative change in LH and SH upward from the surface over the sea ice, see figure \ref{fig:lhshskin_r3Day5}. Since there has been no change in LW there is no loss of warming from a decrease in LW reaching the surface, but the change can be explained by looking at the SW radiation. The downward SW at the surface has been significantly decreased as a consequence of the increase in aerosol number concentration, see figure~\ref{subfig:swdown_r3Day5}. Which is known as the first indirect effect, and was described in Chapter~\ref{chap:theory}. 
+\begin{figure}
 \centering
-\includegraphics[width=0.9\textwidth]{results/diff_swupdown_Aero10_Day5.png}
-\caption{The average difference in SW downward at the surface, and upward on TOA at day 5, from left to right. (preliminary figure)}
-\label{fig:swup_down_r3Day5}
-\end{figure}
+	\begin{subfigure}{0.48\textwidth}
+		\includegraphics[width=\textwidth]{results/aero10/diff_Aero10_LH_Day1.pdf}
+		\caption{Difference in LH.}
+		\label{subfig:lh_r3Day5}
+	\end{subfigure}
+	\quad
+		\begin{subfigure}{0.48\textwidth}
+		\includegraphics[width=\textwidth]{results/aero10/diff_Aero10_HFX_Day1.pdf}
+		\caption{Difference in SH.}
+		\label{subfig:sh_r3Day5}
+	\end{subfigure}
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.9\textwidth]{results/diff_lhhfx_Aero10_Day5.png}
-\caption{The average difference in LH and SH upward at the surface on day 5, from left to right. (preliminary figure)}
-\label{fig:lhhfx_r3Day5}
+	\begin{subfigure}{0.48\textwidth}
+		\includegraphics[width=\textwidth]{results/aero10/diff_Aero10_TSK_Day5.pdf}
+		\caption{Difference in skin temperature.}
+		\label{subfig:skin_r3Day5}
+	\end{subfigure}
+	\caption{Average difference in LH, SH and skin temperature for day1. Aero10-Control.}
+	\label{fig:lhshskin_r3Day5}
 \end{figure}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.5\textwidth]{results/diff_skintemp_Aero10_Day5.png}
-\caption{The average difference in skin temperature (the temperature of the surface), for day 5.}
-\label{fig:skintemp_r3Day5}
-\end{figure}
-The albedo of sea ice is typically 0.5-0.7 which means that a fraction of the incident SW radiation is absorbed. Since the amount of incident SW radiation at the surface has been reduced by the cloud cover, the absorbed radiation is less than for a higher incident amount. The ice therefore has a lower temperature to give off SH with. 
+The albedo of the sea ice in Aero10 is around 0.6 (not shown) which means that a fraction of the incident SW radiation is absorbed. Since the amount of incident SW radiation at the surface has been reduced by the cloud cover, the absorbed radiation is less than for a higher incident amount. The ice therefore has a lower temperature to give off SH with. 
 
 %Look at temperature changes at the surface. Over ice and ocean.. 
-The skin temperature, figure~\ref{fig:skintemp_r3Day5}, for the domain shows a small decrease in the same area as where there is less sensible and latent heat release.
+The skin temperature, figure~\ref{subfig:skin_r3Day5}, for the domain shows a small decrease in the same area as where there is less sensible and latent heat release.
 
 Also the dynamics over ice and the ocean are different, so this could have an effect. The cold air over the ice may be intensified, while the sea surface temperature (SST) is the same for all the runs and there is no coupling with the ocean. There will therefore be no changes in the SSTs that could have an effect on the dynamics over the ocean. So the response may be smaller there...?
 

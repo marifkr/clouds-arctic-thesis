@@ -58,7 +58,7 @@ Now \textbf{v} is the velocity vector in three dimensions, $\omega = \dot{\eta}$
 \end{eqnarray}
 To close the system they use the diagnostic equation for inverse density, $\alpha_d$,
 \begin{equation}
-\partial_{\etq} \phi = -\alpha_d \mu
+\partial_{\eta} \phi = -\alpha_d \mu
 \end{equation}
 and the moist equation of state
 \begin{equation}
@@ -150,7 +150,7 @@ The choice of cumulus parameterization was based on the grid resolution, and the
 
 \subsubsection{The aerosol-aware scheme}
 The microphysics includes explicitly resolved water vapor, cloud, and precipitation processes. The aerosol-aware scheme was chosen so that the study would have scavenging of aerosols included and have proper enough representation of aerosols to study aerosol-cloud interactions, without using the WRF model coupled with chemistry (WRF-Chem).
-According to the ARW User's Guide by~\citet{Wang2015}, the aerosol-aware scheme considers water- and ice-friendly aerosols, and a climatological dataset may be used to specify initial and boundary conditions for the aerosol variables. I have used this climatological dataset, which is explained in Subsection~\ref{sec:inputdata}~Input~data. The scheme uses a monthly mean for aerosol number concentrations derived from multi-year (2001-2007) global model simulations in which particles and their precursors are emitted by natural and anthropogenic sources and are explicitly modeled with multiple size bins for multiple species of aerosols by the Goddard Chemistry Aerosol Radiation and Transport (GOCART) model %(@desiterteGinoux2001)
+According to the ARW User's Guide by~\citet{Wang2015}, the aerosol-aware scheme considers water- and ice-friendly aerosols, and a climatological dataset may be used to specify initial and boundary conditions for the aerosol variables. I have used this climatological dataset, which is explained in Subsection~\ref{subsec:inputdata}~Input~data. The scheme uses a monthly mean for aerosol number concentrations derived from multi-year (2001-2007) global model simulations in which particles and their precursors are emitted by natural and anthropogenic sources and are explicitly modeled with multiple size bins for multiple species of aerosols by the Goddard Chemistry Aerosol Radiation and Transport (GOCART) model %(@desiterteGinoux2001)
 ~\citep{Thompson2014}.
 The aerosol-aware scheme~\citep{Thompson2014} is built on the schematic shown in figure~\ref{fig:microphysics}, from~\citet{Reisner1998}. It is a double moment scheme, which means it computes both mass mixing ratios, Q, and number concentrations, N, for the same water species (hydrometeors). 
 
@@ -170,7 +170,7 @@ According to~\citet{Thompson2014} the Rapid Radiative Transfer Model (RRTM) for 
 %The correlated-k method is capable of achieving accuracy comparable with that of line-by-line models with an extreme reduction in the number of radiative transfer operations performed~\citep{Mlawer1997}, which by that reduces computational cost and increases computational efficiency. The Line-By-Line Radiative Transfer Model (LBLRTM) is used both to calculate the absorption coefficients used to generate the k distributions needed by RRTM and  to evaluate the RRTM calculations of fluxes and cooling rates~\citep{Iacono2000}. 
 
 \section{Model runs}
-The results presented in the next chapter are based on four different runs. The control run is the run where the aerosol climatological dataset has been used unchanged, and where the sea ice is kept as it was in the downloaded input data, see Section~\ref{sec:inputdata}. The control run is used as a base to compare the other runs to, those with no ice and/or increased aerosol number concentrations.
+The results presented in the next chapter are based on four different runs. The control run is the run where the aerosol climatological dataset has been used unchanged, and where the sea ice is kept as it was in the downloaded input data, see Subsection~\ref{subsec:inputdata}. The control run is used as a base to compare the other runs to, those with no ice and/or increased aerosol number concentrations.
 
 There are three runs where the sea ice was removed, NoIce, Aero10NoIce and Aero100NoIce. The point of this is to compare the run with no ice to the control run, and see if there are any changes in the cloud properties, and SW and LW fluxes. For two of those runs the aerosol number concentration was also increased, these can be compared with the control run, and the other runs that have ice, but the same aerosol number concentrations.
 
@@ -203,13 +203,10 @@ Through WPS the data from ERA-Interim was interpolated over the area, with a 2 d
 To use the climatological aerosol dataset, the file containing monthly means had to be called through WPS. The aerosol input data includes mass mixing ratios of sulfates, sea salts, organic carbon, dust, and black carbon from a 7-yr simulation with 0.5$^{\text{o}}$ longitude by 1.25$^{\text{o}}$ latitude spacing~\citep{Thompson2014}.
 
 \subsection{Manipulation of input files}
-The input files for the ARW solver, created by WPS and REAL (see figure~\ref{fig:wrfflowchart}) were manipulated by use of the NetCDF Operator (NCO) tool ncap2. In these files the sea ice was removed for the runs without sea ice (NoIce, Aero10NoIce) and the aerosol number concentration from the climatological dataset was multiplied by 10 for the runs with increased aerosol concentrations.
+The input files for the ARW solver, created by WPS and REAL (see figure~\ref{fig:wrfflowchart}) were manipulated by use of the NetCDF Operator (NCO) tool ncap2. In these files the sea ice was removed for the runs without sea ice (NoIce and Aero10NoIce) and the aerosol number concentration from the climatological dataset was multiplied by 10 for the runs with increased aerosol concentrations (Aero10 and Aero10NoIce).
 %wrfinput\_d01 and wrfbdy\_d01 are input files for domain 1, in my case the only domain, and are made by real.exe. These files are then used as initialization or forcing when wrf.exe is run.
 %To run the model without ice and with an increased number of aerosols I manipulated the input files for WRF. I used a netCDF Operator (NCO) tool, ncap2. This allowed me to manipulate the netCDF files from my terminal window in the folder where they were located.
 %Elaborate on removal or placing of sea ice. Elaborate on multiplying the aerosol number concentration with a factor 10 or 100. By use of ncap2 from NetCDF (NCO).
-
-%---------------------
-Include figures of sea ice and aerosol concentrations?@
 
 %---------------------
 \section{Processing of the results}
