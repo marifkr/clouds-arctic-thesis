@@ -24,52 +24,74 @@ As can be seen from figure~\ref{fig:wrfflowchart} the WRF-ARW Modeling System co
 
 WPS is used primarily for real data simulations~\citep{Wang2015}, like the study presented in this thesis. A real-data simulation means that it has been initialized by observations and reanalysis, not artificial data. WPS' functions include defining simulation domains, interpolating terrestrial data and degribbing and interpolating meteorological data from another model to this simulation domain~\citep{Wang2015}. WRF-DA is optional and can be used to ingest observations into the interpolated analyses created by WPS~\citep{Wang2015}, but was not used in this study. The ARW solver is the key component of the modeling system, which is composed of several initialization programs for idealized, and real-data simulations, and the numerical integration program~\citep{Wang2015}.% Fully compressible nonhydrostatic equations with hydrostatic options, regional and global applications, complete coriolis and curvature terms and that vertical grid-spacing can vary with height are among the WRF models key features according to~\citet{Wang2015}.
 
-\subsection{The vertical coordinate}
 The continuous equations solved in the ARW model are the Euler equations cast in a flux form where the vertical coordinate, $\eta$, is defined by a normalized hydrostatic pressure,
 \begin{equation}
 \eta = (p_h - p_{ht})/\mu 
 \end{equation}
 where $\mu = (p_{hs} - p_{ht})$~\citep{Skamarock2008}. $p_h$ is the hydrostatic component of the pressure and $p_{hs}$ and $p_{ht}$ are the values of the hydrostatic pressure in a dry atmosphere at the surface and top boundaries respectively~\citep{Skamarock2008}.
 
-The vertical coordinate is the traditional $\sigma$ coordinate used in many hydrostatic atmospheric models, shown in figure~\ref{fig:sigma}.
+The vertical coordinate is the traditional $\sigma$ coordinate used in many hydrostatic atmospheric models, but is denoted by $\eta$ in ARW, and is shown in figure~\ref{fig:sigma}.
+
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.9]{model_methods/sigma.pdf}
-\caption{This figure is shown as presented in~\citet{Skamarock2008}, and is a schematic of the terrain following a $\sigma$ coordinate. $P_{hs}$ and $P_{ht}$ are the hydrostatic pressure at the surface and top respectively.}
+\caption{This figure is shown as presented in~\citet{Skamarock2008}, and is a schematic of the $\eta$ coordinate. $P_{hs}$ and $P_{ht}$ represent the hydrostatic pressure at the surface and top respectively.}
 \label{fig:sigma}
 \end{figure}
 
-
+$\eta$ decreases monotonically from a value of 1 at the surface, where the coordinate follows the terrain and $P_h = P_{hs}$, to a value of 0 at the top level, which is then a pressure surface, where $P_h = P_{ht}$. Levels with constant $\eta$ are commonly referred to as $\eta$-levels (or Eta-levels). $\mu(x,y)$ is the mass of dry air per unit area within the column in the model domain at $(x,y)$. The $\eta$-levels are where the vertical wind speed is calculated, whereas the thermodynamic variables ($\theta$) are calculated between the $\eta$-levels, on so-called mass levels.
 
 %--------- Stuff on staggered grid.
-\subsection{Staggered grid}
-The WRF-model uses a staggered grid, which means that some variables lie in the middle of a gird box, and other on the sides of the box. The pressure for example is in the middle of the grid box, and the winds on each side of the box use the pressure in the middle of one box, and the middle of the box next to it as reference for calculating the winds at the grid box sides. A staggered grid saves computational time since the a variable at point a needs only the values at a+1/2, and a-1/2, in stead of a+1 and a-1, which is more computationally costly.
+With the vertical coordinate $\eta$, and the mass of an air column, $\mu(x,y)$, in the model grid the Euler equations can be written with  variables on flux form:
+\begin{eqnarray*}
+\textbf{V} = \mu \textbf{v} = (U,V,W),\textit{    }\Omega = \mu \dot{\eta},\textit{    }\Theta = \mu \theta
+\end{eqnarray*}
+Now \textbf{v} is the velocity vector in three dimensions, $\omega = \dot{\eta}$ denotes the vertical velocity and $\Psi$ is the geopotential, and the set of prognostic equations that needs to be solved numerically is this:
+\begin{eqnarray}
+\partial_t U + (\nabla \cdot \textbf{V}_u) - \partial_x (p\phi_{\eta}) + \partial_{\eta}(p\phi_x) &=& F_U\\ \label{eqn:euler1}
+\partial_t V + (\nabla \cdot \textbf{V}_v) - \partial_y (p\phi_{\eta}) + \partial_{\eta}(p\phi_y) &=& F_V\\
+\partial_t W + (\nabla \cdot \textbf{V}_w) + g(\partial_{\eta}p-\mu)&=&F_W\\
+\partial_t \Theta + (\nabla \cdot \textbf{V}\theta) &=& F_{\Theta}\\ \label{eqn:euler2}
+\partial_t \mu + (\nabla \cdot \textbf{V}) &=& 0\\
+\partial_t \phi + \mu^{-1}[(\textbf{V} \cdot \nabla \phi - gW) &=& 0\\
+\partial_t Q_m + (\nabla \cdot \textbf{V}Q_m) &=& F_{Q_m} \label{eqn:euler3}
+\end{eqnarray}
+To close the system they use the diagnostic equation for inverse density, $\alpha_d$,
+\begin{equation}
+\partial_{\etq} \phi = -\alpha_d \mu
+\end{equation}
+and the moist equation of state
+\begin{equation}
+p = p_0\left(R_d\theta\frac{1+R_d/R_v)q_v}{p_0\alpha_d}\right)^{\gamma}
+\end{equation}
+where $\gamma = c_v/c_p = 1.4$ is the ratio of the heat capacity for dry air at constant volume, to that of constant pressure, $R_d$ and $R_v$ are the gas constants for dry and moist air respectively, $q_v$ is the mixing ratio of water vapor and $p_0$ is the reference pressure (typically 10$^3$hPa). The right-hand-side terms in equations~\ref{eqn:euler1}-\ref{eqn:euler2} and~\ref{eqn:euler3} represent forcing terms which arise from model physics, turbulent mixing, spherical projections, the earth's rotation, and moist physics~\citep{Skamarock2008a}.
 
-The staggered grid therefore reduces the computation time of the WRF-ARW modeling system.
-
-This is important to know, also for the variables in the vertical. If a cloud effective radius, $r_e$, for example lies between two levels, in the middle of a layer, or if they have values exactly on the levels.
-
-Figure~\ref{fig:stagger} shows the staggered C-grid used in the WRF-model. The C-grid is the most used staggered grid in nonhydrostatic NWP and research models~\citep{Skamarock2008}.
+To solve these equations the WRF-ARW modeling system uses the spatial discretization known as a staggered C grid~\citep{Skamarock2008a}. Figure~\ref{fig:stagger} shows the schematic of the grid and how the velocities, $u$ and $v$, are calculated at the edges of each grid box both in the horizontal and in the vertical, half a grid box length away from the thermodynaic variable, which is calculated in the middle of each grid box, at the mass point. The advection in and out of the grid box is calculated from $u$ and $v$. This staggering allows for discretization of the pressure gradient and divergence terms across a single grid interval, without any averaging, which gives a highly accurate second order difference.
 
 \begin{figure}%[h]
 \centering
 \includegraphics[width=\textwidth]{model_methods/gridstagger.pdf}
-\caption{This figure is shown as presented in~\citet{Skamarock2008}, and shows the staggering for the C-grid. The horizontal staggering to the left, and the vertical staggering to the right.}
+\caption{This figure is shown as presented in~\citet{Skamarock2008}, and shows the staggering of the C-grid. The horizontal staggering to the left, and the vertical staggering to the right.}
 \label{fig:stagger}
 \end{figure}
 
-The selection of physics schemes in WRF-ARW are numerous. The choice of schemes treating microphysics in clouds and aerosols, and the radiation are presented in the following section about the model setup.
+The time integration in ARW is performed by a "time split integration scheme", which means that the low frequency, meteorologically significant modes are integrated by a third order Runge-Kutta (RK3) integration scheme, while the higher frequency acoustic modes are integrated with a shorter time step, to conserve the numerical stability. In general, it is preferred to use as large a time step as possible while keeping the numerical stability. For integration by the RK3 scheme the maximum time step $\Delta t_{max}$ is found through equation~\ref{eqn:tmax}
+\begin{equation}
+\Delta t_{max} < \frac{C\cdot \Delta x}{\sqrt{3}\cdot u_{max}}
+\label{eqn:tmax}
+\end{equation}
+where $C$ is the maximum Courant number, which depends on the order of the discretization of the advection terms. Typically in WRF, it is recommended that $\Delta t$ (in seconds) does not exceed 6 times $\Delta x$ (in km). When I ran the modeling system with a horizontal resolution of 4~km I therefore chose $\Delta t = 24$. More about the model runs and choices of physics in the model is presented in the next section.
+
 %---------------------
 \section{Model setup}
 \label{sec:modelsetup}
 %---------------------
 The model was ran with a 4~km$\times$4~km horizontal grid point spacing, with 300$\times$300 grid points, and 72 vertical layers, with the model top at 10~hPa.
 The area covers parts of the Beaufort Sea, by Canada and Alaska. This area was chosen because data from the area has been used for related studies~\citep{Intrieri2002,Shupe2004,Kay2009,Wu2012,Palm2010,Schweiger2008} %sjekk dette!!,
-as mentioned in Chapter~\ref{chap:introduction}.%, to give the reader some background material and an understanding of the subject of this study.
-The area is not completely ice free any part of the year,% @cite,
+as mentioned in Chapter~\ref{chap:introduction}. The area is not completely ice free any part of the year,% @cite,
  and provides a good place to simulate cloud-sea ice interaction. The area is over several time zones but is approximately 7 hours behind UTC time. The times given in the WRF-ARW modeling system are UTC. The model was ran for a period of 5~days, 1st to 6th of September 2012. This is approximately when the record low ice extent in the Arctic was set (eg. National Snow and Ice Data Centre, U.S.A.,~\citet{Beitler2012}).
 
-The vertical layers in the ARW model are often referred to as eta levels, because of the choice of $\eta$ as the vertical coordinate. These levels have uneven vertical spacing. The fact that this $\eta$ is the traditional $\sigma$-coordinate, means that the altitude of each level is dependent on pressure, therefore the level height varies in both time and space. As a consequence of pressure dependence, the levels in the lower troposphere are closer to each other than the levels higher up in the troposphere. Therefore the low clouds in the area can be resolved. Approximate heights for the lowest 11 eta levels is shown in Table~\ref{tab:etaheights}.
+The vertical layers in the ARW model are often referred to as eta levels, because of the choice of $\eta$ as the vertical coordinate. These levels have uneven vertical spacing and the altitude of each level is dependent on pressure, therefore the level height varies in both time and space. As a consequence of pressure dependence, the levels in the lower troposphere are closer to each other than the levels higher up in the troposphere. Thus the low clouds in the area can be resolved. Approximate heights for the lowest 11 eta levels are shown in Table~\ref{tab:etaheights}.
 
 \begin{table}[H]
 \centering
@@ -99,7 +121,7 @@ The vertical layers in the ARW model are often referred to as eta levels, becaus
 \subsection{Choices of physics in the model}
 %Based on the WRF-ARW Version 3 User's Guide by~\citet{Wang2015}.
 %Based on the description of ARW Version 3 from \citet{Skamarock2008a}. 
-The physics options in WRF fall into several categories, each containing several choices. Table~\ref{tab:physics} shows some of the different categories and the choice of scheme, for this study, within each of those categories.
+The selection of physics schemes in WRF-ARW are numerous and fall into several categories, each containing several choices. Table~\ref{tab:physics} shows some of the different categories and the choice of scheme, for this study, within each of those categories.
 
 \begin{table}[H]
 \centering
@@ -118,7 +140,7 @@ The physics options in WRF fall into several categories, each containing several
 
 The ARW model offers a wide selection of schemes to treat different physics that one wants represented in the model. The schemes treat the physics slightly differently and some schemes are better for certain horisontal and vertical resolutions than others, so one needs to be careful when choosing how the model is to treat the physics. For my thesis, the especially relevant scheme to mention is the cloud microphysics scheme that I chose, which is the aerosol-aware scheme described in~\citet{Thompson2014}. When studying cloud and rediation response to removal of sea ice we might expect an increase in aerosols from the open ocean and increased sea traffic. The aerosols are therefore also relevant for the choice of schemes, and the aerosol-aware scheme includes the necessary processes for this study.
 
-%The choice of cumulus parameterization was based on the grid resolution, and the best fit for it. A horisontal grid point spacing of 4~km can be fine enough to not use cumulus parameterization, but in this thesis we chose a parameterization that was more suitable for grid point spacings less than 10~km, the Grell 3D parameterization. Grell 3D is an improved multi-closure, multi-parameter ensamble method with typically 144 sub-grid members, that may be used on high resolution~\citep{Wang2015}, like my 4~km grid point spacing.
+The choice of cumulus parameterization was based on the grid resolution, and the best fit for it. A horisontal grid point spacing of 4~km can be fine enough to not use cumulus parameterization~\citep{Thompson2014}, but in this thesis a parameterization that was more suitable for grid point spacings less than 10~km was chosen; the Grell 3D parameterization. According to~\citet{Wang2015} Grell 3D may be used on high resolution, like my 4~km grid point spacing.
 %---------
 %Yonsei University scheme was chosen for the PBL. It is a non-local-K scheme with explicit entrainment layer and parabolic profile in unstable mixed layer~\citep{Wang2015}.
 %---------
@@ -135,11 +157,11 @@ The aerosol-aware scheme~\citep{Thompson2014} is built on the schematic shown in
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.9\textwidth]{model_methods/microphysics.pdf}
-\caption{Cloud microphysical parameterization scheme typically used i NWP models as shown in~\citet{Reisner1998}. A full list of the acronyms used in the schematic can be found in~\citet{Reisner1998}.}
+\caption{Cloud microphysical parameterization scheme used in some NWP models as shown in~\citet{Reisner1998}. A full list of the acronyms used in the schematic can be found in~\citet{Reisner1998}.}
 \label{fig:microphysics}
 \end{figure}
 
-Figure~\ref{fig:microphysics} show the processes in the microphysics scheme developed by~\citet{Reisner1998}, which the first bulk microphysics scheme by Thompson~\citep{Thompson2004} was based on. The aerosol-aware scheme~\citep{Thompson2014} is an extension of the updated Thompson bulk microphysics scheme described in~\citet{Thompson2008}. The figure shows a schematic of five hydrometeors, cloud water (c), rain (r), ice (i), snow (s) and graupel (g), and if just the mass mixing ratio is calculated or if both the mass mixing ratio and the number concentration is calculated. For each of the hydrometeors, prognostic equations are used with all the sources and sink terms included.%, as exemplified by this equation from~\citet{Reisner1998}?
+Figure~\ref{fig:microphysics} show the processes in the microphysics scheme developed by~\citet{Reisner1998}, which the first bulk microphysics scheme by Thompson~\citep{Thompson2004} was based on. The aerosol-aware scheme~\citep{Thompson2014} is an extension of the updated Thompson bulk microphysics scheme described in~\citet{Thompson2008}. The figure shows a schematic of five hydrometeors, cloud water (c), rain (r), ice (i), snow (s) and graupel (g), and if just the mass mixing ratio is calculated or if both the mass mixing ratio and the number concentration is calculated. For each of the hydrometeors, prognostic equations are used with all the sources and sink terms included.
  % which was originally built on this~\citep{Thompson2004}, but there is not much left of it in the code now (@cite the code comments?).
  
 \subsubsection{The RRTMG radiation schemes}
@@ -148,33 +170,17 @@ According to~\citet{Thompson2014} the Rapid Radiative Transfer Model (RRTM) for 
 %The correlated-k method is capable of achieving accuracy comparable with that of line-by-line models with an extreme reduction in the number of radiative transfer operations performed~\citep{Mlawer1997}, which by that reduces computational cost and increases computational efficiency. The Line-By-Line Radiative Transfer Model (LBLRTM) is used both to calculate the absorption coefficients used to generate the k distributions needed by RRTM and  to evaluate the RRTM calculations of fluxes and cooling rates~\citep{Iacono2000}. 
 
 \section{Model runs}
-The results presented in the next chapter are based on six different runs. The control run is the run where the aerosol climatological dataset has been used unchanged, and where the sea ice is kept as it was in the downloaded input data, see Section~\ref{sec:inputdata}. The control run is used as a base to compare the other runs to, those with no ice and/or increased aerosol number concentrations.
+The results presented in the next chapter are based on four different runs. The control run is the run where the aerosol climatological dataset has been used unchanged, and where the sea ice is kept as it was in the downloaded input data, see Section~\ref{sec:inputdata}. The control run is used as a base to compare the other runs to, those with no ice and/or increased aerosol number concentrations.
 
 There are three runs where the sea ice was removed, NoIce, Aero10NoIce and Aero100NoIce. The point of this is to compare the run with no ice to the control run, and see if there are any changes in the cloud properties, and SW and LW fluxes. For two of those runs the aerosol number concentration was also increased, these can be compared with the control run, and the other runs that have ice, but the same aerosol number concentrations.
 
-The number of water- and ice-friendly aerosols were multiplied by 10 and 100 both with and without sea ice for 4 runs in total: Aero10 and Aero100 with ice, and as mentioned above, Aero10NoIce and Aero100NoIce without ice. The goal is to find changes in cloud properties, and radiation fluxes compared to those in the control run.
+The number of water- and ice-friendly aerosols were multiplied by 10 both with and without sea ice for 2 runs: Aero10 with ice, and as mentioned above, Aero10NoIce without ice. The goal is to find changes in cloud properties, and radiation fluxes compared to those in the control run.
 
 Table~\ref{tab:runs} shows an overview of the different runs that have been executed, whose output have been used for production of figures presented in the next chapter.
-%\begin{table}[H]
-%\centering
-%\caption{Table showing the name of the runs and what is included}
-%\label{tab:runs} 
-%\begin{tabular}{L{2.3cm} L{2.3cm} L{2cm} L{1.5cm} L{1cm} L{1cm} L{3cm}}
-%\centering
-%Name & Horisontal resolution & Dimensions & Vertical layers & $\Delta$t & Sea ice & Aerosol concentration\\ \hline
-%control & 4~km x 4~km & 300 x 300 & 72& 24~s & yes & control\\
-%NoIce & 4~km x 4~km & 300 x 300 & 72 & 24~s & no & control\\
-%Aero10 & 4~km x 4~km & 300 x 300 & 72 & 24~s & yes & control x 10\\
-%Aero10NoIce & 4~km x 4~km & 300 x 300 & 72 & 24~s & no & control x 10\\
-%Aero100 & 4~km x 4~km & 300 x 300 & 72 & 24~s & yes & control x 100\\
-%Aero100NoIce & 4~km x 4~km & 300 x 300 & 72 & 24~s & no & control x 100 \\
-%\end{tabular}
-%\end{table}
-%
-%Which table?
+
 \begin{table}[H]
 \centering
-\caption{Table showing the names of the runs and if they have sea ice or not, and if the aerosol concentration has been increased by a factor of 10 or 100 through input files. All the runs have the same horisontal resolution of 4~km$\times$4~km, dimensons 300$\times$300, 72 vertical layers and time step 24 s.}
+\caption{Table showing the names of the runs and if they have sea ice or not, and if the aerosol concentration has been increased by a factor of 10 through input files. All the runs have the same horizontal resolution of 4~km$\times$4~km, dimensions 300$\times$300, 72 vertical layers and $\delta t$=24~s.}
 \label{tab:runs} 
 \begin{tabular}{L{2.3cm} L{2cm} L{3cm}}
 \centering
@@ -183,8 +189,6 @@ control & initial & climatology\\
 NoIce & removed & climatology\\
 Aero10 & initial & climatology$\times$10\\
 Aero10NoIce & removed & climatology$\times$10\\
-Aero100 & initial & climatology$\times$100\\
-Aero100NoIce & removed & climatology$\times$100\\
 \end{tabular}
 \end{table}
 
@@ -199,7 +203,7 @@ Through WPS the data from ERA-Interim was interpolated over the area, with a 2 d
 To use the climatological aerosol dataset, the file containing monthly means had to be called through WPS. The aerosol input data includes mass mixing ratios of sulfates, sea salts, organic carbon, dust, and black carbon from a 7-yr simulation with 0.5$^{\text{o}}$ longitude by 1.25$^{\text{o}}$ latitude spacing~\citep{Thompson2014}.
 
 \subsection{Manipulation of input files}
-The input files for the ARW solver, created by WPS and REAL (see figure~\ref{fig:wrfflowchart}) were manipulated by use of the NetCDF Operator (NCO) tool ncap2. In these files the sea ice was removed for the runs without sea ice (NoIce, Aero10NoIce, Aero100NoIce) and the aerosol number concentration from the climatological dataset was multiplyed by 10 and 100 for the runs with increased aerosol concentrations by a factor of 10 and 100 respectively.
+The input files for the ARW solver, created by WPS and REAL (see figure~\ref{fig:wrfflowchart}) were manipulated by use of the NetCDF Operator (NCO) tool ncap2. In these files the sea ice was removed for the runs without sea ice (NoIce, Aero10NoIce) and the aerosol number concentration from the climatological dataset was multiplied by 10 for the runs with increased aerosol concentrations.
 %wrfinput\_d01 and wrfbdy\_d01 are input files for domain 1, in my case the only domain, and are made by real.exe. These files are then used as initialization or forcing when wrf.exe is run.
 %To run the model without ice and with an increased number of aerosols I manipulated the input files for WRF. I used a netCDF Operator (NCO) tool, ncap2. This allowed me to manipulate the netCDF files from my terminal window in the folder where they were located.
 %Elaborate on removal or placing of sea ice. Elaborate on multiplying the aerosol number concentration with a factor 10 or 100. By use of ncap2 from NetCDF (NCO).

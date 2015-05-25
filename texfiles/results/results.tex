@@ -14,7 +14,7 @@ But first, to have a reference for the differences, the weather and cloud situat
 \section{Reference figures from the control run}
 %--------------------
 Figure~\ref{fig:weather} shows the weather situation in the control run for days 1 and 5. The temperature at 2~m height is represented by red contour lines, and the wind speed and direction at 10~m height is shown by the 
-wind barbs and their color. Day 1, figure~\ref{subfig:weather_cont_day1} shows weak northerly winds ($\sim$ 5~m/s) bringing cold air (@ input temperature) from the north over the sea ice, and the westerly winds over the ocean south of the sea ice bring moisture to the air over the sea ice which is seen as low stratus in figure~\ref{subfig:cross_LWC_day1}, which shows the LWC in the vertical cross section over the red line in figure~\ref{subfig:cross_line}. The thicker clouds over the island in figure~\ref{subfig:cross_LWC_day1} have been formed due to orographic lifting. The westerly winds over the sea ice towards the mountains at $\sim$76$\degree$N and 112$\degree$W has brought the air to saturation as it is lifted and formed thick clouds over the mountains with LWC of $\sim$0.1$\text{g/m}^3$. From figure~\ref{subfig:cross_IWC_day1}, showing the ice water content (IWC) in the section one can see that the thicker clouds over the mountain also contain ice in the upper part of the clouds, with about 5$\cdot\text{10}^{-3}$~$\text{mg/m}^3$. 
+wind barbs and their color. Day 1, figure~\ref{subfig:weather_cont_day1} shows weak northerly winds ($\sim$ 5~m/s) bringing cold air, -3$\degree$C (270~K), from the north over the sea ice, and the westerly winds over the ocean south of the sea ice bring moisture to the air over the sea ice which is contributes to the low stratus in figure~\ref{subfig:cross_LWC_day1}. Figure~\ref{fig:sections} contains the vertical cross sections of LWC and IWC over the line shown in figure~\ref{subfig:cross_line}. The deeper clouds over the island in figure~\ref{subfig:cross_LWC_day1} have been formed due to orographic lifting, and the height of the "mountain" is $\sim$400~m according to the y-axis in the cross section, and the filled contours of terrain height in figure~\ref{subfig:cross_line}. The westerly winds over the sea ice, towards the mountain at $\sim$76$\degree$N and 112$\degree$W, increase in strength of the mountain and brings air to saturation as it is lifted and forms deeper clouds over the mountain with LWC of $\sim$0.1$\text{g/m}^3$. From figure~\ref{subfig:cross_IWC_day1}, showing the ice water content (IWC) in the section one can see that the thicker clouds over the mountain also contain ice in the upper part of the clouds, with about 5$\cdot\text{10}^{-3}$~$\text{mg/m}^3$. 
 
 \begin{figure}
     \centering
@@ -30,7 +30,7 @@ wind barbs and their color. Day 1, figure~\ref{subfig:weather_cont_day1} shows w
         \caption{Day 5}
         \label{subfig:weather_cont_day5}
     \end{subfigure}
-    \caption{The temperature and wind pattern for days 1 and 5, from the control run. The temperature at 2~m height is represented by red contour lines and the wind speed and direction at 10~m height is shown by wind barbs and their color, where red is higher wind speed and blue is lower. The shortest tails on the wind barbs indicate 2.5~m/s each, the longer tails indicate 5~m/s and the longest indicate 10~m/s.}
+    \caption{The temperature and wind pattern for days 1 and 5, from the control run. The temperature at 2~m height is represented by red contour lines and the wind speed and direction at 10~m height is shown by wind barbs and their color, where red is higher wind speed and blue is lower. The shortest tails on the wind barbs indicate a wind speed of 5~m/s and the longest indicate 10~m/s.}
     \label{fig:weather}
 \end{figure}
 
@@ -64,7 +64,7 @@ By day 5 the wind direction has changed to south-easterly, see figure~\ref{subfi
         \label{subfig:cross_line}
     \end{subfigure}
     \caption{Vertical cross sections of averaged liquid ($\text{g/m}^3$) and ice  ($\text{mg/m}^3$) water content, and temperature ($\degree\text{C}$), from the control run, for days 1 and 5. LWC and IWC for day 1 are shown in figures~\ref{subfig:cross_LWC_day1} and~\ref{subfig:cross_IWC_day1} respectively. Figure~\ref{subfig:cross_LWC_Day5} shows the LWC for day 5. The IWC on day 5 was 0 in the section and is not shown. Figure~\ref{subfig:cross_line} shows a map of the area with the ice edge as a black contour line. The terrain height is represented by filled contours and the red line over the sea ice is the line over which the cross sections are made.}
-    \label{fig:weather}
+    \label{fig:sections}
 \end{figure}
 
 The LWP for days 1 and 5 are shown in figure~\ref{subfig:LWPr1Day1} and~\ref{subfig:LWPr1Day5} with the CDNC (~\ref{subfig:cdnc_cont_Day1} and~\ref{subfig:cdnc_cont_Day5}) and $r_e$ (~\ref{subfig:recloud_r1Day1} and~\ref{subfig:recloud_r1Day5}). One can clearly see that where the LWP is high, so is the CDNC, which is expected based on equation~\ref{eqn:LWC}. The pattern in $r_e$ is @different due to...@
@@ -72,6 +72,8 @@ The LWP for days 1 and 5 are shown in figure~\ref{subfig:LWPr1Day1} and~\ref{sub
 The fluxes of both SW and LW radiation at both the surface and at the top of the atmosphere (TOA) may be partly explained by the clouds, through looking at the LWP. Figure (@radiation) shows the downward SW at the surface (@subfig) and upward at TOA (@subfig) for day 1 and @more radiation and why it looks that way.
 
 The heat fluxes upward at the surface, latent heat (LH) and sensible heat (SH), are also of interest when studying clouds in the Arctic. The fluxes are shown in figure (@figure) for day 1 (LH (@subfig), SH (@subfig)) and day 5 (LH (@subfig), SH (@subfig)). Notice that the LH and SH is lower over the sea ice for both days 1 and 5. This because the sea ice is colder than the ocean, and works as a lid over that part of the ocean, not letting all the heat out.
+
+Looking back to figure~\ref{fig:seaice} in Chapter~\ref{chap:modmet}, one can also see that the sea ice fraction is higher further north, which explains the lower LH for that area in the control run.
 
 %--------- Cloud droplet and ice number concentrations
 \begin{figure}
@@ -242,7 +244,7 @@ Of course, the removal of sea ice would reduce the SW at TOA, see figure~\ref{su
 \label{fig:sh_r2Day1}
 \end{figure}
 
-The heat fluxes are almost unchanged for most of the study area by the removal of sea ice, except for the area where the sea ice has been removed (see figures~\ref{fig:lh_r2Day1} and~\ref{fig:sh_r2Day1}). Especially for the northernmost part of the study area and "sea ice removed area" the fluxes are a lot higher than in the control run. This is not surprising, since one would expect the ocean surface to hold a higher temperature than the sea ice. Also a lot more heat would be released due to evaporation than in the case when sea ice is present. Looking back to figure~\ref{fig:seaice} in Chapter~\ref{chap:modmet}, one can also see that the sea ice fraction is higher further north, which explains the lower LH for that area in the control run.\textbf{@check this!!}
+The heat fluxes are almost unchanged for most of the study area by the removal of sea ice, except for the area where the sea ice has been removed (see figures~\ref{fig:lh_r2Day1} and~\ref{fig:sh_r2Day1}). Especially for the northernmost part of the study area and "sea ice removed area" the fluxes are a lot higher than in the control run. This is not surprising, since one would expect the ocean surface to hold a higher temperature than the sea ice. Also a lot more heat would be released due to evaporation than in the case when sea ice is present. 
 
 \subsection{Day 5}
 The average differences for LWP, CDNC and $r_e$ at day 5 are all negative, see figure~\ref{fig:lwpcdncre_r2Day5}, over the area that had ice in the control run. Thus the clouds making up the LWP in the control run, see figure~\ref{subfig:LWPr1Day5}, have either ceased to exist, been significantly thinned, moved away or turned into ice. The LWP has a negative difference of >30~$\text{g/m}^2$, which means that the LWP, when comparing with the values for that area in the control run (figure~\ref{subfig:LWPr1Day5}) which were around 40-100~$\text{g/m}^2$, there is still around 20-70$\text{g/m}^2$ left. So the clouds have not all ceased to exist. This is supported by the fact that the CDNC in the control run was $\sim$10 to 25~$\text{cm}^{-3}$ and has according to figure~\ref{subfig:CDNCr2Day5} got 3 to >5 droplets~$\text{cm}^{-3}$ less in the run with no ice. Then the clouds in the run with no ice are left with <5 to around 20 droplets~$\text{cm}^{-3}$ which is definitely enough to assume that there are still clouds in the area.
