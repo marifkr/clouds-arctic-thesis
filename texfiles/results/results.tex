@@ -2,9 +2,7 @@
 \label{chap:results}
 In this chapter, the findings made in the thesis are presented. First a section on the model output from the control run (Control) is described, which is also used for comparison and reference in the following sections. The chapter mostly consists of a discussion of why there is a difference in certain cloud and radiation variables between NoIce and Control, and between Aero10 and Control. At the end, there is also a small section on the difference in the fields between Aero10NoIce and Control.
 
-The discussion is based on differences in daily averages for the fields. The daily averaged differences have been calculated by subtracting the daily averaged field in the control run from the daily averaged field in the run discussed in the respective section.
-
-The results are discussed separately for NoIce and Aero10 and for days 1 and 5. Here day 1 represents the closest to an "off line" run, with near instantaneous changes in clouds due to ice removal or aerosol increase, whereas by day 5 the atmosphere has had some time to adjust to the changes that were implemented at the beginning of the first day of the run.
+The discussion is based on daily time averaged differences between Control and the other runs. The results are discussed separately for NoIce, Aero10 and Aero10NoIce for days 1 and 5. Here day 1 represents the closest to an "off line" run, with near instantaneous changes in clouds due to ice removal or aerosol increase, whereas by day 5 the atmosphere has had some time to adjust to the changes that were implemented at the beginning of the first day of the run.
 
 I also try to answer if these results show a warming or cooling effect and if there is reason to believe that changes in sea ice extent and aerosol concentration will further influence the sea ice extent.
 
@@ -686,8 +684,12 @@ The skin temperature, figure~\ref{subfig:skin_r3Day5}, for the domain shows a sm
 \clearpage
 \section{Removed sea ice \underline{and}~increased aerosol}
 %------------
+The effects on radiative cloud properties and the surface by removal of sea ice and increased aerosol number concentration is studied combined. This is to get an idea of the effects of increased pollution from sea traffic as a consequence of more ice free ocean, in combination with more available heat and moisture from the ocean. @cite someone looking at that and what they found? The results in this section are not discussed as detailed as the results presented in the two previous sections for NoIce and Aero10 separately. This is to avoid too much repetition of the mechanisms behind the differences.
+
+%-----------------
 \subsection{Day 1}
-The difference in LWP between the run with both removed sea ice and incerased aerosol number concentration (Aero10NoIce) and Control (figure~\ref{subfig:LWPr4Day1}) is clearly due to the increase is number of aerosols. The increase in LWP for day 1 in NoIce (figure~\ref{subfig:LWPr2Day1}) was on average $\sim$0.2~$\text{g/m}^2$ for the whole field, whereas for Aero10 it was 11~$\text{g/m}^2$, which is also the average increase for Aero10NoIce. The average increase in CDNC (figure~\ref{subfig:CDNCr4Day1}) for Aero10NoIce is also similar to Aero10 (figure~\ref{subfig:CDNCr3Day1}) where both those runs had an average increase of $\sim$15.9~$\text{cm}^{-3}$. The difference in effective radius is also the same with an average decrease in droplet size of about 0.5~$\mu\text{m}$ (see figure~\ref{subfig:recloud_r4Day1} for Aero10NoIce and~\ref{subfig:recloud_r3Day1} for Aero10).
+%-----------------
+The difference in LWP between the run with both removed sea ice and incerased aerosol number concentration (Aero10NoIce) and Control for day 1 (figure~\ref{subfig:LWPr4Day1}) is clearly due to the increase is number of aerosols. The increase in LWP for day 1 in NoIce (figure~\ref{subfig:LWPr2Day1}) was on average $\sim$0.2~$\text{g/m}^2$ for the whole field, whereas for Aero10 it was 11~$\text{g/m}^2$, which is also the average increase for Aero10NoIce. The average increase in CDNC (figure~\ref{subfig:CDNCr4Day1}) for Aero10NoIce is also similar to Aero10 (figure~\ref{subfig:CDNCr3Day1}) where both those runs had an average increase of $\sim$15.9~$\text{cm}^{-3}$. The difference in effective radius is also the same with an average decrease in droplet size of about 0.5~$\mu\text{m}$ (see figure~\ref{subfig:recloud_r4Day1} for Aero10NoIce and~\ref{subfig:recloud_r3Day1} for Aero10). For these specific parameters it is clear that the effect of increasing the aerosol number concentration outweighs that of removing the sea ice.
 
 % Figure with LWP, CDNC and r_e
 \begin{figure}[hb]
@@ -715,6 +717,8 @@ The difference in LWP between the run with both removed sea ice and incerased ae
 \caption{The averaged difference in LWP, CDNC and $r_e$ of cloud droplets (from left to right) over the lowermost 11 layers for day 1. Aero10NoIce-Control.}
 \label{fig:lwpcdncre_r4Day1}
 \end{figure}
+
+When looking at the difference in radiation fluxes down at the surface and up at TOA (figure~\ref{fig:radiation_r4Day1}) one can see that both the removal of sea ice and the increase in aerosol number concentration make a difference.  For downward SW at the surface (figure~\ref{subfig:swdown_r4Day1}) the average difference can be interpreted as a sum of the difference in NoIce and Aero10. NoIce and Aero10 had average decreases in SW down of $\sim$2.36~$\text{W/m}^2$ (figure~\ref{subfig:swdown_r2Day1}) and $\sim$9.25~$\text{W/m}^2$ (figure~\ref{subfig:swdown_r3Day1}) respectively. When added together they are almost equal to the average difference in Aero10NoIce, which is a decrease of 11.6~$\text{W/m}^2$. Such a decrease in downwelling SW radiation could have a cooling effect at the surface. It can be seen from figures~\ref{subfig:lh_r4Day1},~\ref{subfig:sh_r4Day1} and~\ref{subfig:skin_r4Day1} showing LH, SH and skin temperature respectively, that there is a decrease in upward surface fluxes and temperature of the surface at 77-79$\degree$N and 115-125$\degree$W, which fits perfectly with the area of most pronounced decrease in downwelling SW in figure~\ref{subfig:swdown_r4Day1}.
 
 % Figure with SW and LW down at surface and up at TOA
 \begin{figure}
@@ -773,9 +777,10 @@ The difference in LWP between the run with both removed sea ice and incerased ae
 	\label{fig:lhshskin_r4Day1}
 \end{figure}
 
-
+%-----------------
+\clearpage
 \subsection{Day 5}
-
+%-----------------
 % Figure with LWP, CDNC and r_e
 \begin{figure}[hb]
 \centering
