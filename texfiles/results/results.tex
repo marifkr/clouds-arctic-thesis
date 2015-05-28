@@ -253,19 +253,21 @@ The average difference in LWP, NoIce-Control, for day 1, shown in figure~\ref{su
 
 \begin{figure}
 \centering
-	\begin{subfigure}{0.30\textwidth}
+	\begin{subfigure}{0.40\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{results/noice/Diff_LWP_Day1NoIce.pdf}
 		\caption{LWP, NoIce, day 1}
 		\label{subfig:LWPr2Day1}
 	\end{subfigure}
-	\begin{subfigure}{0.30\textwidth}
+	\quad
+	\begin{subfigure}{0.40\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{results/noice/diff_NoIce_QNCLOUD_Day1.pdf}
 		\caption{CDNC, NoIce, day 1}
 		\label{subfig:CDNCr2Day1}
 	\end{subfigure}
-	\begin{subfigure}{0.30\textwidth}
+	
+	\begin{subfigure}{0.40\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{results/noice/diff_NoIce_RE_CLOUD_Day1.pdf}
 		\caption{$r_e$, NoIce, day 1}
@@ -360,19 +362,21 @@ The average differences for LWP, CDNC and $r_e$ at day 5 are all negative, see f
 
 \begin{figure}[hb]
 \centering
-	\begin{subfigure}{0.32\textwidth}
+	\begin{subfigure}{0.40\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{results/noice/Diff_LWP_Day5NoIce.pdf}
 		\caption{LWP, NoIce, day 5}
 		\label{subfig:LWPr2Day5}
 	\end{subfigure}
-	\begin{subfigure}{0.32\textwidth}
+	\quad
+	\begin{subfigure}{0.40\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{results/noice/diff_NoIce_QNCLOUD_Day5.pdf}
 		\caption{CDNC, NoIce, day 5}
 		\label{subfig:CDNCr2Day5}
 	\end{subfigure}
-	\begin{subfigure}{0.32\textwidth}
+	
+	\begin{subfigure}{0.40\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{results/noice/diff_NoIce_RE_CLOUD_Day5.pdf}
 		\caption{$r_e$, NoIce, day 5}
@@ -459,7 +463,7 @@ In figure~\ref{fig:radiation_r2Day5} the difference, for NoIce-Control, in SW do
 
 The red patch at 77$\degree$N stretching from 120 to 140$\degree$W, in figure~\ref{subfig:swdown_r2Day5}, indicating the increase in downwelling SW is recognized as a decrease in downwelling LW in the same area in figure~\ref{subfig:glw_r2Day5}. This can also be explained by the decrease in CDNC, or rather the LWP, where if the clouds are thinned or cease to exist, the LW emissivity of the clouds would decrease as the LWP decreased (equation~\ref{eqn:epsilon_lw}), provided the LWP got lower than 40-45~$\text{g/m}^2$ according to figure~\ref{fig:epsalb}. Looking at the difference in LWP in figure~\ref{subfig:LWPr2Day5}, which shows LWP for NoIce-Control, one sees that the LWP in NoIce is >30~$\text{g/m}^2$ less than in the control run for that exact area. The LWP in the control run (figure~\ref{subfig:LWPr1Day5}) for that area was 30 to 60~$\text{g/m}^2$. Thus the LWP in NoIce is below the limit for saturation on LW and the LW emissivity is decreased, explaining the decrease in LW reaching the surface in that particular area.
 
-For quite a large part of the area which is now sea ice free the downwelling LW experiences an increase compared to the control run, difference shown in figure~\ref{subfig:glw_r2Day5}. The depletion of clouds by snow, decreasing the LWP, would intuitively also decrease the downwelling LW at the surface if one considers the decrease in emissivity it would lead to, based on equation~\ref{eqn:epsilon_lw}. On the other hand, knowing Stefan-Boltzmann's law (equation~\ref{eqn:stefanboltzmann}) the temperature of the emitting body is of crucial importance. The removal of sea ice has led to an increase in surface heat fluxes and skin temperature, as mentioned in day 1, and shows the same for day 5 in figure~\ref{fig:lhshskin_r2Day5}.
+For quite a large part of the area which is now sea ice free the downwelling LW experiences an increase compared to the control run, see figure~\ref{subfig:glw_r2Day5}. The depletion of clouds by snow, decreasing the LWP, would intuitively also decrease the downwelling LW at the surface if one considers the decrease in emissivity it would lead to, based on equation~\ref{eqn:epsilon_lw}. On the other hand, knowing Stefan-Boltzmann's law (equation~\ref{eqn:stefanboltzmann}) the temperature of the emitting body is of crucial importance. The removal of sea ice has led to an increase in surface heat fluxes and skin temperature, as mentioned in day 1, and shows the same for day 5 in figure~\ref{fig:lhshskin_r2Day5}.
 
 \begin{figure}
 \centering
@@ -484,16 +488,18 @@ For quite a large part of the area which is now sea ice free the downwelling LW 
 	\label{fig:lhshskin_r2Day5}
 \end{figure}
 
-A higher skin temperature and increased surface heat fluxes pushes the lower cloud limit slightly higher up into the atmosphere, the cloud height for a section of the area can be seen in the vertical cross section for LWC on day 5~\ref{fig:cross_LWC_r2Day5} for the run with no ice. Comparing this with the vertical cross section from the control run, figure~\ref{subfig:cross_LWC_Day5}, it is clear that the stratus clouds lie approximately 500~m higher closer to the mountain in the NoIce run than they did in the control run.
+A higher skin temperature and increased surface heat fluxes causes warmer air to rise and pushes the lower cloud base slightly higher up into the atmosphere. The cloud height for a section of the area can be seen in the vertical cross section for LWC on day 5~\ref{fig:cross_LWC_r2Day5} for the run with no ice. Comparing this with the vertical cross section from the control run, figure~\ref{subfig:cross_LWC_Day5}, it is clear that the stratus clouds lie approximately 500~m higher closer to the mountain in the NoIce run than they did in the control run.
 
 \begin{figure}
 \centering
 \includegraphics[width=0.6\textwidth]{results/noice/crossSec_LWC_NoIce_Day5.pdf}
-\caption{Averaged LWC in the NoIce run for day 5, in the vertical cross section over the red line in figure~\ref{subfig:cross_line}.}
+\caption{Averaged LWC as filled contours, and temperature as dashed contours, in the vertical cross section over the red line in figure~\ref{subfig:cross_line}. Day 5 of NoIce.}
 \label{fig:cross_LWC_r2Day5}
 \end{figure}
 
-Looking at vertical cross sections from NoIce and Control the clouds seem to have the same temperature in both runs, but in NoIce the cloud does not stretch as close to the mountain as in Control, and between 100 and 120 on the x-axis NoIce has no cloud, which fits with the decrease in downwelling LW in that area (77$\degree$N and 117$\degree$W). The increase in downwelling LW on the other hand might be explained by the increase in cloud height. .....\textit{men den forklaringen er jeg veldig usikker paa, se e-post}
+Looking closely at vertical cross sections from NoIce and Control the clouds in NoIce have a higher temperature at the core (-10$\degree$C), where there is most liquid water, than in Control (-12$\degree$C). This increase in temperature allow the clouds to emit more LW to the ground surface, following Stefan-Boltzmanns law (equation~\ref{eqn:stefanboltzmann}) than in Control, despite the decrease in LWP that lowers the cloud emissivity (equation~\ref{eqn:epsilon_lw}). On the other hand, in NoIce the clouds do not stretch as close to the mountain as in Control, and between 100 and 120 on the x-axis NoIce has no cloud, which fits with the decrease in downwelling LW in that area (77$\degree$N and 117$\degree$W).
+
+The increase in surface fluxes from the area where sea ice was removed, shown in figure~\ref{fig:lhshskin_r2Day5}, is accompanied by a significant decrease over the ocean outside where the sea ice used to be. Recall that the strong winds in that area made the surface heat fluxes significantly higher over the ocean than over the ice, compared to day 1 (figure~\ref{fig:surface_fluxes_r1}). The wind pattern in NoIce (not shown) is the same as in Control, but since the sea ice is not there, the air being brought over that area is no colder than further out over the ocean and does therefore not experience the same difference in temperature gradient as when the sea ice was there. Thus, removal of sea ice releases more latent and sensible heat, and gives a higher skin temperature ($\sim$0.6 to 2~K increase) in that area. With an increase of $\sim$2~K the skin temperature (where there used to be sea ice) reaches almost the same skin temperature as the open ocean (figure~\ref{subfig:skin_r1Day5}). Therefore there is no marked increase in the surface fluxes off that area, and it is shown as a decrease compared to Control for both LH and SH (figures~\ref{subfig:lh_r2Day5} and~\ref{subfig:sh_r2Day5}).
 
 %-------------------------------------
 \clearpage
