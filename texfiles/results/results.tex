@@ -64,9 +64,7 @@ By day 5 the wind direction has changed to south-easterly, see figure~\ref{subfi
 \end{figure}
 
 The LWP, CDNC and $r_e$ for days 1 and 5 are shown in figure~\ref{fig:lwpcdncre_r1}. One can see that the LWP and the CDNC have similar pattern, which is expected based on equation~\ref{eqn:LWC}. The pattern in $r_e$ also fits quite well with that of LWP, where the effective droplet radius is higher so is LWP, which can be interpreted as that larger droplets contain more water. These similarities in patterns are true for both days 1 and 5. In the daily averaged LWP for day 1, figure~\ref{subfig:LWPr1Day1}, there are some areas with LWP of 0-20~$\text{g/m}^2$, for instance 78-81$\degree$N 135-145$\degree$W. Here there are no low clouds, which is also evident from the lack of number of droplets per cubic centimeter in figure~\ref{subfig:cdnc_cont_Day1}. This figure shows the numbers with units $10^6~\text{kg}^{-1}$, which can be approximated to the more common units for CDNC, per cubic centimeter ($\text{cm}^{-3}$). Assuming that the clouds are close enough to the surface to assume an air density $\rho_a = 1~\text{kg/m}^3=1~\text{kg/}10^6\text{cm}^3$, then for CDNC $10^6/\text{kg} = \text{cm}^{-3}$ is a good approximation.
-Based on the LWP from day 5 (figure~\ref{subfig:LWPr1Day5}), most of the low clouds were only in the western part of the domain.
-
-%this is where to discuss radiation. do it together for both days after LWP, CDNC and re discussion! link and refer back to equation!
+Based on the LWP from day 5 (figure~\ref{subfig:LWPr1Day5}), most of the low clouds were only in the western part of the domain on that day. Particularly thick low clouds are seen just south of 75$\degree$N and west of 130$\degree$W. Where the LWP ranges from 100 to almost 300~$\text{g/m}^2$, and the CDNC ranges from 15 to 60~$\text{cm}^{-3}$ (figure~\ref{subfig:cdnc_cont_Day5}). These clouds contain many droplets with averaged effective radius as large as 8~$\mu\text{m}$ (figure~\ref{subfig:recloud_r1Day5}).
 
 %---------- LWP control run, days 1 and 5
 \begin{figure}
@@ -115,7 +113,9 @@ Based on the LWP from day 5 (figure~\ref{subfig:LWPr1Day5}), most of the low clo
 	\label{fig:lwpcdncre_r1}
 \end{figure}
 
-The fluxes of both SW and LW radiation at both downward at the surface and upward at the top of the atmosphere (TOA) may be partly explained by the clouds (@utdyp, Jon egill spør: Hvordan det?), through looking at the LWP. Figures~\ref{fig:radiation_r1Day1} and~\ref{fig:radiation_r1Day5} show the downward SW and LW at the surface and upward at TOA for days 1 and 5 respectively.
+
+
+%The fluxes of both SW and LW radiation both downward at the surface and upward at the top of the atmosphere (TOA) may be partly explained by the clouds (@utdyp, Jon egill spør: Hvordan det?), through looking at the LWP. Figures~\ref{fig:radiation_r1Day1} and~\ref{fig:radiation_r1Day5} show the downward SW and LW at the surface and upward at TOA for days 1 and 5 respectively.
 %----------Radiation Day 1
 \begin{figure}
 \centering
@@ -154,35 +154,35 @@ The fluxes of both SW and LW radiation at both downward at the surface and upwar
 \centering
 	\begin{subfigure}{0.48\textwidth}
 		\includegraphics[width=\textwidth]{results/control/SWDOWN_Day5.pdf}
-		\caption{The average SW flux down at the surface, day 5.}
+		\caption{SW down at the surface, day 5.}
 		\label{subfig:swdown_r1Day5}
 	\end{subfigure}
 	\quad
 	\begin{subfigure}{0.48\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{results/control/SWUPT_Day5.pdf}
-		\caption{The average SW flux up at TOA, day 5.}
+		\caption{SW up at TOA, day 5.}
 		\label{subfig:swup_r1Day5}
 	\end{subfigure}
 	
 	\begin{subfigure}{0.48\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{results/control/GLW_Day5.pdf}
-		\caption{The average LW flux down at the surface, day 5.}
+		\caption{LW down at the surface, day 5.}
 		\label{subfig:glw_r1Day5}
 	\end{subfigure}
 	\quad
 	\begin{subfigure}{0.48\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{results/control/LWUPT_Day5.pdf}
-		\caption{The average LW flux up at TOA, day 5.}
+		\caption{LW up at TOA, day 5.}
 		\label{subfig:lwup_r1Day5}
 	\end{subfigure}
 	\caption{The average SW and LW flux down at the surface and up at TOA, for day 5. Control.}
 	\label{fig:radiation_r1Day5}
 \end{figure}
 
-The heat fluxes upward at the surface, latent heat (LH) and sensible heat (SH), are also of interest when studying clouds in the Arctic. The fluxes are shown in figure~\ref{fig:surface_fluxes_r1} for days 1 and 5. Notice that the LH is lower over the sea ice for both days 1 and 5. This because the sea ice is colder than the ocean, and works as a lid over that part of the ocean, not letting all the heat and water vapor out. Another thing to notice is the marked increase in SH just off the sea ice edge, 77$\degree$N, 135$\degree$W, day 5. This is due to the strong winds in that area (figure~\ref{subfig:weather_cont_day5}), which brings cold air from over the ice out over the warmer open ocean. Thus the temperature gradient is stronger just off the sea ice edge, increasing the heat given from the surface to the overlying air. The effect is strongest at the sea ice edge, but is also evident further away over the ocean, to about 160$\degree$W. The reason the signal is so clear at the ice edge and stretches far is the wind speed, which is just above 10~$\text{m/s}$ (see figure~\ref{subfig:weather_cont_day5}). In figure~\ref{subfig:sh_r1Day5} is also a white "blob" south of the sea ice (70-75$\degree$N and 125-140$\degree$W), which indicates a negative heat flux of about 20~$\text{W/m}^2$. There the surface draws heat from the overlying air, since the temperature at 2~m height (figure~\ref{subfig:weather_cont_day5}) is higher than the skin temperature (figure~\ref{subfig:skin_r1Day5}) in that area. This warmer air is brought over the ocean by winds coming from land south east of that area, see figure~\ref{subfig:weather_cont_day5}. The figure also shows the strength of the wind field, which was mentioned as a reason for the high SH off the ice edge and is also the reason for the strong negative heat flux.
+The heat fluxes upward at the surface, latent heat (LH) and sensible heat (SH), are also of interest when studying clouds in the Arctic. The fluxes are shown in figure~\ref{fig:surface_fluxes_r1} for days 1 and 5. Notice that the LH is lower over the sea ice for both days 1 and 5. This because the sea ice is colder than the ocean, and works as a lid over that part of the ocean, not letting all the heat and water vapor out. Another thing to notice is the marked increase in SH just off the sea ice edge, 77$\degree$N, 135$\degree$W, day 5. This is due to the strong winds in that area (figure~\ref{subfig:weather_cont_day5}), which brings cold air from over the ice out over the warmer open ocean. Thus the temperature gradient is stronger just off the sea ice edge, increasing the heat given from the surface to the overlying air. The effect is strongest at the sea ice edge, but is also evident further away over the ocean, to about 160$\degree$W. The reason the signal is so clear at the ice edge and stretches far is the wind speed, which is just above 10~$\text{m/s}$ (see figure~\ref{subfig:weather_cont_day5}). In figure~\ref{subfig:sh_r1Day5} is also a white "blob" south of the sea ice (70-75$\degree$N and 125-140$\degree$W), which indicates a negative heat flux of about 20~$\text{W/m}^2$. There the surface draws heat from the overlying air, since the temperature at 2~m height (figure~\ref{subfig:weather_cont_day5}) is higher than the skin temperature (figure~\ref{subfig:skin_r1Day5}) in that area. This warmer air is brought over the ocean by winds coming from land southeast of that area, see figure~\ref{subfig:weather_cont_day5}. The figure also shows the strength of the wind field, which was mentioned as a reason for the high SH off the ice edge and is also the reason for the strong negative heat flux.
 
 %----- Surface heat fluxes
 \begin{figure}
@@ -239,7 +239,7 @@ The heat fluxes upward at the surface, latent heat (LH) and sensible heat (SH), 
 \clearpage
 \section{Removed sea ice}
 %-------------------------------
-The sea ice was removed to study the effect this had on the cloud radiative properties, and through that if it had heating or cooling effects at the surface. @\textit{Explain why sea ice was removed, repeat stuff from earlier!} The sea ice that was present in the control run, but has been removed for NoIce, is shown in figure~\ref{fig:seaice}. 
+The sea ice was removed to study the effect this had on the cloud radiative properties, and through that if it had heating or cooling effects at the surface. The sea ice that was present in the control run, but has been removed for NoIce, is shown in figure~\ref{fig:seaice}. 
 
 \begin{figure}[hb]
 \centering
@@ -274,7 +274,7 @@ The average difference in LWP, NoIce-Control, for day 1, shown in figure~\ref{su
 		\caption{$r_e$, NoIce, day 1}
 		\label{subfig:recloud_r2Day1}
 	\end{subfigure}
-\caption{The averaged difference in LWP, CDNC and $r_e$ of cloud droplets (from left to right) over the lowermost 11 layers for day 1. NoIce-Control.}
+\caption{Difference in time averaged LWP, and in height and time averaged CDNC and $r_e$, for day 1. NoIce-Control.}
 \label{fig:lwpcdncre_r2Day1}
 \end{figure}
 
@@ -299,7 +299,7 @@ This implies that there is a new cloud forming in that area, that could not form
 		\caption{Difference in skin temperature.}
 		\label{subfig:skin_r2Day1}
 	\end{subfigure}
-	\caption{Average difference in LH, SH and skin temperature for day1. NoIce-Control.}
+	\caption{Difference in time averaged LH, SH and skin temperature for day1. NoIce-Control.}
 	\label{fig:lhshskin_r2Day1}
 \end{figure}
 
@@ -339,7 +339,7 @@ The the two red patches at 80$\degree$N and 140-155$\degree$W in the figure for 
 		\caption{The average difference in LW flux up at TOA, day 1.}
 		\label{subfig:lwup_r2Day1}
 	\end{subfigure}
-	\caption{The average difference in SW and LW flux down at the surface and up at TOA, for day 1. NoIce-Control.}
+	\caption{Difference in time averaged SW and LW flux down at the surface and up at TOA, for day 1. NoIce-Control.}
 	\label{fig:radiation_r2Day1}
 \end{figure}
 
@@ -383,11 +383,11 @@ The average differences for LWP, CDNC and $r_e$ at day 5 are all negative, see f
 		\caption{$r_e$, NoIce, day 5}
 		\label{subfig:recloud_r2Day5}
 	\end{subfigure}
-\caption{The average difference in LWP, CDNC and $r_e$ of cloud droplets (from left to right) over the lowermost 11 layers for day 1. NoIce-Control.}
+\caption{Difference in time averaged LWP, and in height and time averaged CDNC and $r_e$, for day 5. NoIce-Control.}
 \label{fig:lwpcdncre_r2Day5}
 \end{figure}
 
-There is hardly any ice at all in the study area in the lowermost 11 layers, much like in the control run (see figure~\ref{subfig:cinc_cont_Day5}), and the IWP is zero (not shown) over the area where there was sea ice, and the area around. The wind pattern (not shown) is very much the same as in the control run (figure~\ref{subfig:weather_cont_day5}), and the chance that the clouds have been moved to a different area is ruled out. Therefore precipitation must have depleted the clouds of some of droplets. The difference in rain (not shown) for the run with no ice compared to the control run is negligible and so snow was found guilty of depleting the clouds. Figure~\ref{fig:snowstory} shows how the cloud that was claimed started to form in day 1 of the run with no ice, in section~\ref{sec:noiceDay1}, as more water vapor and aerosols were made available, develops into a snowing cloud and performs natural cloud seeding by snowing out the other clouds as it travels south-east over the sea ice free area.
+There is hardly any ice at all in the study area in the lowermost 11 layers (not shown), and the IWP is zero (not shown) over the area where there was sea ice, and the area around. The wind pattern (not shown) is the same as in the control run (figure~\ref{subfig:weather_cont_day5}), and the chance that the clouds have been moved to a different area is ruled out. Therefore precipitation must have depleted the clouds of some of the droplets. The difference in rain (not shown) for the run with no ice compared to the control run is negligible and so snow was found guilty of depleting the clouds. Figure~\ref{fig:snowstory} shows how the cloud that was claimed started to form in day 1 of the run with no ice, in section~\ref{sec:noiceDay1}, as more water vapor and aerosols are made available, more clouds develop and produce snow that performs natural cloud seeding, by making other clouds snow too.
 
 \begin{figure}
 \centering
@@ -420,43 +420,43 @@ There is hardly any ice at all in the study area in the lowermost 11 layers, muc
 		\caption{Day 5}
 		\label{subfig:snowstory_Day5}
 	\end{subfigure}
-\caption{The average difference in mixing ratio of snow to air, over the lowermost 11 layers for days 1 to 5. NoIce-Control.}
+\caption{Difference in time and height averaged mixing ratio of snow to air, for days 1 to 5. NoIce-Control.}
 \label{fig:snowstory}
 \end{figure}
 
-Figure~\ref{subfig:snowstory_Day1} shows the difference in mixing ratio of snow to air averaged for day 1 over the 11 lowermost layers. The slight increase in mixing ratio of snow is in the same area as the red patch in figure~\ref{subfig:CDNCr2Day5} that was claimed to be a forming cloud. Figure~\ref{subfig:snowstory_Day2} shows that in day 2 the cloud has indeed formed and it starts its journey south-eastward and continues through to day 5, see figure~\ref{subfig:snowstory_Day5} where the positive difference in snow is less pronounced, but still present.
+Figure~\ref{subfig:snowstory_Day1} shows the difference in mixing ratio of snow to air averaged for day 1 over the 11 lowermost layers. The slight increase in mixing ratio of snow is in the same area as the red patch in figure~\ref{subfig:CDNCr2Day5} that was claimed to be a forming cloud. Figure~\ref{subfig:snowstory_Day2} shows that in day 2 the cloud has indeed formed and as time passes more clouds form and produce snow through to day 5, see figure~\ref{subfig:snowstory_Day5} where the positive difference in snow is less pronounced, but still present.
 
-The clouds on the 5th day of the run with no ice are now significantly thinner than the clouds in the 5th day of the control run, due to the aforementioned reduction in CDNC. This allows for more of the upwelling LW at TOA to come directly from the surface, which holds a higher temperature than the atmosphere above (see cross section in figure~\ref{subfig:cross_LWC_Day5}) and the newly ice free area also has a higher skin temperature, an increase of $\sim$1$\degree$C than the area did in the control run, when there was sea ice there (see figure~\ref{subfig:skin_r2Day5}). Following Stefan-Boltzmann's law (equation~\ref{eqn:stefanboltzmann}) the surface should now emit more LW than the clouds and sea ice with lower temperatures in the control run did. Figure~\ref{subfig:lwup_r2Day5} shows that the upwelling LW at TOA has indeed increased by $\sim$0.5 to 5 $\text{W/m}^2$ over the area where sea ice has been removed. Overall the average increase in upwelling LW at TOA for the whole area is just shy of 0.5, but the area of particular interest is where the sea ice has been removed, and that shows a more pronounced difference than the rest of the field.
+The clouds on the 5th day of the run with no ice are now significantly thinner than the clouds in the 5th day of the control run, due to the aforementioned reduction in CDNC. This allows for more of the upwelling LW at TOA to come directly from the surface, which holds a higher temperature than the atmosphere above (see cross section in figure~\ref{subfig:cross_LWC_Day5}) and the newly ice free area also has a higher skin temperature, an increase of $\sim$1$\degree$C than the area did in the control run, when there was sea ice there (see figure~\ref{subfig:skin_r2Day5}). Following Stefan-Boltzmann's law (equation~\ref{eqn:stefanboltzmann}) the surface should then emit more LW than the clouds and sea ice with lower temperatures in the control run did. Figure~\ref{subfig:lwup_r2Day5} shows that the upwelling LW at TOA has indeed increased by $\sim$0.5 to 5 $\text{W/m}^2$ over the area where sea ice has been removed. Overall the average increase in upwelling LW at TOA for the whole area is just shy of 0.5, but the area of particular interest is where the sea ice has been removed, and that shows a more pronounced difference than the rest of the field.
 
 \begin{figure}
 \centering
 	\begin{subfigure}{0.48\textwidth}
 		\includegraphics[width=\textwidth]{results/noice/diff_NoIce_SWDOWN_Day5.pdf}
-		\caption{The average difference in SW flux down at the surface, day 5.}
+		\caption{SW down at the surface, day 5.}
 		\label{subfig:swdown_r2Day5}
 	\end{subfigure}
 	\quad
 	\begin{subfigure}{0.48\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{results/noice/diff_NoIce_SWUPT_Day5.pdf}
-		\caption{The average difference in SW flux up at TOA, day 5.}
+		\caption{SW up at TOA, day 5.}
 		\label{subfig:swup_r2Day5}
 	\end{subfigure}
 	
 	\begin{subfigure}{0.48\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{results/noice/diff_NoIce_GLW_Day5.pdf}
-		\caption{The average difference in LW flux down at the surface, day 5.}
+		\caption{LW down at the surface, day 5.}
 		\label{subfig:glw_r2Day5}
 	\end{subfigure}
 	\quad
 	\begin{subfigure}{0.48\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{results/noice/diff_NoIce_LWUPT_Day5.pdf}
-		\caption{The average difference in LW flux up at TOA, day 5.}
+		\caption{LW up at TOA, day 5.}
 		\label{subfig:lwup_r2Day5}
 	\end{subfigure}
-	\caption{The average difference in SW and LW flux down at the surface and up at TOA, for day 5. NoIce-Control.}
+	\caption{Difference in time averaged SW and LW flux down at the surface and up at TOA, for day 5. NoIce-Control.}
 	\label{fig:radiation_r2Day5}
 \end{figure}
 
@@ -485,7 +485,7 @@ For quite a large part of the area which is now sea ice free the downwelling LW 
 		\caption{Difference in skin temperature.}
 		\label{subfig:skin_r2Day5}
 	\end{subfigure}
-	\caption{Average difference in LH, SH and skin temperature for day 5. NoIce-Control.}
+	\caption{Difference in time averaged LH, SH and skin temperature for day 5. NoIce-Control.}
 	\label{fig:lhshskin_r2Day5}
 \end{figure}
 
@@ -494,7 +494,7 @@ A higher skin temperature and increased surface heat fluxes causes warmer air to
 \begin{figure}
 \centering
 \includegraphics[width=0.6\textwidth]{results/noice/crossSec_LWC_NoIce_Day5.pdf}
-\caption{Averaged LWC as filled contours, and temperature as dashed contours, in the vertical cross section over the red line in figure~\ref{subfig:cross_line}. Day 5 of NoIce.}
+\caption{Time averaged LWC as filled contours, and temperature as dashed contours, in the vertical cross section over the red line in figure~\ref{subfig:cross_line}. Day 5 of NoIce.}
 \label{fig:cross_LWC_r2Day5}
 \end{figure}
 
@@ -552,7 +552,7 @@ With an aerosol number concentration 10 times higher than that in the control ru
 		\caption{$r_e$, Aero10, day 1}
 		\label{subfig:recloud_r3Day1}
 	\end{subfigure}
-\caption{The averaged difference in LWP, CDNC and $r_e$ of cloud droplets (from left to right) over the lowermost 11 layers for day 1. Aero10-Control.}
+\caption{Difference in time averaged LWP, and in height and time averaged CDNC and $r_e$, for day 1. Aero10-Control.}
 \label{fig:lwpcdncre_r3Day1}
 \end{figure}
 
@@ -562,31 +562,31 @@ The first indirect effect describes an increase in the cloud albedo as a consequ
 \centering
 	\begin{subfigure}{0.48\textwidth}
 		\includegraphics[width=\textwidth]{results/aero10/diff_Aero10_SWDOWN_Day1.pdf}
-		\caption{The average difference in SW flux down at the surface, day 1.}
+		\caption{SW down at the surface, day 1.}
 		\label{subfig:swdown_r3Day1}
 	\end{subfigure}
 	\quad
 	\begin{subfigure}{0.48\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{results/aero10/diff_Aero10_SWUPT_Day1.pdf}
-		\caption{The average difference in SW flux up at TOA, day 1.}
+		\caption{SW up at TOA, day 1.}
 		\label{subfig:swup_r3Day1}
 	\end{subfigure}
 	
 	\begin{subfigure}{0.48\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{results/aero10/diff_Aero10_GLW_Day1.pdf}
-		\caption{The average difference in LW flux down at the surface, day 1.}
+		\caption{LW down at the surface, day 1.}
 		\label{subfig:glw_r3Day1}
 	\end{subfigure}
 	\quad
 	\begin{subfigure}{0.48\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{results/aero10/diff_Aero10_LWUPT_Day1.pdf}
-		\caption{The average difference in LW flux up at TOA, day 1.}
+		\caption{LW up at TOA, day 1.}
 		\label{subfig:lwup_r3Day1}
 	\end{subfigure}
-	\caption{The average difference in SW and flux down at the surface and up at TOA, for day 1. Aero10-Control.}
+	\caption{Difference in time averaged SW and LW flux down at the surface and up at TOA, for day 1. Aero10-Control.}
 	\label{fig:radiation_r3Day1}
 \end{figure}
 
@@ -617,7 +617,7 @@ The differences in LWP and CDNC and $r_e$ for day 5 (Aero10-Control) are shown i
 		\caption{$r_e$, Aero10, day 5}
 		\label{subfig:recloud_r3Day5}
 	\end{subfigure}
-	\caption{The averaged difference in LWP, CDNC and $r_e$ of cloud droplets (from left to right) over the lowermost 11 layers for day 5. Aero10-Control.}
+	\caption{Difference in time averaged LWP, and in height and time averaged CDNC and $r_e$, for day 5. Aero10-Control.}
 	\label{fig:lwpcdncre_r3Day5}
 \end{figure}
 
@@ -652,7 +652,7 @@ This is also seen in that there is no significant change in LW downward at the s
 		\caption{The average difference in LW flux up at TOA, day 5.}
 		\label{subfig:lwup_r3Day5}
 	\end{subfigure}
-	\caption{The average difference in SW and LW flux down at the surface and up at TOA, for day 5. Aero10-Control.}
+	\caption{Difference in time averaged SW and LW flux down at the surface and up at TOA, for day 5. Aero10-Control.}
 	\label{fig:radiation_r3Day5}
 \end{figure}
 
@@ -676,7 +676,7 @@ The area with lack of change in LW up or down is approximately the same area as 
 		\caption{Difference in skin temperature.}
 		\label{subfig:skin_r3Day5}
 	\end{subfigure}
-	\caption{Average difference in LH, SH and skin temperature for day1. Aero10-Control.}
+	\caption{Difference in time averaged LH, SH and skin temperature for day1. Aero10-Control.}
 	\label{fig:lhshskin_r3Day5}
 \end{figure}
 The albedo of the sea ice in Aero10 is around 0.6 (not shown) which means that a fraction of the incident SW radiation is absorbed. Since the amount of incident SW radiation at the surface has been reduced by the cloud cover, the absorbed radiation is less than for a higher incident amount. The ice therefore has a lower temperature to give off SH with. 
@@ -703,24 +703,24 @@ The difference in LWP between the run with both removed sea ice and incerased ae
 	\begin{subfigure}{0.48\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{results/aero10ni/Diff_LWP_Day1Aero10NoIce.pdf}
-		\caption{LWP}
+		\caption{LWP, Aero10NoIce, day 1.}
 		\label{subfig:LWPr4Day1}
 	\end{subfigure}
 	\quad
 	\begin{subfigure}{0.48\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{results/aero10ni/diff_Aero10NoIce_QNCLOUD_Day1.pdf}
-		\caption{CDNC}
+		\caption{CDNC, Aero10NoIce, day 1.}
 		\label{subfig:CDNCr4Day1}
 	\end{subfigure}
 	
 	\begin{subfigure}{0.48\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{results/aero10ni/diff_Aero10NoIce_RE_CLOUD_Day1.pdf}
-		\caption{$r_e$}
+		\caption{$r_e$, Aero10NoIce, day 1.}
 		\label{subfig:recloud_r4Day1}
 	\end{subfigure}
-\caption{The averaged difference in LWP, CDNC and $r_e$ of cloud droplets (from left to right) over the lowermost 11 layers for day 1. Aero10NoIce-Control.}
+\caption{Difference in time averaged LWP, and in height and time averaged CDNC and $r_e$, for day 1. Aero10NoIce-Control.}
 \label{fig:lwpcdncre_r4Day1}
 \end{figure}
 
@@ -756,7 +756,7 @@ When looking at the difference in radiation fluxes down at the surface and up at
 		\caption{LW up at TOA.}
 		\label{subfig:lwup_r4Day1}
 	\end{subfigure}
-	\caption{The average difference in SW and LW flux down at the surface and up at TOA, for day 1. Aero10NoIce-Control.}
+	\caption{Difference in time averaged SW and LW flux down at the surface and up at TOA, for day 1. Aero10NoIce-Control.}
 	\label{fig:radiation_r4Day1}
 \end{figure}
 
@@ -780,7 +780,7 @@ When looking at the difference in radiation fluxes down at the surface and up at
 		\caption{Difference in skin temperature.}
 		\label{subfig:skin_r4Day1}
 	\end{subfigure}
-	\caption{Average difference in LH and SH up at the surface, and difference in skin temperature, for day 1. Aero10NoIce-Control.}
+	\caption{Difference in time averaged LH and SH up at the surface, and skin temperature, for day 1. Aero10NoIce-Control.}
 	\label{fig:lhshskin_r4Day1}
 \end{figure}
 
@@ -794,24 +794,24 @@ When looking at the difference in radiation fluxes down at the surface and up at
 	\begin{subfigure}{0.48\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{results/aero10ni/Diff_LWP_Day5Aero10NoIce.pdf}
-		\caption{LWP}
+		\caption{LWP, Aero10NoIce, day 5.}
 		\label{subfig:LWPr4Day5}
 	\end{subfigure}
 	\quad
 	\begin{subfigure}{0.48\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{results/aero10ni/diff_Aero10NoIce_QNCLOUD_Day5.pdf}
-		\caption{CDNC}
+		\caption{CDNC, Aero10NoIce, day 5.}
 		\label{subfig:CDNCr4Day5}
 	\end{subfigure}
 	
 	\begin{subfigure}{0.48\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{results/aero10ni/diff_Aero10NoIce_RE_CLOUD_Day5.pdf}
-		\caption{$r_e$}
+		\caption{$r_e$, Aero10NoIce, day 5.}
 		\label{subfig:recloudr4Day5}
 	\end{subfigure}
-\caption{The averaged difference in LWP, CDNC and $r_e$ of cloud droplets (from left to right) over the lowermost 11 layers for day 5. Aero10NoIce-Control.}
+\caption{Difference in time averaged LWP, and in height and time averaged CDNC and $r_e$, for day 5. Aero10NoIce-Control.}
 \label{fig:lwpcdncre_r4Day5}
 \end{figure}
 
@@ -820,7 +820,7 @@ When looking at the difference in radiation fluxes down at the surface and up at
 \centering
 	\begin{subfigure}{0.48\textwidth}
 		\includegraphics[width=\textwidth]{results/aero10ni/diff_Aero10NoIce_SWDOWN_Day5.pdf}
-		\caption{SW down at surface.}
+		\caption{SW down at the surface.}
 		\label{subfig:swdown_r4Day5}
 	\end{subfigure}
 	\quad
@@ -834,7 +834,7 @@ When looking at the difference in radiation fluxes down at the surface and up at
 	\begin{subfigure}{0.48\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{results/aero10ni/diff_Aero10NoIce_GLW_Day5.pdf}
-		\caption{LW down at surface.}
+		\caption{LW down at the surface.}
 		\label{subfig:glw_r4Day5}
 	\end{subfigure}
 	\quad

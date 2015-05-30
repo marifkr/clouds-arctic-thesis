@@ -2,14 +2,16 @@
 \label{chap:theory}
 In this thesis the term shortwave (SW) refers to the wavelength band that carries the energy associated with solar radiation, including the visible spectrum and the shorter waves in the near infrared ($\lambda < 4\mu m$)~\citep{Wallace2006}. Longwave (LW) refers to wavelengths emitted by the Earth--atmosphere system (terrestrial radiation) including the longer waves in the near infra red and wavelengths in the infrared spectrum ($\lambda > 4\mu m$)~\citep{Wallace2006}. 
 
-In this chapter a brief overview of clouds in the Arctic, with focus on stratus, is presented. This is followed by how cloud properties can influence radiation and lastly a section on aerosols-cloud interactions.
+In this chapter a brief overview of clouds in the Arctic, with focus on stratus, is presented. This is followed by how cloud properties can influence radiation and lastly a section on aerosol-cloud interactions.
 
 \section{Arctic stratus}
 The clouds studied in this thesis are low (up to about 1600~m) stratus clouds, in the Arctic. Stratus clouds are low layered clouds that form when extensive areas of stable air is lifted. They are normally between 0.5 and 1~km thick, and can be several km wide~\citep{Aguado2010}. The largest amounts of low stratus clouds in the Arctic are over the ocean~\citep{Klein1993}.
 
 According to~\citet{Klein1993} stratus in the Arctic basin peaks during summer at nearly 62\%, while during the winter season the stratus only accounts for 18\% of the cloud cover. This leads them to conclude that the seasonal cycle of stratus in the Arctic is driven by the temperature cycle, thereby moisture content in the atmosphere, rather than the static stability.
 
-Winter in the Arctic (polar night) is completely dark and free of incoming SW radiation. The Arctic summer on the other hand has sunlight 24 hours a day. The amount of solar radiation reaching the surface is limited by the optical depth of the atmosphere it passes through. Since the Arctic is far north, the incoming solar radiation is at a high zenith angle, and less SW reaches the surface than at lower latitudes. Consequently the SW reaching the surface in the Arctic is low compared to lower latitudes. Due to their high albedo, low clouds have a net cooling effect globally. Clouds not only reflect SW radiation, but also emit LW radiation. When there is little SW to reflect, the warming effect of the emission of LW radiation is enhanced. This is how the low clouds in the Arctic differ from clouds elsewhere as mentioned in Chapter~\ref{chap:introduction}. The clouds in the Arctic have a net warming effect~\citep{Shupe2004}. It is only in the summer that the downwelling solar radiation outweighs the downwelling LW emitted by the low clouds. The rest of the year the low clouds' ability to absorb and emit terrestrial radiation dominates over their reflective effect on the solar radiation.
+Winter in the Arctic (polar night) is completely dark and free of incoming SW radiation. The Arctic summer on the other hand has sunlight 24 hours a day. The amount of solar radiation reaching the surface is limited by the optical depth of the atmosphere it passes through. Since the Arctic is far north, the incoming solar radiation is at a high zenith angle, and less SW reaches the surface than at lower latitudes.
+
+Details on radiation follows below, but in short: Low clouds reflect SW radiation, due to their high albedo, which has a cooling effect at the surface. These clouds also absorb and emit LW radiation, both up and down, and the downwelling LW radiation has a warming effect at the surface. Globally, the low clouds have a net cooling effect at the surface, due to high amounts of incoming solar radiation and lower zenith angles. In the Arctic the annual mean incoming solar radiation is low, the zenith angle is high and so is the surface albedo. It is only in the summer that reflection of solar radiation outweighs the downwelling LW emitted by the clouds~\citep{Curry1996}, therefore the warming effect of downwelling LW radiation dominates. Hence, as mentioned in Chapter~\ref{chap:introduction}, low clouds in the Arctic have a net warming effect at the surface~\citep{Shupe2004}.
 
 The air in the Arctic is very stable in winter (polar night), when the surface temperature is lower than that of the atmosphere above. The air is also clean since there are not many sources for pollution. In Autumn the sea ice extent reaches a minimum after the summer melt and leaves open water to influence low clouds and their properties. According to~\citet{Curry1996}, clouds in the Arctic are mostly optically thin and low lying. The maximum value of liquid water content measured in Arctic stratus over the Beaufort Sea, during June 1980 was 0.5~$\text{g/m}^3$, and the liquid water paths ranged from 11 to 117~$\text{g/m}^2$ for low clouds. Mean effective radius ranged from 3.6 to 11.4~$\mu\text{m}$, with 7.5 being the average value for low clouds~\citep{Curry1996}. These cloud properties in the clouds play a crucial role in influencing the radiation fluxes reaching the surface. Some of the cloud radiative properties are presented in the next section.
 
@@ -26,29 +28,30 @@ where $\epsilon_{\lambda} = 1$ is the emissivity for a blackbody at wavelength $
 
 A cloud can be defined as a a gray body, which means that $\alpha_{\lambda}$and $\epsilon_{\lambda}$ are not maximum, $\alpha_{\lambda}=\epsilon_{\lambda}<1$~\citep{Liou2002}.
 
+\subsection{Cloud emissivity}
 The cloud LW emissivity, $\epsilon$, is a measure of the emittance of LW radiation by the cloud. From Stefan-Boltzmann's law, equation~\ref{eqn:stefanboltzmann}, the flux density emitted by a body depends on the body's temperature and it's emissivity. The cloud longwave emissivity is given by~\cite{Liou1992}
 \begin{equation}
 \epsilon = 1 - \exp(-k_v^c \text{LWP})
 \label{eqn:epsilon_lw}
 \end{equation}
-where $k_v^c$ is the mass absorption coefficient of cloud particles, LWP is the liquid water path, which is the vertically integrated amount of water, and is further explained in section~\ref{sec:lwc}. Equation~\ref{eqn:stefanboltzmann} shows that if one assumes constant cloud temperature, the flux density emitted by the cloud increases with increasing $\epsilon$, which increases with increasing LWP. Arctic stratus are often sufficiently thin to not have an emissivity of unity (hence they are grey bodies). If they are thicker than 350~m, though, they do have emissivity close to unity~\citep{Herman1980}. %Name some typical values, and calculate F?@ Check also, values for $k_v c$!!@
+where $k_v^c$ is the mass absorption coefficient of cloud particles and is inversely proportional to the droplet size~\citep{Alterskjaer2010}, meaning that a decrease in droplet size increases $\epsilon$. LWP is the liquid water path, which is the vertically integrated amount of water, and is further explained in section~\ref{subsec:lwc}. Equation~\ref{eqn:stefanboltzmann} shows that if one assumes constant cloud temperature, the flux density emitted by the cloud increases with increasing $\epsilon$, which increases with increasing LWP. Arctic stratus are often sufficiently thin to not have an emissivity of unity (hence they are grey bodies). If they are thicker than 350~m, though, they do have emissivity close to unity~\citep{Herman1980}. Dependence of $\epsilon$ on LWP and droplet size will be further explained in section~\ref{subsec:dependalbeps}.
 
 \subsection{Cloud optical depth}
-\label{sec:cloudoptdep}
-Cloud optical depth (or cloud optical thickness), $\tau$, is a measure of the cumulative depletion that a beam of radiation directed straight downward (zenith angle $\theta = 0$) would experience in passing through a defined cloud layer. Of the incident SW radiation on a cloud with optical depth $\tau$, a fraction $e^{-\tau}$ is not scattered and is defined as the transmissivity of the cloud -- the radiation that is not absorbed or scattered in passing through the cloud~\citep{Wallace2006}. The remaining $1-e^{\tau}$ has been scattered one or more times in passing through the cloud layer. The cloud optical depth is given by~\citep{Twomey1977}
+\label{subsec:cloudoptdep}
+Cloud optical depth (or cloud optical thickness), $\tau$, is a measure of the cumulative depletion that a beam of radiation directed straight downward (zenith angle $\theta = 0$) would experience in passing through a defined cloud layer. Of the incident SW radiation on a cloud with optical depth $\tau$, a fraction $e^{-\tau}$ is not scattered or absorbed and is defined as the transmissivity of the cloud~\citep{Wallace2006}. The remaining $1-e^{\tau}$ has been scattered one or more times, or absorbed, in passing through the cloud layer. The cloud optical depth is given by~\citep{Twomey1977}
 \begin{equation}
 \tau = \int_0^h k_{E}dz = \pi \int_0^h \int_0^{\infty} r^2 Q_E(r/\lambda) n(r,z) dr dz
 \end{equation}
-at height z above cloud base for a cloud of depth $h$, containing $n(r)dr$ drops with radius in the interval ($r, r + dr$) per cubic centimeter ($\text{cm}^{-3}$). $Q_E(r/\lambda)$ is the extinction efficiency and $k_{E}$ is the extinction coefficient~\citep{Twomey1977}. The extinction efficiency is a measure of how well a particle removes the incident radiation, either by scattering or absorption. In the visible, for $\lambda<<r$, $Q_E\approx 2$ is a good approximation~\citep{Hobbs1993}, and we get the simpler expression
+at height z above cloud base for a cloud of depth $h$, containing $n(r)dr$ drops with radius in the interval ($r, r + dr$) per cubic centimeter ($\text{cm}^{-3}$). $Q_E(r/\lambda)$ is the extinction efficiency and $k_{E}$ is the extinction coefficient~\citep{Twomey1977}. The extinction efficiency is a measure of how well a particle removes the incident radiation, either by scattering or absorption. In the visible, for $\lambda<<r$, $Q_E\approx 2$ is a good approximation~\citep{Hobbs1993}, giving the simpler expression
 \begin{equation}
 \tau = 2\pi N r_e^2 h
 \label{eqn:cloudtau1}
 \end{equation}
-where it is assumed that the cloud droplet radius can be approximated by the effective radius, $r_e$, defined in Subsection~\ref{subsec:effectiveradius}.
+where it is assumed that the cloud droplet radius can be approximated by the effective radius, $r_e$, defined in section~\ref{subsec:effectiveradius}.
 
 \subsection{Cloud albedo}
 %Clouds contribute the most to the planetary albedo~\citep{Twomey1974}. The cloud albedo is given by~\citep{Hobbs1993}
-In section~\ref{sec:cloudoptdep} it was stated that the incident SW radiation on a cloud layer is either transmitted, scattered or absorbed. The scattered radiation is scattered by single droplets, and the single-scattering albedo, $\overline{\omega}$, is the fraction of energy that is not absorbed in a single-scattering event, but scattered. $\overline{\omega}$ can to a good approximation be assumed equal to 1. Which means that the absorption of SW is negligible for cloud water. When the single-scattering albedo is taken to unity, the albedo (or reflectance) of a cloud layer is given by~\citep{Hobbs1993}%\citep{Meador1980}
+In section~\ref{subsec:cloudoptdep} it was stated that the incident SW radiation on a cloud layer is either transmitted, scattered or absorbed. The scattered radiation is scattered by single droplets, and the single-scattering albedo, $\overline{\omega}$, is the fraction of energy that is not absorbed in a single-scattering event, but scattered. $\overline{\omega}$ can to a good approximation be assumed equal to 1. Which means that the absorption of SW is negligible for cloud water. When the single-scattering albedo is taken to unity, the albedo (or reflectance) of a cloud layer is given by~\citep{Hobbs1993}%\citep{Meador1980}
 \begin{equation}
 A = \frac{(1-g)\tau}{1+(1-g)\tau} = \frac{1-g}{\frac{1}{\tau}+(1-g)}
 \label{eqn:cloudalbedo}
@@ -72,7 +75,7 @@ r_e = \frac{\int r^3 n(r) dr}{\int r^2 n(r) dr}
 \label{eqn:re}
 \end{equation}
 
-It can be seen from equation~\ref{eqn:cloudtau1} that a decrease in $r_e$, when $N$ and $h$ is kept constant decreases the optical depth of the cloud. Whereas an increase in $r_e$ increases the cloud optical depth. It has already been established from equation~\ref{eqn:cloudalbedo} that a(n) decrease (increase) in the cloud optical depth leads to a(n) decrease (increase) in the cloud albedo $A$. The effect of $r_e$ on $\epsilon$ is through the LWP and is described in the following section.
+It can be seen from equation~\ref{eqn:cloudtau1} that a decrease in $r_e$, when $N$ and $h$ is kept constant decreases the optical depth of the cloud. Whereas an increase in $r_e$ increases the cloud optical depth. It has already been established from equation~\ref{eqn:cloudalbedo} that a(n) decrease (increase) in the cloud optical depth leads to a(n) decrease (increase) in the cloud albedo $A$. The effect of $r_e$ on $\epsilon$ is through $k_v^c$, where a decrease in $r_e$ increases $k_v^c$ and thereby increases $\epsilon$, see equation~\ref{eqn:epsilon_lw}. 
 
 \begin{figure}
 \centering
@@ -86,7 +89,7 @@ The effective radius of cloud droplets is typically on the order of a few micro 
 
 
 \subsection{Liquid water content and path}
-\label{sec:lwc}
+\label{subsec:lwc}
 The amount of condensed water can be expressed by the liquid water content (LWC) in the cloud, often presented with units $\text{g~m}^{-3}$ and is proportional to the cloud droplet number concentration (CDNC), and cloud particle size. From~\citet{Rogers1989} the total number of droplets can be expressed by
 \begin{equation}
 N = \int n(r) dr
@@ -128,6 +131,7 @@ where $L$ is the maximum dimension of an ice crystal, $V$ is the volume, $\rho_i
 where IWP denotes the ice water path $\text{IWP} = \text{IWC} \cdot h$ for a layer of thickness h, and $c \approx -6.656 \times 10^{-3}$ and $b \approx 3.686$ for ice columns~\citep{Liou2002}. Equation~\ref{eqn:icetau} clearly shows that an increase in the IWP increases the cloud optical depth (when $D_e$ is kept constant), which in turn, according to equation~\ref{eqn:cloudalbedo}, increases the cloud albedo. The opposite is obvious for $D_e$; when $D_e$ increases, the optical depth decreases, provided the IWP is unchanged, which in turn decreases $A$.
 
 \subsection{Denpendence of $A$ and $\epsilon$ on LWP and $r_e$}
+\label{subsec:dependalbeps}
 What effect a change in LWP has on incoming and outgoing radiation can be seen when the cloud optical depth is expressed as a function of LWP. Recall the cloud optical depth for SW radiation from equation~\ref{eqn:cloudtau1} and rewrite it to get the CDNC ($N$) on the left side
 \begin{equation}
 N = \frac{\tau}{2\pi r^2_e h}
@@ -144,8 +148,8 @@ the cloud optical depth in the visible ($\tau$) can be written as a function of 
 \tau &=& \frac{3\text{LWP}}{2\rho_l r_e}
 \label{eqn:cloudtau}
 \end{eqnarray}
-Where $\text{ LWC }h \approx \text{LWP}$. It is now clear that, if the droplet size is constant, an increase in the LWP increases the optical depth of a cloud, $\tau$. An increase in $\tau$ would make the denominator in equation~\ref{eqn:cloudalbedo} for the cloud albedo, $A$, smaller and thereby increase the cloud albedo. An increase in $A$ also means a reduction in SW radiation reaching the surface. In that way, an increase in LWP would have a cooling effect on the surface.
-But, the LW radiation must also be considered. A change in LWP changes the cloud emissivity. Equation~\ref{eqn:epsilon_lw} shows that $\epsilon$ increases (decreases) with increasing (decreasing) LWP. Meaning that an increase in LWP would increase the flux density emitted by the cloud, following Stefan-Boltzmann's law from equation~\ref{eqn:stefanboltzmann}, and have a warming effect on the surface. Thus, a change in LWP gives opposite effects for short and long wavelengths.
+Where $\text{ LWC }h \approx \text{LWP}$. It is now clear that, if the droplet size is constant, an increase in the LWP increases the optical depth of a cloud, $\tau$. An increase in $\tau$ would make the denominator in equation~\ref{eqn:cloudalbedo} for the cloud albedo, $A$, smaller and thereby increase the cloud albedo. An increase in $A$ also means a reduction in SW radiation reaching the surface. In that way, an increase in LWP would have a cooling effect on the surface. 
+But, the LW radiation must also be considered. A change in LWP changes the cloud emissivity. Equation~\ref{eqn:epsilon_lw} shows that $\epsilon$ increases (decreases) with increasing (decreasing) LWP. Meaning that an increase in LWP would increase the flux density emitted by the cloud, following Stefan-Boltzmann's law from equation~\ref{eqn:stefanboltzmann}, and have a warming effect on the surface. Thus, a change in LWP gives opposite effects for short and long wavelengths. It is important to mention that the same effect is evident from keeping the LWP constant and decreasing $r_e$, which in turn increases $\tau$, and thereby $A$ -- the cooling effect, but also gives the warming effect through increasing $\epsilon$, as described in section~\ref{subsec:effectiveradius}.
 
 \begin{figure}
 \centering
