@@ -200,7 +200,7 @@ Aero10NoIce & removed & climatology$\times$10\\
 %---------------------
 The model runs were initialized with data downloaded from the European Centre for Medium-Range Weather Forecasts (ECMWF). %~\citet{ecmwf}
 %@cite web page.%was downloaded from their site and used as input for initial and boundary?? conditions.
-The downloaded data is from the ERA-Interim data set, which is a global atmospheric reanalysis from 1979 to present and continues to be updated in real time. %~\citet{ecmwf}.%@make bib for ecmwf
+The downloaded data is from the ERA-Interim data set, which is a global atmospheric reanalysis from 1979 to present and continues to be updated in real time%~\citep{ecmwf}.%@make bib for ecmwf
 Through WPS the data from ERA-Interim was interpolated over the area, with a 2 degree minute spacing between the points, to be used to initialize the model. The data used is in 6-hourly atmospheric fields on pressure levels, for the first five days of September 2012, which was the period the model was run for. This is done to make sure the initial meteorological conditions are the same in every run, so that the effects of changing a variable in the input files for the modeling system are only due to that change.
 
 To use the climatological aerosol data set, the file containing monthly means had to be called through WPS. The aerosol input data includes mass mixing ratios of sulfates, sea salts, organic carbon, dust, and black carbon from a 7-yr simulation with 0.5$\degree$ longitude by 1.25$\degree$ latitude spacing~\citep{Thompson2014}.
@@ -215,7 +215,7 @@ Figures presented in my thesis, I made (unless other is stated) by use of NCL (N
 
 The model output was stored as instantaneous values for every hour for each of the five days, from each of the four runs. 
 
-To study the response in cloud radiative properties, all fields of interest were made into daily time averages, by use of NCL, in each run. Some fields vary only in horizontal space and in time (2-dimensional in space), and were simply added together and divided by the number of hours in that day. These fields are: SW and LW radiation down at the surface and up at TOA, latent heat (LH) and sensible heat (SH), temperature at the surface and at 2~m height and winds at 10~m height.
+To study the response in cloud radiative properties, fields of interest were made into daily time averages, by use of NCL, in each run. Some fields vary only in horizontal space and in time (2-dimensional in space), and were simply added together and divided by the number of hours in a day. These fields are: SW and LW radiation down at the surface and up at the top of the atmosphere (TOA), latent heat (LH) and sensible heat (SH), temperature at the surface and at 2~m height and winds at 10~m height.
 
 The cloud parameters, such as $r_e$ and CDNC, vary also in the vertical (3-dimensional in space) and have been averaged over the 11 lowermost layers (the lower $\sim$1600~m above the surface) and all hours of the day. Hence, the figures showing $r_e$ and CDNC over maps do not account for variations in the vertical.
 
