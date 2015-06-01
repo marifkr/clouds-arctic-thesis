@@ -40,7 +40,7 @@ The vertical coordinate is the traditional $\sigma$ coordinate used in many hydr
 \label{fig:sigma}
 \end{figure}
 
-$\eta$ decreases monotonically from a value of 1 at the surface, where the coordinate follows the terrain and $P_h = P_{hs}$, to a value of 0 at the top level, which is then a pressure surface, where $P_h = P_{ht}$. Levels with constant $\eta$ are commonly referred to as $\eta$-levels (or Eta-levels). $\mu(x,y)$ is the mass of dry air per unit area within the column in the model domain at $(x,y)$. The $\eta$-levels are where the vertical wind speed is calculated, whereas the thermodynamic variables ($\theta$) are calculated between the $\eta$-levels, on so-called mass levels.
+$\eta$ decreases monotonically from a value of 1 at the surface, where the coordinate follows the terrain and $P_h = P_{hs}$, to a value of 0 at the top level, which is then a pressure surface, where $P_h = P_{ht}$. Levels with constant $\eta$ are commonly referred to as $\eta$-levels (or Eta-levels). $\mu(x,y)$ is the mass of dry air per unit area within the column in the model domain at $(x,y)$. The $\eta$-levels are where the vertical wind speeds are calculated, whereas the thermodynamic variables ($\theta$) are calculated between the $\eta$-levels, on so-called mass levels.
 
 %--------- Stuff on staggered grid.
 With the vertical coordinate $\eta$, and the mass of an air column, $\mu(x,y)$, in the model grid the Euler equations can be written with  variables on flux form:
@@ -87,14 +87,14 @@ where $C$ is the maximum Courant number, which depends on the order of the discr
 \section{Model setup}
 \label{sec:modelsetup}
 %---------------------
-The model was ran with a 4~km$\times$4~km horizontal grid point spacing, with 300$\times$300 grid points, and 72 vertical layers, with the model top at 10~hPa.
-The area covers parts of the Beaufort Sea, north of Canada and Alaska. This area was chosen because data from the area has been used for related studies~\citep{Shupe2004,Kay2009,Wu2012,Palm2010,Schweiger2008,Eastman2010a} as mentioned in Chapter~\ref{chap:introduction}. The area is not completely ice free any part of the year~\citep{NSIDC}, and provides a good place to simulate cloud-sea ice interaction. The area is over several time zones but is approximately 7 hours behind UTC time. The times given in the WRF-ARW modeling system are UTC. The model was run for a period of 5~days, 1st to 6th of September 2012. This is approximately when the record low ice extent in the Arctic was set (eg. National Snow and Ice Data Centre, U.S.A.,~\citep{NSIDC}).
+The model was run with a 4~km$\times$4~km horizontal grid point spacing, with 300$\times$300 grid points, and 72 vertical layers, with the model top at 10~hPa.
+The area covers parts of the Beaufort Sea, north of Canada and Alaska. This area was chosen because data from the area has been used for related studies~\citep{Shupe2004,Kay2009,Wu2012,Palm2010,Schweiger2008,Eastman2010a} as mentioned in Chapter~\ref{chap:introduction}. The area is not completely ice free any part of the year~\citep{NSIDC}, and provides a good place to simulate cloud-sea ice interaction. The area spans several time zones, and is approximately 7 hours behind UTC time. The times given in the WRF-ARW modeling system are UTC. The model was run for a period of 5~days, 1st to 6th of September 2012. This is approximately when the record low ice extent in the Arctic was set (eg. National Snow and Ice Data Centre, U.S.A.,~\citep{NSIDC}).
 
-The vertical layers in the ARW model are often referred to as eta levels, because of the choice of $\eta$ as the vertical coordinate. These levels have uneven vertical spacing and the altitude of each level is dependent on pressure, therefore the level height varies in both time and space. As a consequence of pressure dependence, the levels in the lower troposphere are closer to each other than the levels higher up in the troposphere. Thus the low clouds in the area can be resolved. Approximate heights for the lowest 11 eta levels are shown in Table~\ref{tab:etaheights}.
+The vertical layers in the ARW model are often referred to as eta levels, because of the choice of $\eta$ as the vertical coordinate. These levels have uneven vertical spacing and the altitude of each level is dependent on pressure. Therefore, the level height varies in both time and space. As a consequence of pressure dependence, the levels in the lower troposphere are closer to each other than the levels higher up in the troposphere. Thus the low clouds in the area can be resolved. In this study, only the lowest 11 eta levels have been used to study the low clouds. Approximate heights for the lowest 11 eta levels are shown in Table~\ref{tab:etaheights}.
 
 \begin{table}[H]
 \centering
-\caption{Approximate height for each level in meters above the surface.}
+\caption{Approximate height for each of the lowermost 11 eta levels, in meters above the surface.}
 \label{tab:etaheights} 
 \begin{tabular}{C{4.cm} C{5.cm}}
 \centering
@@ -133,7 +133,7 @@ The selection of physics schemes in WRF-ARW are numerous and fall into several c
 \end{tabular}
 \end{table}
 
-The ARW model offers a wide selection of schemes to treat different physics that one wants represented in the model. The schemes treat the physics slightly differently and some schemes are better for certain horisontal and vertical resolutions than others, so one needs to be careful when choosing how the model is to treat the physics. For my thesis, the especially relevant scheme to mention is the cloud microphysics scheme that I chose, which is the aerosol-aware scheme described in~\citet{Thompson2014}. When studying cloud and radiation response to removal of sea ice one might expect an increase in aerosols from the open ocean and increased sea traffic. The aerosols are therefore also relevant for the choice of schemes, and the aerosol-aware scheme, described further below, includes the necessary processes for this study.
+The ARW model offers a wide selection of schemes to treat different physics that one wants represented in the model. The schemes treat the physics slightly differently. Some schemes are better for certain horizontal and vertical resolutions than others, so one needs to be careful when choosing how the model is to treat the physics. For my thesis, the especially relevant scheme to mention is the cloud microphysics scheme that I chose, which is the aerosol-aware scheme described in~\citet{Thompson2014}. When studying cloud and radiation response to removal of sea ice, one might expect an increase in aerosols from the open ocean and increased sea traffic. The aerosols are therefore also relevant for the choice of schemes, and the aerosol-aware scheme, described further below, includes the necessary processes for this study.
 
 The choice of cumulus parameterization was based on the grid resolution, and the best fit for it. A horizontal grid point spacing of 4~km can be fine enough to not use cumulus parameterization~\citep{Thompson2014}, but in this thesis a parameterization that was more suitable for grid point spacings less than 10~km was chosen; the Grell 3D parameterization. According to~\citet{Wang2015} Grell 3D may be used on high resolution, like my 4~km grid point spacing.
 %---------
@@ -146,8 +146,8 @@ The choice of cumulus parameterization was based on the grid resolution, and the
 %------------------------------------------
 \subsubsection{The aerosol-aware scheme}
 %------------------------------------------
-The microphysics includes explicitly resolved water vapor, cloud, and precipitation processes. The aerosol-aware scheme was chosen so that the study would have scavenging of aerosols included and have proper enough representation of aerosols to study aerosol-cloud interactions, without using the WRF model coupled with chemistry (WRF-Chem).
-According to the ARW User's Guide by~\citet{Wang2015}, the aerosol-aware scheme considers water- and ice-friendly aerosols, and a climatological dataset may be used to specify initial and boundary conditions for the aerosol variables. I have used this climatological dataset, which will be explained in Subsection~\ref{subsec:inputdata}~Input~data. The scheme uses a monthly mean for aerosol number concentrations derived from multi-year (2001-2007) global model simulations in which particles and their precursors are emitted by natural and anthropogenic sources and are explicitly modeled with multiple size bins for multiple species of aerosols by the Goddard Chemistry Aerosol Radiation and Transport (GOCART) model~\citep{Thompson2014}.
+The microphysics includes explicitly resolved water vapor, cloud, and precipitation processes. The aerosol-aware scheme was chosen so that the study would have scavenging of aerosols included and have proper enough representation of aerosols to study aerosol--cloud interactions, without using the WRF model coupled with chemistry (WRF-Chem).
+According to the ARW User's Guide by~\citet{Wang2015}, the aerosol-aware scheme considers water- and ice-friendly aerosols, and a climatological data set may be used to specify initial and boundary conditions for the aerosol variables. I have used this climatological data set, which will be explained in Subsection~\ref{subsec:inputdata}~Input~data. The scheme uses a monthly mean for aerosol number concentrations derived from multi-year (2001-2007) global model simulations in which particles and their precursors are emitted by natural and anthropogenic sources and are explicitly modeled with multiple size bins for multiple species of aerosols by the Goddard Chemistry Aerosol Radiation and Transport (GOCART) model~\citep{Thompson2014}.
 The aerosol-aware scheme~\citep{Thompson2014} is built on the schematic shown in figure~\ref{fig:microphysics}, from~\citet{Reisner1998}. It is a double moment scheme, which means it computes both mass mixing ratios, Q, and number concentrations, N, for the same water species (hydrometeors). 
 
 \begin{figure}[h]
@@ -162,20 +162,20 @@ Figure~\ref{fig:microphysics} show the processes in the microphysics scheme deve
 %------------------------------------------
 \subsubsection{The RRTMG radiation schemes}
 %------------------------------------------
-According to~\citet{Thompson2014} the Rapid Radiative Transfer Model (RRTM) for General Circulation Models (GCMs) (RRTMG) schemes for SW and LW~\citep{Mlawer1997, Iacono2000, Iacono2003, Iacono2008} are the only radiation schemes which include the effects of the effective radii calculated in aerosol-aware. These were therefore used in combination with the aerosol-aware cloud microphysics scheme. The RRTMG schemes are accurate schemes using look-up tables for efficiency, and accounts for multiple bands and microphysics species, and includes the Monte Carlo Independent Column Approximation (MCICA) method of random cloud overlap~\citep{Wang2015}.
+According to~\citet{Thompson2014} the Rapid Radiative Transfer Model (RRTM) for General Circulation Models (GCMs) (RRTMG) schemes for SW and LW~\citep{Mlawer1997, Iacono2000, Iacono2003, Iacono2008} are the only radiation schemes which include the effects of the effective radii calculated in the aerosol-aware scheme. These were therefore used in combination with the aerosol-aware cloud microphysics scheme. The RRTMG schemes are accurate schemes using look-up tables for efficiency, and accounts for multiple bands and microphysics species, and includes the Monte Carlo Independent Column Approximation (MCICA) method of random cloud overlap~\citep{Wang2015}.
 %The RRTM scheme described in~\citet{Mlawer1997} uses the correlated-k method, which is an approximated technique for the accelerated calculation of fluxes and cooling rates for inhomogeneous atmospheres~\citep{Mlawer1997}. %\textbf{@define inhomogeneous atmosphere}.
 %The correlated-k method is capable of achieving accuracy comparable with that of line-by-line models with an extreme reduction in the number of radiative transfer operations performed~\citep{Mlawer1997}, which by that reduces computational cost and increases computational efficiency. The Line-By-Line Radiative Transfer Model (LBLRTM) is used both to calculate the absorption coefficients used to generate the k distributions needed by RRTM and  to evaluate the RRTM calculations of fluxes and cooling rates~\citep{Iacono2000}. 
 
 %---------------------
 \section{Model runs}
 %---------------------
-The results presented in the next chapter are based on four different runs. The control run is the run where the aerosol climatological dataset has been used unchanged, and where the sea ice is kept as it was in the downloaded input data, see Subsection~\ref{subsec:inputdata}. The control run is used as a base to compare the other runs to, those with no ice and/or increased aerosol number concentrations.
+The results presented in the next chapter are based on four different runs. The control run is the run where the aerosol climatological data set has been used unchanged, and where the sea ice is kept as it was in the downloaded input data, see Subsection~\ref{subsec:inputdata}. The control run is used as a base to compare the other runs to, those with no ice and/or increased aerosol number concentrations.
 
-There are two runs where the sea ice was removed, NoIce and Aero10NoIce. The point of this is to compare the run with no ice to the control run, and see if there are any changes in the cloud properties, and SW and LW fluxes. For one of those runs the aerosol number concentration was also increased, results from this run can be compared with the control run.
+There are two runs where the sea ice was removed, NoIce and Aero10NoIce. The point of this is to compare the run with no ice to the control run, and see if there are any changes in the cloud properties, and SW and LW fluxes. For one of those runs the aerosol number concentration was also increased. Results from this run can be compared with the control run.
 
-The number of water- and ice-friendly aerosols were multiplied by 10 both with and without sea ice for two runs: Aero10 with ice, and as mentioned above, Aero10NoIce without ice. The goal is to find changes in cloud properties, and radiation fluxes compared to those in the control run.
+The number of water- and ice-friendly aerosols were multiplied by 10 both with and without sea ice for two runs: Aero10 with ice, and as mentioned above, Aero10NoIce without ice. The goal is to find changes in cloud properties and radiation fluxes compared to those in the control run.
 
-Table~\ref{tab:runs} shows an overview of the different runs that have been executed, whose output have been used for production of figures presented in the next chapter.
+Table~\ref{tab:runs} shows an overview of the different runs that have been performed, whose output have been used for production of figures presented in the next chapter.
 
 \begin{table}[H]
 \centering
@@ -201,12 +201,12 @@ Through WPS the data from ERA-Interim was interpolated over the area, with a 2 d
 To use the climatological aerosol data set, the file containing monthly means had to be called through WPS. The aerosol input data includes mass mixing ratios of sulfates, sea salts, organic carbon, dust, and black carbon from a 7-yr simulation with 0.5$\degree$ longitude by 1.25$\degree$ latitude spacing~\citep{Thompson2014}.
 
 \subsection{Manipulation of input files}
-The input files for the ARW solver, created by WPS and REAL (see figure~\ref{fig:wrfflowchart}) were manipulated by use of the NetCDF Operator (NCO) tool ncap2. In these files the sea ice was removed for the runs without sea ice (NoIce and Aero10NoIce) and the aerosol number concentration from the climatological dataset was multiplied by 10 for the runs with increased aerosol number concentration (Aero10 and Aero10NoIce).
+The input files for the ARW solver, created by WPS and REAL (see figure~\ref{fig:wrfflowchart}) were manipulated by use of the NetCDF Operator (NCO) tool ncap2. In these files the sea ice was removed for the runs without sea ice (NoIce and Aero10NoIce) and the aerosol number concentration from the climatological data set was multiplied by 10 for the runs with increased aerosol number concentration (Aero10 and Aero10NoIce).
 
 %---------------------
 \section{Processing the model output}
 %---------------------
-Figures presented in my thesis, I made (unless other is stated) by use of NCL (National Center for Atmospheric Research (NCAR) Command Language). For the NCL scripts I found a lot of help and inspiration from the example scripts for WRF-users.% available at @(URL for examples).
+Figures presented in my thesis were made by me (unless stated otherwise) by use of NCL (National Center for Atmospheric Research (NCAR) Command Language)~citep{NCL}. For the NCL scripts I found a lot of help and inspiration from the example scripts for WRF-users, found on the NCL web page~\citep{NCL}.
 
 The model output was stored as instantaneous values for every hour for each of the five days, from each of the four runs. 
 
