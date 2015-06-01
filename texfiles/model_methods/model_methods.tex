@@ -1,6 +1,6 @@
 \chapter{Model and methods}
 \label{chap:modmet}
-To test the thesis hypothesis, a formulation of the Weather Research and Forecasting (WRF) Model called the Advanced Research WRF (ARW) has been used. The model is described in the first part of this chapter. Then follows a description of the model setup and the different physics schemes that were chosen for this study, before a summary of the different runs that were performed. Ending the chapter are two short sections on the input data and processing of the model output.
+To test the thesis hypothesis, a formulation of the Weather Research and Forecasting (WRF) model called the Advanced Research WRF (ARW) has been used. The model is described in the first part of this chapter. Then follows a description of the model setup and the different physics schemes that were chosen for this study, before a summary of the different runs that were performed. Ending the chapter are two short sections on the input data and processing of the model output.
 
 %---------------------
 \section{Description of the WRF-ARW Modeling System}
@@ -88,8 +88,7 @@ where $C$ is the maximum Courant number, which depends on the order of the discr
 \label{sec:modelsetup}
 %---------------------
 The model was ran with a 4~km$\times$4~km horizontal grid point spacing, with 300$\times$300 grid points, and 72 vertical layers, with the model top at 10~hPa.
-The area covers parts of the Beaufort Sea, by Canada and Alaska. This area was chosen because data from the area has been used for related studies~\citep{Intrieri2002,Shupe2004,Kay2009,Wu2012,Palm2010,Schweiger2008} %@@@sjekk dette!!,
-as mentioned in Chapter~\ref{chap:introduction}. The area is not completely ice free any part of the year~\citep{NSIDC}, and provides a good place to simulate cloud-sea ice interaction. The area is over several time zones but is approximately 7 hours behind UTC time. The times given in the WRF-ARW modeling system are UTC. The model was run for a period of 5~days, 1st to 6th of September 2012. This is approximately when the record low ice extent in the Arctic was set (eg. National Snow and Ice Data Centre, U.S.A.,~\citep{NSIDC}).
+The area covers parts of the Beaufort Sea, north of Canada and Alaska. This area was chosen because data from the area has been used for related studies~\citep{Shupe2004,Kay2009,Wu2012,Palm2010,Schweiger2008,Eastman2010a} as mentioned in Chapter~\ref{chap:introduction}. The area is not completely ice free any part of the year~\citep{NSIDC}, and provides a good place to simulate cloud-sea ice interaction. The area is over several time zones but is approximately 7 hours behind UTC time. The times given in the WRF-ARW modeling system are UTC. The model was run for a period of 5~days, 1st to 6th of September 2012. This is approximately when the record low ice extent in the Arctic was set (eg. National Snow and Ice Data Centre, U.S.A.,~\citep{NSIDC}).
 
 The vertical layers in the ARW model are often referred to as eta levels, because of the choice of $\eta$ as the vertical coordinate. These levels have uneven vertical spacing and the altitude of each level is dependent on pressure, therefore the level height varies in both time and space. As a consequence of pressure dependence, the levels in the lower troposphere are closer to each other than the levels higher up in the troposphere. Thus the low clouds in the area can be resolved. Approximate heights for the lowest 11 eta levels are shown in Table~\ref{tab:etaheights}.
 
@@ -127,10 +126,10 @@ The selection of physics schemes in WRF-ARW are numerous and fall into several c
 \centering
 \textbf{Physics categories} & \textbf{Scheme selected within category}\\ \hline
 (1) microphysics & aerorol-aware ~\citep{Reisner1998, Thompson2004, Thompson2008, Thompson2014}. Option 28.\\
-(2) cumulus parameterization & Grell 3D  @cite authors. Option 5.\\
-(3) planetary boundary layer (PBL) &  Yonsei University scheme @cite authors. Option 1.\\
-(4) land-surface model & Noah Land Surface Model @cite authors. Option 2.\\
-(5) radiation & RRTMG LW \& SW ~\citep{Mlawer1997, Iacono2000, Iacono2003, Iacono2008}. Radiation option 4 in both LW and SW.
+(2) cumulus parameterization & Grell 3D~\citep{Grell2002}. Option 5.\\
+(3) planetary boundary layer (PBL) &  Yonsei University scheme~\citep{Hong2004}. Option 1.\\
+(4) land-surface model & Noah Land Surface Model~\citep{Tewari2004}. Option 2.\\
+(5) radiation & RRTMG LW \& SW ~\citep{Mlawer1997, Iacono2000, Iacono2003, Iacono2008}. Option 4 in both LW and SW.
 \end{tabular}
 \end{table}
 
@@ -148,8 +147,7 @@ The choice of cumulus parameterization was based on the grid resolution, and the
 \subsubsection{The aerosol-aware scheme}
 %------------------------------------------
 The microphysics includes explicitly resolved water vapor, cloud, and precipitation processes. The aerosol-aware scheme was chosen so that the study would have scavenging of aerosols included and have proper enough representation of aerosols to study aerosol-cloud interactions, without using the WRF model coupled with chemistry (WRF-Chem).
-According to the ARW User's Guide by~\citet{Wang2015}, the aerosol-aware scheme considers water- and ice-friendly aerosols, and a climatological dataset may be used to specify initial and boundary conditions for the aerosol variables. I have used this climatological dataset, which will be explained in Subsection~\ref{subsec:inputdata}~Input~data. The scheme uses a monthly mean for aerosol number concentrations derived from multi-year (2001-2007) global model simulations in which particles and their precursors are emitted by natural and anthropogenic sources and are explicitly modeled with multiple size bins for multiple species of aerosols by the Goddard Chemistry Aerosol Radiation and Transport (GOCART) model %(@desiterteGinoux2001)
-~\citep{Thompson2014}.
+According to the ARW User's Guide by~\citet{Wang2015}, the aerosol-aware scheme considers water- and ice-friendly aerosols, and a climatological dataset may be used to specify initial and boundary conditions for the aerosol variables. I have used this climatological dataset, which will be explained in Subsection~\ref{subsec:inputdata}~Input~data. The scheme uses a monthly mean for aerosol number concentrations derived from multi-year (2001-2007) global model simulations in which particles and their precursors are emitted by natural and anthropogenic sources and are explicitly modeled with multiple size bins for multiple species of aerosols by the Goddard Chemistry Aerosol Radiation and Transport (GOCART) model~\citep{Thompson2014}.
 The aerosol-aware scheme~\citep{Thompson2014} is built on the schematic shown in figure~\ref{fig:microphysics}, from~\citet{Reisner1998}. It is a double moment scheme, which means it computes both mass mixing ratios, Q, and number concentrations, N, for the same water species (hydrometeors). 
 
 \begin{figure}[h]
@@ -160,7 +158,6 @@ The aerosol-aware scheme~\citep{Thompson2014} is built on the schematic shown in
 \end{figure}
 
 Figure~\ref{fig:microphysics} show the processes in the microphysics scheme developed by~\citet{Reisner1998}, which the first bulk microphysics scheme by Thompson~\citep{Thompson2004} was based on. The aerosol-aware scheme~\citep{Thompson2014} is an extension of the updated Thompson bulk microphysics scheme described in~\citet{Thompson2008}. The figure shows a schematic of five hydrometeors, cloud water (c), rain (r), ice (i), snow (s) and graupel (g), and if just the mass mixing ratio is calculated or if both the mass mixing ratio and the number concentration is calculated. For each of the hydrometeors, prognostic equations are used with all the sources and sink terms included.
- % which was originally built on this~\citep{Thompson2004}, but there is not much left of it in the code now (@cite the code comments?).
  
 %------------------------------------------
 \subsubsection{The RRTMG radiation schemes}
@@ -198,9 +195,7 @@ Aero10NoIce & removed & climatology$\times$10\\
 \subsection{Input data}
 \label{subsec:inputdata}
 %---------------------
-The model runs were initialized with data downloaded from the European Centre for Medium-Range Weather Forecasts (ECMWF). %~\citet{ecmwf}
-%@cite web page.%was downloaded from their site and used as input for initial and boundary?? conditions.
-The downloaded data is from the ERA-Interim data set, which is a global atmospheric reanalysis from 1979 to present and continues to be updated in real time%~\citep{ecmwf}.%@make bib for ecmwf
+The model runs were initialized with data downloaded from the European Centre for Medium-Range Weather Forecasts (ECMWF)~\citep{ecmwf}. The downloaded data is from the ERA-Interim data set, which is a global atmospheric reanalysis from 1979 to present and continues to be updated in real time~\citep{ecmwf}.
 Through WPS the data from ERA-Interim was interpolated over the area, with a 2 degree minute spacing between the points, to be used to initialize the model. The data used is in 6-hourly atmospheric fields on pressure levels, for the first five days of September 2012, which was the period the model was run for. This is done to make sure the initial meteorological conditions are the same in every run, so that the effects of changing a variable in the input files for the modeling system are only due to that change.
 
 To use the climatological aerosol data set, the file containing monthly means had to be called through WPS. The aerosol input data includes mass mixing ratios of sulfates, sea salts, organic carbon, dust, and black carbon from a 7-yr simulation with 0.5$\degree$ longitude by 1.25$\degree$ latitude spacing~\citep{Thompson2014}.
